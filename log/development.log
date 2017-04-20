@@ -1,0 +1,63 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (14.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePessoas (20170420201417)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (178.5ms)[0m  [1m[35mCREATE TABLE "pessoas" ("id" serial primary key, "cpf" character varying, "nome" character varying, "rg" character varying, "login_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (31.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (328.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (212.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+  [1m[35m (105.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (89.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePessoas (20170420201417)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (71.3ms)[0m  [1m[35mCREATE TABLE "pessoas" ("id" serial primary key, "cpf" character varying, "nome" character varying, "rg" character varying, "login_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420201417"]]
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 20:15:46 UTC], ["updated_at", 2017-04-20 20:15:46 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:15:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/guerra/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/guerra/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 39ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pessoas" for 127.0.0.1 at 2017-04-20 17:16:04 -0300
+Processing by PessoasController#index as HTML
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.5ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  Rendered pessoas/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 1125ms (Views: 1115.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pessoas/new" for 127.0.0.1 at 2017-04-20 17:16:17 -0300
+Processing by PessoasController#new as HTML
+  Rendering pessoas/new.html.erb within layouts/application
+  Rendered pessoas/_form.html.erb (66.3ms)
+  Rendered pessoas/new.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 100ms (Views: 91.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/pessoas" for 127.0.0.1 at 2017-04-20 17:16:31 -0300
+Processing by PessoasController#index as HTML
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (1.0ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  Rendered pessoas/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 1.0ms)
+
+
