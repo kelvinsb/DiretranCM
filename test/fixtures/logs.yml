@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  motivo: MyString
+  data: 2017-04-20
+  hora: 2017-04-20 11:30:45
+
+two:
+  motivo: MyString
+  data: 2017-04-20
+  hora: 2017-04-20 11:30:45

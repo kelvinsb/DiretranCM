@@ -192,3 +192,52 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 15ms (Views: 5.2ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLogs (20170420143045)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (125.9ms)[0m  [1m[35mCREATE TABLE "logs" ("id" serial primary key, "motivo" character varying, "data" date, "hora" time, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420143045"]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-20 11:32:44 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 18ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logs" for 127.0.0.1 at 2017-04-20 11:32:51 -0300
+Processing by LogsController#index as HTML
+  Rendering logs/index.html.erb within layouts/application
+  [1m[36mLog Load (0.5ms)[0m  [1m[34mSELECT "logs".* FROM "logs"[0m
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from _app_views_logs_index_html_erb__4536211775606811601_47004452893940 at /home/rafael/Documentos/UTFPR/5º Periodo/Projeto Integrador/DiretranCM/app/views/logs/index.html.erb:16)
+  Rendered logs/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 307ms (Views: 301.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/logs/new" for 127.0.0.1 at 2017-04-20 11:32:53 -0300
+Processing by LogsController#new as HTML
+  Rendering logs/new.html.erb within layouts/application
+  Rendered logs/_form.html.erb (39.7ms)
+  Rendered logs/new.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 80ms (Views: 59.7ms | ActiveRecord: 2.3ms)
+
+
