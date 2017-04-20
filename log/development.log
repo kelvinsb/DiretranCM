@@ -1,13 +1,136 @@
-
-Started GET "/" for 127.0.0.1 at 2017-04-20 10:18:01 -0300
+Started GET "/" for 127.0.0.1 at 2017-04-20 16:03:42 -0300
+  
+ActiveRecord::NoDatabaseError (FATAL:  role "pe01" does not exist
+):
+  
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:675:in `rescue in connect'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+activerecord (5.0.2) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.2) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.2) lib/active_record/migration.rb:559:in `connection'
+activerecord (5.0.2) lib/active_record/migration.rb:546:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.6ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 16:28:56 -0300
+  
+ActiveRecord::NoDatabaseError (FATAL:  role "pe01" does not exist
+):
+  
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:675:in `rescue in connect'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+activerecord (5.0.2) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.2) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.2) lib/active_record/migration.rb:559:in `connection'
+activerecord (5.0.2) lib/active_record/migration.rb:546:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.8ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 16:36:55 -0300
 Processing by Rails::WelcomeController#index as HTML
   Parameters: {"internal"=>true}
-  Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
-Completed 200 OK in 56ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (9.0ms)
+Completed 200 OK in 64ms (Views: 14.9ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2017-04-20 10:41:42 -0300
+Started GET "/" for 127.0.0.1 at 2017-04-20 16:57:43 -0300
   
 ActiveRecord::PendingMigrationError (
 
@@ -52,6 +175,677 @@ puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
 puma (3.8.2) lib/puma/server.rb:435:in `process_client'
 puma (3.8.2) lib/puma/server.rb:299:in `block in run'
 puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.5ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 16:58:20 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.9ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 16:58:38 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.8ms)
+  [1m[35m (119.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (115.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFuncionarios (20170420195337)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (116.1ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "Login_id" character varying, "integer" character varying, "Pessoa_ID" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420195337"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 19:59:05 UTC], ["updated_at", 2017-04-20 19:59:05 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-20 16:59:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (4.6ms)
+Completed 200 OK in 31ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/Funcionario" for 127.0.0.1 at 2017-04-20 16:59:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Funcionario"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered collection of /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (77.6ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.8ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (187.8ms)
+Started GET "/funcionarios" for 127.0.0.1 at 2017-04-20 16:59:40 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.9ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 1694ms (Views: 1665.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2017-04-20 16:59:45 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (42.6ms)
+  Rendered funcionarios/new.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 116ms (Views: 94.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2017-04-20 16:59:52 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (4.3ms)
+  Rendered funcionarios/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFuncionarios (20170420200327)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:08:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 10:18:01 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 56ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 10:41:42 -0300
+
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (238.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (235.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:13:03 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.1ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:13:04 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.3ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:13:05 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.8ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:13:05 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.6ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:13:06 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.5ms)
+  [1m[35m (122.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (108.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFuncionarios (20170420200327)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (43.3ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420200327"]]
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEstados (20170420200720)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (100.5ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "Nome" character varying, "UF" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420200720"]]
+  [1m[35m (17.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 20:13:18 UTC], ["updated_at", 2017-04-20 20:13:18 UTC]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:13:32 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (4.5ms)
+Completed 200 OK in 25ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/Funcionario" for 127.0.0.1 at 2017-04-20 17:13:38 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Funcionario"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (7.4ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.0ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.2ms)
+Started GET "/funcionario" for 127.0.0.1 at 2017-04-20 17:13:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/funcionario"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (7.3ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.2ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (52.9ms)
+Started GET "/Funcionarios[" for 127.0.0.1 at 2017-04-20 17:13:47 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Funcionarios["):
+
   Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
   Rendered /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.8ms)
@@ -87,6 +881,7 @@ Completed 200 OK in 18ms (Views: 10.2ms | ActiveRecord: 0.0ms)
 Started GET "/Login" for 127.0.0.1 at 2017-04-20 10:46:33 -0300
   
 ActionController::RoutingError (No route matches [GET] "/Login"):
+
   
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -114,6 +909,19 @@ puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
 puma (3.8.2) lib/puma/server.rb:435:in `process_client'
 puma (3.8.2) lib/puma/server.rb:299:in `block in run'
 puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered collection of /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (7.3ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (54.3ms)
+Started GET "/Funcionarios" for 127.0.0.1 at 2017-04-20 17:13:49 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Funcionarios"):
+
   Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
   Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
@@ -125,6 +933,7 @@ puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/Login" for 127.0.0.1 at 2017-04-20 10:46:38 -0300
   
 ActionController::RoutingError (No route matches [GET] "/Login"):
+
   
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -152,6 +961,834 @@ puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
 puma (3.8.2) lib/puma/server.rb:435:in `process_client'
 puma (3.8.2) lib/puma/server.rb:299:in `block in run'
 puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (7.7ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (53.6ms)
+Started GET "/funcionarios" for 127.0.0.1 at 2017-04-20 17:13:58 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.7ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 480ms (Views: 466.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2017-04-20 17:14:01 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (8.2ms)
+  Rendered funcionarios/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 52ms (Views: 42.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2017-04-20 17:14:03 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.5ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/estados" for 127.0.0.1 at 2017-04-20 17:14:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EstadosController#index as HTML
+  Rendering estados/index.html.erb within layouts/application
+  [1m[36mEstado Load (0.7ms)[0m  [1m[34mSELECT "estados".* FROM "estados"[0m
+  Rendered estados/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 332ms (Views: 309.6ms | ActiveRecord: 2.2ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEstados (20170420202945)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (226.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (234.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+  [1m[35m (147.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (123.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFuncionarios (20170420200327)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (47.7ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420200327"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEstados (20170420202945)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (90.1ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202945"]]
+  [1m[35m (27.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBairros (20170420202947)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (91.0ms)[0m  [1m[35mCREATE TABLE "bairros" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202947"]]
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDocumentos (20170420202948)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (109.5ms)[0m  [1m[35mCREATE TABLE "documentos" ("id" serial primary key, "rg" character varying, "cpf" character varying, "cid" character varying, "foto" character varying, "comp_residencia" character varying, "string" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202948"]]
+  [1m[35m (41.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoria (20170420202949)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (92.0ms)[0m  [1m[35mCREATE TABLE "categoria" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202949"]]
+  [1m[35m (14.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 20:30:57 UTC], ["updated_at", 2017-04-20 20:30:57 UTC]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:31:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 27ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/estados" for 127.0.0.1 at 2017-04-20 17:32:35 -0300
+Processing by EstadosController#index as HTML
+  Rendering estados/index.html.erb within layouts/application
+  [1m[36mEstado Load (0.9ms)[0m  [1m[34mSELECT "estados".* FROM "estados"[0m
+  Rendered estados/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 530ms (Views: 519.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/estados/new" for 127.0.0.1 at 2017-04-20 17:32:39 -0300
+Processing by EstadosController#new as HTML
+  Rendering estados/new.html.erb within layouts/application
+  Rendered estados/_form.html.erb (19.7ms)
+  Rendered estados/new.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 73ms (Views: 57.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2017-04-20 17:32:50 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.7ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 61ms (Views: 43.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/bairros" for 127.0.0.1 at 2017-04-20 17:32:55 -0300
+Processing by BairrosController#index as HTML
+  Rendering bairros/index.html.erb within layouts/application
+  [1m[36mBairro Load (0.8ms)[0m  [1m[34mSELECT "bairros".* FROM "bairros"[0m
+  Rendered bairros/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 72ms (Views: 49.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/estados" for 127.0.0.1 at 2017-04-20 17:36:10 -0300
+Processing by EstadosController#index as HTML
+  Rendering estados/index.html.erb within layouts/application
+  [1m[36mEstado Load (1.0ms)[0m  [1m[34mSELECT "estados".* FROM "estados"[0m
+  Rendered estados/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/estados/new" for 127.0.0.1 at 2017-04-20 17:36:11 -0300
+Processing by EstadosController#new as HTML
+  Rendering estados/new.html.erb within layouts/application
+  Rendered estados/_form.html.erb (3.8ms)
+  Rendered estados/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/estados" for 127.0.0.1 at 2017-04-20 17:36:19 -0300
+Processing by EstadosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3mWKEWA6lU7oJpEHPWtdWLBHoEd4R8c3EIEXkqN9X1yiIDUL1SxwvhxIdaj69DZJd8Vq3GXomCcGgTqg13x3GA==", "estado"=>{"nome"=>"Parana", "uf"=>"PR"}, "commit"=>"Create Estado"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "estados" ("nome", "uf", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["nome", "Parana"], ["uf", "PR"], ["created_at", 2017-04-20 20:36:19 UTC], ["updated_at", 2017-04-20 20:36:19 UTC]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/estados/1
+Completed 302 Found in 13ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/estados/1" for 127.0.0.1 at 2017-04-20 17:36:20 -0300
+Processing by EstadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstado Load (0.6ms)[0m  [1m[34mSELECT  "estados".* FROM "estados" WHERE "estados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering estados/show.html.erb within layouts/application
+  Rendered estados/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 70ms (Views: 46.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/estados" for 127.0.0.1 at 2017-04-20 17:36:22 -0300
+Processing by EstadosController#index as HTML
+  Rendering estados/index.html.erb within layouts/application
+  [1m[36mEstado Load (0.9ms)[0m  [1m[34mSELECT "estados".* FROM "estados"[0m
+  Rendered estados/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 52ms (Views: 50.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2017-04-20 17:36:28 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.6ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 51ms (Views: 49.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2017-04-20 17:36:30 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (2.5ms)
+  Rendered funcionarios/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 70ms (Views: 59.8ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2017-04-20 17:36:31 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rzv4hoT4Hp6KpdcInL5+3JKyRQVN4ne0FsMAHS5wxIx4W2XPoD/JzIgSUU/zdv1wqHcjq56nrhuIGLyK9TvduA==", "commit"=>"Create Funcionario"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "funcionarios" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-04-20 20:36:31 UTC], ["updated_at", 2017-04-20 20:36:31 UTC]]
+  [1m[35m (36.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/funcionarios/1
+Completed 302 Found in 42ms (ActiveRecord: 37.9ms)
+
+
+Started GET "/funcionarios/1" for 127.0.0.1 at 2017-04-20 17:36:31 -0300
+Processing by FuncionariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFuncionario Load (0.3ms)[0m  [1m[34mSELECT  "funcionarios".* FROM "funcionarios" WHERE "funcionarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering funcionarios/show.html.erb within layouts/application
+  Rendered funcionarios/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2017-04-20 17:36:34 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (1.0ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bairros" for 127.0.0.1 at 2017-04-20 17:36:38 -0300
+Processing by BairrosController#index as HTML
+  Rendering bairros/index.html.erb within layouts/application
+  [1m[36mBairro Load (0.6ms)[0m  [1m[34mSELECT "bairros".* FROM "bairros"[0m
+  Rendered bairros/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 70ms (Views: 67.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bairros/new" for 127.0.0.1 at 2017-04-20 17:36:42 -0300
+Processing by BairrosController#new as HTML
+  Rendering bairros/new.html.erb within layouts/application
+  Rendered bairros/_form.html.erb (4.2ms)
+  Rendered bairros/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 65ms (Views: 46.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/bairros" for 127.0.0.1 at 2017-04-20 17:36:46 -0300
+Processing by BairrosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bhYXFd9itAr2pN6Q7tncumXjZCO5qMpBAXrBdFl2rp1+kACYkrnpHv+gxd20CwC6Nuvtt/rWO10UXBJ2gsEn1Q==", "bairro"=>{"nome"=>"Santa Nilce"}, "commit"=>"Create Bairro"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "bairros" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Santa Nilce"], ["created_at", 2017-04-20 20:36:46 UTC], ["updated_at", 2017-04-20 20:36:46 UTC]]
+  [1m[35m (31.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/bairros/1
+Completed 302 Found in 37ms (ActiveRecord: 32.6ms)
+
+
+Started GET "/bairros/1" for 127.0.0.1 at 2017-04-20 17:36:46 -0300
+Processing by BairrosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBairro Load (0.4ms)[0m  [1m[34mSELECT  "bairros".* FROM "bairros" WHERE "bairros"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bairros/show.html.erb within layouts/application
+  Rendered bairros/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 59ms (Views: 54.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bairros" for 127.0.0.1 at 2017-04-20 17:36:48 -0300
+Processing by BairrosController#index as HTML
+  Rendering bairros/index.html.erb within layouts/application
+  [1m[36mBairro Load (0.5ms)[0m  [1m[34mSELECT "bairros".* FROM "bairros"[0m
+  Rendered bairros/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/documentos" for 127.0.0.1 at 2017-04-20 17:36:54 -0300
+Processing by DocumentosController#index as HTML
+  Rendering documentos/index.html.erb within layouts/application
+  [1m[36mDocumento Load (6.1ms)[0m  [1m[34mSELECT "documentos".* FROM "documentos"[0m
+  Rendered documentos/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 67ms (Views: 53.2ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/documentos/new" for 127.0.0.1 at 2017-04-20 17:37:00 -0300
+Processing by DocumentosController#new as HTML
+  Rendering documentos/new.html.erb within layouts/application
+  Rendered documentos/_form.html.erb (5.6ms)
+  Rendered documentos/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 68ms (Views: 51.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/categorias" for 127.0.0.1 at 2017-04-20 17:37:53 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/categorias"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (16.9ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.3ms)
+Started GET "/funcionarios" for 127.0.0.1 at 2017-04-20 17:38:05 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.6ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categoria" for 127.0.0.1 at 2017-04-20 17:38:10 -0300
+Processing by CategoriaController#index as HTML
+  Rendering categoria/index.html.erb within layouts/application
+  [1m[36mCategorium Load (0.7ms)[0m  [1m[34mSELECT "categoria".* FROM "categoria"[0m
+  Rendered categoria/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 56ms (Views: 48.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/categoria/new" for 127.0.0.1 at 2017-04-20 17:38:13 -0300
+Processing by CategoriaController#new as HTML
+  Rendering categoria/new.html.erb within layouts/application
+  Rendered categoria/_form.html.erb (4.9ms)
+  Rendered categoria/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 82ms (Views: 63.8ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/categoria" for 127.0.0.1 at 2017-04-20 17:38:15 -0300
+Processing by CategoriaController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ec+BV7Zp4lXjzMjirWLMuYzw3bYaQRbZEcIspnV+4M1IP0VBCTuWqAnHLEAFAK/OJ5+AHj0XmmHqML1y26hyjw==", "categorium"=>{"nome"=>"ola"}, "commit"=>"Create Categorium"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "categoria" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "ola"], ["created_at", 2017-04-20 20:38:15 UTC], ["updated_at", 2017-04-20 20:38:15 UTC]]
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/categoria/1
+Completed 302 Found in 32ms (ActiveRecord: 27.4ms)
+
+
+Started GET "/categoria/1" for 127.0.0.1 at 2017-04-20 17:38:15 -0300
+Processing by CategoriaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategorium Load (0.6ms)[0m  [1m[34mSELECT  "categoria".* FROM "categoria" WHERE "categoria"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categoria/show.html.erb within layouts/application
+  Rendered categoria/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 49ms (Views: 43.7ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (25.4ms)[0m  [1m[35mDROP TABLE "bairros" CASCADE[0m
+  [1m[35m (122.5ms)[0m  [1m[35mCREATE TABLE "bairros" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.7ms)[0m  [1m[35mDROP TABLE "categoria" CASCADE[0m
+  [1m[35m (122.9ms)[0m  [1m[35mCREATE TABLE "categoria" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.3ms)[0m  [1m[35mDROP TABLE "documentos" CASCADE[0m
+  [1m[35m (110.2ms)[0m  [1m[35mCREATE TABLE "documentos" ("id" serial primary key, "rg" character varying, "cpf" character varying, "cid" character varying, "foto" character varying, "comp_residencia" character varying, "string" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (10.6ms)[0m  [1m[35mDROP TABLE "estados" CASCADE[0m
+  [1m[35m (109.4ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.8ms)[0m  [1m[35mDROP TABLE "funcionarios" CASCADE[0m
+  [1m[35m (66.2ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (115.2ms)[0m  [1m[35mCREATE TABLE "bairros" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (119.9ms)[0m  [1m[35mCREATE TABLE "categoria" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (108.5ms)[0m  [1m[35mCREATE TABLE "documentos" ("id" serial primary key, "rg" character varying, "cpf" character varying, "cid" character varying, "foto" character varying, "comp_residencia" character varying, "string" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (120.0ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (108.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (9.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170420202949)[0m
+  [1m[35m (9.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170420200327),
+(20170420202945),
+(20170420202947);
+
+[0m
+  [1m[35m (108.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 20:43:44 UTC], ["updated_at", 2017-04-20 20:43:44 UTC]]
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/estados" for 127.0.0.1 at 2017-04-20 17:44:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (97.5ms)[0m  [1m[35mDROP TABLE "bairros" CASCADE[0m
+  [1m[35m (109.8ms)[0m  [1m[35mCREATE TABLE "bairros" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.5ms)[0m  [1m[35mDROP TABLE "categoria" CASCADE[0m
+  [1m[35m (110.6ms)[0m  [1m[35mCREATE TABLE "categoria" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (10.2ms)[0m  [1m[35mDROP TABLE "documentos" CASCADE[0m
+  [1m[35m (109.2ms)[0m  [1m[35mCREATE TABLE "documentos" ("id" serial primary key, "rg" character varying, "cpf" character varying, "cid" character varying, "foto" character varying, "comp_residencia" character varying, "string" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.8ms)[0m  [1m[35mDROP TABLE "estados" CASCADE[0m
+  [1m[35m (121.7ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.8ms)[0m  [1m[35mDROP TABLE "funcionarios" CASCADE[0m
+  [1m[35m (66.1ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (15.1ms)[0m  [1m[35mDROP TABLE "bairros" CASCADE[0m
+  [1m[35m (110.2ms)[0m  [1m[35mCREATE TABLE "bairros" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.3ms)[0m  [1m[35mDROP TABLE "categoria" CASCADE[0m
+  [1m[35m (99.3ms)[0m  [1m[35mCREATE TABLE "categoria" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.6ms)[0m  [1m[35mDROP TABLE "documentos" CASCADE[0m
+  [1m[35m (110.4ms)[0m  [1m[35mCREATE TABLE "documentos" ("id" serial primary key, "rg" character varying, "cpf" character varying, "cid" character varying, "foto" character varying, "comp_residencia" character varying, "string" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.2ms)[0m  [1m[35mDROP TABLE "estados" CASCADE[0m
+  [1m[35m (110.5ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.5ms)[0m  [1m[35mDROP TABLE "funcionarios" CASCADE[0m
+  [1m[35m (65.4ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (1236.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (337.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+  [1m[35m (113.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (121.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFuncionarios (20170420200327)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (48.6ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420200327"]]
+  [1m[35m (24.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEstados (20170420202945)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (111.6ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202945"]]
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBairros (20170420202947)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (91.5ms)[0m  [1m[35mCREATE TABLE "bairros" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202947"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoria (20170420202949)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (113.8ms)[0m  [1m[35mCREATE TABLE "categoria" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202949"]]
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDocumentos (20170420204339)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (103.3ms)[0m  [1m[35mCREATE TABLE "documentos" ("id" serial primary key, "rg" character varying, "cpf" character varying, "cid" character varying, "foto" character varying, "comp_residencia" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420204339"]]
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 20:45:05 UTC], ["updated_at", 2017-04-20 20:45:05 UTC]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/estados" for 127.0.0.1 at 2017-04-20 17:45:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EstadosController#index as HTML
+  Rendering estados/index.html.erb within layouts/application
+  [1m[36mEstado Load (0.8ms)[0m  [1m[34mSELECT "estados".* FROM "estados"[0m
+  Rendered estados/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 356ms (Views: 333.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/estados/new" for 127.0.0.1 at 2017-04-20 17:45:34 -0300
+Processing by EstadosController#new as HTML
+  Rendering estados/new.html.erb within layouts/application
+  Rendered estados/_form.html.erb (18.5ms)
+  Rendered estados/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 81ms (Views: 62.0ms | ActiveRecord: 10.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (24.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (32.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (401.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (337.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+  [1m[35m (118.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (112.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFuncionarios (20170420200327)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (46.2ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420200327"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEstados (20170420202945)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (109.2ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202945"]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBairros (20170420202947)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (91.7ms)[0m  [1m[35mCREATE TABLE "bairros" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202947"]]
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoria (20170420202949)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (109.6ms)[0m  [1m[35mCREATE TABLE "categoria" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202949"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDocumentos (20170420204339)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (81.0ms)[0m  [1m[35mCREATE TABLE "documentos" ("id" serial primary key, "rg" character varying, "cpf" character varying, "cid" character varying, "foto" character varying, "comp_residencia" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420204339"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 21:44:20 UTC], ["updated_at", 2017-04-20 21:44:20 UTC]]
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (338.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (336.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+  [1m[35m (114.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (112.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFuncionarios (20170420200327)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (43.3ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420200327"]]
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEstados (20170420202945)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (130.6ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202945"]]
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBairros (20170420202947)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (88.1ms)[0m  [1m[35mCREATE TABLE "bairros" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202947"]]
+  [1m[35m (19.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoria (20170420202949)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (110.3ms)[0m  [1m[35mCREATE TABLE "categoria" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202949"]]
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDocumentos (20170420204339)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (89.0ms)[0m  [1m[35mCREATE TABLE "documentos" ("id" serial primary key, "rg" character varying, "cpf" character varying, "cid" character varying, "foto" character varying, "comp_residencia" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420204339"]]
+  [1m[35m (17.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 21:45:58 UTC], ["updated_at", 2017-04-20 21:45:58 UTC]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-20 18:46:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (16.4ms)
+Completed 200 OK in 94ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/estados" for 127.0.0.1 at 2017-04-20 18:46:31 -0300
+Processing by EstadosController#index as HTML
+  Rendering estados/index.html.erb within layouts/application
+  [1m[36mEstado Load (0.8ms)[0m  [1m[34mSELECT "estados".* FROM "estados"[0m
+  Rendered estados/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 390ms (Views: 378.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/estados/new" for 127.0.0.1 at 2017-04-20 18:46:33 -0300
+Processing by EstadosController#new as HTML
+  Rendering estados/new.html.erb within layouts/application
+  Rendered estados/_form.html.erb (42.9ms)
+  Rendered estados/new.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 116ms (Views: 80.9ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/estados" for 127.0.0.1 at 2017-04-20 18:46:38 -0300
+Processing by EstadosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0djsinS72LSvrT3zHmbFKETDm2DDFJ4Qkp4y+e6MhP+tg1ArzCQAOgafjKk7LiH2XgIAeaOYgs5MNLe9np2cGg==", "estado"=>{"nome"=>"Parana", "uf"=>"PR"}, "commit"=>"Create Estado"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "estados" ("nome", "uf", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["nome", "Parana"], ["uf", "PR"], ["created_at", 2017-04-20 21:46:38 UTC], ["updated_at", 2017-04-20 21:46:38 UTC]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/estados/1
+Completed 302 Found in 21ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/estados/1" for 127.0.0.1 at 2017-04-20 18:46:38 -0300
+Processing by EstadosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEstado Load (0.5ms)[0m  [1m[34mSELECT  "estados".* FROM "estados" WHERE "estados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering estados/show.html.erb within layouts/application
+  Rendered estados/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 81ms (Views: 56.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/estados" for 127.0.0.1 at 2017-04-20 18:46:40 -0300
+Processing by EstadosController#index as HTML
+  Rendering estados/index.html.erb within layouts/application
+  [1m[36mEstado Load (1.0ms)[0m  [1m[34mSELECT "estados".* FROM "estados"[0m
+  Rendered estados/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2017-04-20 18:46:45 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.9ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 52ms (Views: 44.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2017-04-20 18:46:47 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (3.8ms)
+  Rendered funcionarios/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 56ms (Views: 46.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2017-04-20 18:46:48 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OMHMJ/alaQaqNUPTKduZ317s3oSN17r1qdOU63L5QE9TJAyIlEUZlQ+2hnN0dRl9v4uck4drZ5N0erBe4cSXTw==", "commit"=>"Create Funcionario"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "funcionarios" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-04-20 21:46:48 UTC], ["updated_at", 2017-04-20 21:46:48 UTC]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/funcionarios/1
+Completed 302 Found in 18ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/funcionarios/1" for 127.0.0.1 at 2017-04-20 18:46:48 -0300
+Processing by FuncionariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFuncionario Load (0.5ms)[0m  [1m[34mSELECT  "funcionarios".* FROM "funcionarios" WHERE "funcionarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering funcionarios/show.html.erb within layouts/application
+  Rendered funcionarios/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 43ms (Views: 38.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2017-04-20 18:46:49 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.6ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bairros" for 127.0.0.1 at 2017-04-20 18:46:54 -0300
+Processing by BairrosController#index as HTML
+  Rendering bairros/index.html.erb within layouts/application
+  [1m[36mBairro Load (0.7ms)[0m  [1m[34mSELECT "bairros".* FROM "bairros"[0m
+  Rendered bairros/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 75ms (Views: 67.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/bairros/new" for 127.0.0.1 at 2017-04-20 18:46:56 -0300
+Processing by BairrosController#new as HTML
+  Rendering bairros/new.html.erb within layouts/application
+  Rendered bairros/_form.html.erb (3.0ms)
+  Rendered bairros/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 62ms (Views: 53.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/bairros" for 127.0.0.1 at 2017-04-20 18:47:00 -0300
+Processing by BairrosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXLAasT2jb+AlgnbsDcbgzyfRczts/RWJtqNTZo4NcDy0NQRosTghopyOwd1eEzYI6ERepJuRdlmmWqhR/Pbtw==", "bairro"=>{"nome"=>"Santa Nilce"}, "commit"=>"Create Bairro"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "bairros" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Santa Nilce"], ["created_at", 2017-04-20 21:47:00 UTC], ["updated_at", 2017-04-20 21:47:00 UTC]]
+  [1m[35m (18.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/bairros/1
+Completed 302 Found in 25ms (ActiveRecord: 19.8ms)
+
+
+Started GET "/bairros/1" for 127.0.0.1 at 2017-04-20 18:47:00 -0300
+Processing by BairrosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBairro Load (0.4ms)[0m  [1m[34mSELECT  "bairros".* FROM "bairros" WHERE "bairros"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bairros/show.html.erb within layouts/application
+  Rendered bairros/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 47ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bairros" for 127.0.0.1 at 2017-04-20 18:47:01 -0300
+Processing by BairrosController#index as HTML
+  Rendering bairros/index.html.erb within layouts/application
+  [1m[36mBairro Load (1.7ms)[0m  [1m[34mSELECT "bairros".* FROM "bairros"[0m
+  Rendered bairros/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 45ms (Views: 41.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/documentos" for 127.0.0.1 at 2017-04-20 18:47:43 -0300
+Processing by DocumentosController#index as HTML
+  Rendering documentos/index.html.erb within layouts/application
+  [1m[36mDocumento Load (0.7ms)[0m  [1m[34mSELECT "documentos".* FROM "documentos"[0m
+  Rendered documentos/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 66ms (Views: 54.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/categorium" for 127.0.0.1 at 2017-04-20 18:48:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/categorium"):
+=======
   Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
   Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
@@ -516,6 +2153,7 @@ Completed 200 OK in 14ms (Views: 5.1ms | ActiveRecord: 0.0ms)
 Started GET "/login" for 127.0.0.1 at 2017-04-20 12:41:22 -0300
   
 ActionController::RoutingError (No route matches [GET] "/login"):
+
   
 actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
 web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -543,6 +2181,195 @@ puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
 puma (3.8.2) lib/puma/server.rb:435:in `process_client'
 puma (3.8.2) lib/puma/server.rb:299:in `block in run'
 puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (93.8ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.7ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (176.5ms)
+Started GET "/categorias" for 127.0.0.1 at 2017-04-20 18:48:50 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/categorias"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (16.4ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (63.2ms)
+Started GET "/categoria" for 127.0.0.1 at 2017-04-20 18:48:53 -0300
+Processing by CategoriaController#index as HTML
+  Rendering categoria/index.html.erb within layouts/application
+  [1m[36mCategorium Load (0.7ms)[0m  [1m[34mSELECT "categoria".* FROM "categoria"[0m
+  Rendered categoria/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 65ms (Views: 51.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/categoria/new" for 127.0.0.1 at 2017-04-20 18:48:56 -0300
+Processing by CategoriaController#new as HTML
+  Rendering categoria/new.html.erb within layouts/application
+  Rendered categoria/_form.html.erb (3.0ms)
+  Rendered categoria/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 67ms (Views: 45.5ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/categoria" for 127.0.0.1 at 2017-04-20 18:48:58 -0300
+Processing by CategoriaController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IB/6C3+235aFSMCRqzfgJnUw7T68MIAabdU/oH+d7yZlfZou7zwlmVNmggkSQubJZMTf3KRfronxcUl9OOKYRQ==", "categorium"=>{"nome"=>"Def"}, "commit"=>"Create Categorium"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "categoria" ("nome", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nome", "Def"], ["created_at", 2017-04-20 21:48:58 UTC], ["updated_at", 2017-04-20 21:48:58 UTC]]
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/categoria/1
+Completed 302 Found in 25ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/categoria/1" for 127.0.0.1 at 2017-04-20 18:48:58 -0300
+Processing by CategoriaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategorium Load (0.4ms)[0m  [1m[34mSELECT  "categoria".* FROM "categoria" WHERE "categoria"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categoria/show.html.erb within layouts/application
+  Rendered categoria/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categoria" for 127.0.0.1 at 2017-04-20 18:49:00 -0300
+Processing by CategoriaController#index as HTML
+  Rendering categoria/index.html.erb within layouts/application
+  [1m[36mCategorium Load (0.6ms)[0m  [1m[34mSELECT "categoria".* FROM "categoria"[0m
+  Rendered categoria/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 65ms (Views: 62.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categoria/1" for 127.0.0.1 at 2017-04-20 18:49:01 -0300
+Processing by CategoriaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategorium Load (0.3ms)[0m  [1m[34mSELECT  "categoria".* FROM "categoria" WHERE "categoria"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categoria/show.html.erb within layouts/application
+  Rendered categoria/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 48ms (Views: 45.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categoria" for 127.0.0.1 at 2017-04-20 18:49:02 -0300
+Processing by CategoriaController#index as HTML
+  Rendering categoria/index.html.erb within layouts/application
+  [1m[36mCategorium Load (0.8ms)[0m  [1m[34mSELECT "categoria".* FROM "categoria"[0m
+  Rendered categoria/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 62ms (Views: 59.3ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (5009.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (343.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (237.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+  [1m[35m (116.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (131.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFuncionarios (20170420200327)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (46.2ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420200327"]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEstados (20170420202945)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (88.3ms)[0m  [1m[35mCREATE TABLE "estados" ("id" serial primary key, "nome" character varying, "uf" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202945"]]
+  [1m[35m (29.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBairros (20170420202947)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (100.1ms)[0m  [1m[35mCREATE TABLE "bairros" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202947"]]
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoria (20170420202949)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (119.9ms)[0m  [1m[35mCREATE TABLE "categoria" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420202949"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDocumentos (20170420204339)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (91.2ms)[0m  [1m[35mCREATE TABLE "documentos" ("id" serial primary key, "rg" character varying, "cpf" character varying, "cid" character varying, "foto" character varying, "comp_residencia" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420204339"]]
+  [1m[35m (16.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 21:50:18 UTC], ["updated_at", 2017-04-20 21:50:18 UTC]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/estados" for 127.0.0.1 at 2017-04-20 18:52:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EstadosController#index as HTML
+  Rendering estados/index.html.erb within layouts/application
+  [1m[36mEstado Load (0.9ms)[0m  [1m[34mSELECT "estados".* FROM "estados"[0m
+  Rendered estados/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 349ms (Views: 327.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 18:52:26 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pe01/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.8ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
   Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
   Rendering /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
@@ -589,3 +2416,4 @@ Migrating to CreateCids (20170420204552)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
   [1m[35m (216.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
   [1m[35m (214.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+
