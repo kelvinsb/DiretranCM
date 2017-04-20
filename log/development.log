@@ -1,3 +1,4 @@
+
 Started GET "/" for 127.0.0.1 at 2017-04-20 10:18:01 -0300
 Processing by Rails::WelcomeController#index as HTML
   Parameters: {"internal"=>true}
@@ -191,19 +192,90 @@ Processing by Rails::WelcomeController#index as HTML
   Rendered /home/rafael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
 Completed 200 OK in 15ms (Views: 5.2ms | ActiveRecord: 0.0ms)
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (14.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePessoas (20170420201417)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (178.5ms)[0m  [1m[35mCREATE TABLE "pessoas" ("id" serial primary key, "cpf" character varying, "nome" character varying, "rg" character varying, "login_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (31.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (328.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (212.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+  [1m[35m (105.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (89.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePessoas (20170420201417)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (71.3ms)[0m  [1m[35mCREATE TABLE "pessoas" ("id" serial primary key, "cpf" character varying, "nome" character varying, "rg" character varying, "login_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420201417"]]
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 20:15:46 UTC], ["updated_at", 2017-04-20 20:15:46 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-20 17:15:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/guerra/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/guerra/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 39ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pessoas" for 127.0.0.1 at 2017-04-20 17:16:04 -0300
+Processing by PessoasController#index as HTML
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.5ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  Rendered pessoas/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 1125ms (Views: 1115.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pessoas/new" for 127.0.0.1 at 2017-04-20 17:16:17 -0300
+Processing by PessoasController#new as HTML
+  Rendering pessoas/new.html.erb within layouts/application
+  Rendered pessoas/_form.html.erb (66.3ms)
+  Rendered pessoas/new.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 100ms (Views: 91.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/pessoas" for 127.0.0.1 at 2017-04-20 17:16:31 -0300
+Processing by PessoasController#index as HTML
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (1.0ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  Rendered pessoas/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 1.0ms)
+
 
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
 Migrating to CreateLogs (20170420143045)
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (125.9ms)[0m  [1m[35mCREATE TABLE "logs" ("id" serial primary key, "motivo" character varying, "data" date, "hora" time, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420143045"]]
   [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+
+Migrating to CreateCarteirinhas (20170420203048)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (80.8ms)[0m  [1m[35mCREATE TABLE "carteirinhas" ("id" serial primary key, "via" integer, "status" character varying, "data_criacao" date, "data_vencimento" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420203048"]]
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
 Started GET "/" for 127.0.0.1 at 2017-04-20 11:32:44 -0300
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by Rails::WelcomeController#index as HTML
@@ -300,10 +372,116 @@ Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.3ms)
 
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+Started GET "/pessoas" for 127.0.0.1 at 2017-04-20 17:31:22 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PessoasController#index as HTML
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.5ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  Rendered pessoas/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 301ms (Views: 288.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/carteirinhas" for 127.0.0.1 at 2017-04-20 17:31:30 -0300
+Processing by CarteirinhasController#index as HTML
+  Rendering carteirinhas/index.html.erb within layouts/application
+  [1m[36mCarteirinha Load (0.4ms)[0m  [1m[34mSELECT "carteirinhas".* FROM "carteirinhas"[0m
+  Rendered carteirinhas/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 27ms (Views: 20.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/carteirinhas/new" for 127.0.0.1 at 2017-04-20 17:31:31 -0300
+Processing by CarteirinhasController#new as HTML
+  Rendering carteirinhas/new.html.erb within layouts/application
+  Rendered carteirinhas/_form.html.erb (30.0ms)
+  Rendered carteirinhas/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 64ms (Views: 51.6ms | ActiveRecord: 4.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCidades (20170420203817)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (74.5ms)[0m  [1m[35mCREATE TABLE "cidades" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420203817"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/cidades" for 127.0.0.1 at 2017-04-20 17:39:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CidadesController#index as HTML
+  Rendering cidades/index.html.erb within layouts/application
+  [1m[36mCidade Load (0.9ms)[0m  [1m[34mSELECT "cidades".* FROM "cidades"[0m
+  Rendered cidades/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 301ms (Views: 288.6ms | ActiveRecord: 1.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCids (20170420204357)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCids (20170420204552)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (74.1ms)[0m  [1m[35mCREATE TABLE "cids" ("id" serial primary key, "cod_doenca" character varying, "nome_doenca" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420204552"]]
+  [1m[35m (18.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/cids" for 127.0.0.1 at 2017-04-20 17:46:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CidsController#index as HTML
+  Rendering cids/index.html.erb within layouts/application
+  [1m[36mCid Load (0.5ms)[0m  [1m[34mSELECT "cids".* FROM "cids"[0m
+  Rendered cids/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 308ms (Views: 295.3ms | ActiveRecord: 1.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEnderecos (20170420205242)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (77.8ms)[0m  [1m[35mCREATE TABLE "enderecos" ("id" serial primary key, "numero" integer, "cep" character varying, "complemento" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420205242"]]
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/enderecos" for 127.0.0.1 at 2017-04-20 17:52:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EnderecosController#index as HTML
+  Rendering enderecos/index.html.erb within layouts/application
+  [1m[36mEndereco Load (0.4ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos"[0m
+  Rendered enderecos/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 309ms (Views: 296.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/enderecos/new" for 127.0.0.1 at 2017-04-20 17:53:01 -0300
+Processing by EnderecosController#new as HTML
+  Rendering enderecos/new.html.erb within layouts/application
+  Rendered enderecos/_form.html.erb (10.1ms)
+  Rendered enderecos/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 49ms (Views: 39.2ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (24.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (18.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+
   [1m[35m (256.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
   [1m[35m (324.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
   [1m[35m (138.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
@@ -380,4 +558,26 @@ Processing by LoginsController#index as HTML
   Rendered logins/index.html.erb within layouts/application (7.8ms)
 Completed 200 OK in 437ms (Views: 422.6ms | ActiveRecord: 4.6ms)
 
+  [1m[35m (246.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_development"[0m
+  [1m[35m (214.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "diretran_test"[0m
+  [1m[35m (124.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (83.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCidades (20170420203817)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (68.9ms)[0m  [1m[35mCREATE TABLE "cidades" ("id" serial primary key, "nome" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420203817"]]
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCids (20170420204552)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (68.4ms)[0m  [1m[35mCREATE TABLE "cids" ("id" serial primary key, "cod_doenca" character varying, "nome_doenca" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420204552"]]
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-20 21:44:50 UTC], ["updated_at", 2017-04-20 21:44:50 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 
