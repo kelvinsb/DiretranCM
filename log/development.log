@@ -61,3 +61,40 @@ Processing by PessoasController#index as HTML
 Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 1.0ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCarteirinhas (20170420203048)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (80.8ms)[0m  [1m[35mCREATE TABLE "carteirinhas" ("id" serial primary key, "via" integer, "status" character varying, "data_criacao" date, "data_vencimento" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420203048"]]
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/pessoas" for 127.0.0.1 at 2017-04-20 17:31:22 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PessoasController#index as HTML
+  Rendering pessoas/index.html.erb within layouts/application
+  [1m[36mPessoa Load (0.5ms)[0m  [1m[34mSELECT "pessoas".* FROM "pessoas"[0m
+  Rendered pessoas/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 301ms (Views: 288.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/carteirinhas" for 127.0.0.1 at 2017-04-20 17:31:30 -0300
+Processing by CarteirinhasController#index as HTML
+  Rendering carteirinhas/index.html.erb within layouts/application
+  [1m[36mCarteirinha Load (0.4ms)[0m  [1m[34mSELECT "carteirinhas".* FROM "carteirinhas"[0m
+  Rendered carteirinhas/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 27ms (Views: 20.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/carteirinhas/new" for 127.0.0.1 at 2017-04-20 17:31:31 -0300
+Processing by CarteirinhasController#new as HTML
+  Rendering carteirinhas/new.html.erb within layouts/application
+  Rendered carteirinhas/_form.html.erb (30.0ms)
+  Rendered carteirinhas/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 64ms (Views: 51.6ms | ActiveRecord: 4.0ms)
+
+
