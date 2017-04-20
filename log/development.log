@@ -146,3 +146,32 @@ Processing by CidsController#index as HTML
 Completed 200 OK in 308ms (Views: 295.3ms | ActiveRecord: 1.6ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1858320020244371880);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEnderecos (20170420205242)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (77.8ms)[0m  [1m[35mCREATE TABLE "enderecos" ("id" serial primary key, "numero" integer, "cep" character varying, "complemento" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170420205242"]]
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1858320020244371880)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/enderecos" for 127.0.0.1 at 2017-04-20 17:52:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EnderecosController#index as HTML
+  Rendering enderecos/index.html.erb within layouts/application
+  [1m[36mEndereco Load (0.4ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos"[0m
+  Rendered enderecos/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 309ms (Views: 296.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/enderecos/new" for 127.0.0.1 at 2017-04-20 17:53:01 -0300
+Processing by EnderecosController#new as HTML
+  Rendering enderecos/new.html.erb within layouts/application
+  Rendered enderecos/_form.html.erb (10.1ms)
+  Rendered enderecos/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 49ms (Views: 39.2ms | ActiveRecord: 2.9ms)
+
+
