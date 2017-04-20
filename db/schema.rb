@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420205242) do
+ActiveRecord::Schema.define(version: 20170420204552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "carteirinhas", force: :cascade do |t|
-    t.integer  "via"
-    t.string   "status"
-    t.date     "data_criacao"
-    t.date     "data_vencimento"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
 
   create_table "cidades", force: :cascade do |t|
     t.string   "nome"
@@ -35,23 +26,6 @@ ActiveRecord::Schema.define(version: 20170420205242) do
     t.string   "nome_doenca"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "enderecos", force: :cascade do |t|
-    t.integer  "numero"
-    t.string   "cep"
-    t.string   "complemento"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "pessoas", force: :cascade do |t|
-    t.string   "cpf"
-    t.string   "nome"
-    t.string   "rg"
-    t.integer  "login_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

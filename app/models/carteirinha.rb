@@ -1,2 +1,0 @@
-class Carteirinha < ApplicationRecord
-end
