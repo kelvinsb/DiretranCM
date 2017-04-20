@@ -18,18 +18,19 @@
 #git commit -m "Criação model: Bairro"
 #git push origin create_models_3
 
-rails generate scaffold Documentos rg:string cpf:string cid:string foto:string comp_residencia:string
-git add .
-git commit -m "Criação model: Documentos"
-git push origin create_models_3
-
-#rails generate scaffold Categoria nome:string
+#rails generate scaffold Documentos rg:string cpf:string cid:string foto:string comp_residencia:string
 #git add .
-#git commit -m "Criação model: Categoria"
+#git commit -m "Criação model: Documentos"
 #git push origin create_models_3
 
+rails generate scaffold Categoria nome:string
+rake db:migrate
+git add .
+git commit -m "Criação model: Categoria"
+git push origin create_models_3
+
 #rake db:schema:load
-#rake db:migrate
+rake db:migrate
 
 #git checkout -b create_models_3
 #git add .
