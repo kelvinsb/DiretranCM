@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420143045) do
+ActiveRecord::Schema.define(version: 20170420144151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "datalogs", force: :cascade do |t|
+    t.string   "valor_anterior"
+    t.string   "valor_atual"
+    t.string   "campo_alterado"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "logins", force: :cascade do |t|
     t.string   "login"
     t.string   "senha"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "logs", force: :cascade do |t|
-    t.string   "motivo"
-    t.date     "data"
-    t.time     "hora"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
