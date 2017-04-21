@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :documentos
+  resources :categoria
+  resources :bairros
+  resources :estados
+  resources :funcionarios
   resources :datalogs
   resources :cids
   resources :cidades

@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20170420204339) do
 ActiveRecord::Schema.define(version: 20170420144151) do
 
 ActiveRecord::Schema.define(version: 20170420204552) do
@@ -17,6 +18,32 @@ ActiveRecord::Schema.define(version: 20170420204552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bairros", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categoria", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "documentos", force: :cascade do |t|
+    t.string   "rg"
+    t.string   "cpf"
+    t.string   "cid"
+    t.string   "foto"
+    t.string   "comp_residencia"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "estados", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "uf"
 
 
   create_table "datalogs", force: :cascade do |t|
@@ -39,11 +66,17 @@ ActiveRecord::Schema.define(version: 20170420204552) do
   end
 
 
+  create_table "funcionarios", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
+
   create_table "cids", force: :cascade do |t|
     t.string   "cod_doenca"
     t.string   "nome_doenca"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+
   end
 
 end
