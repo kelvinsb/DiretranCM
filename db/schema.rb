@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425013929) do
+ActiveRecord::Schema.define(version: 20170425013947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20170425013929) do
     t.date     "data_vencimento"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "categoria_id"
+    t.integer  "cid_id"
   end
 
   create_table "categoria", force: :cascade do |t|
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170425013929) do
     t.integer  "campo_alterado"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "log_id"
   end
 
   create_table "documentos", force: :cascade do |t|
@@ -71,8 +74,12 @@ ActiveRecord::Schema.define(version: 20170425013929) do
     t.integer  "numero"
     t.string   "cep"
     t.string   "complemento"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "estado_id"
+    t.integer  "cidade_id"
+    t.integer  "logradouro_id"
+    t.integer  "bairro_id"
   end
 
   create_table "estados", force: :cascade do |t|
@@ -85,6 +92,8 @@ ActiveRecord::Schema.define(version: 20170425013929) do
   create_table "funcionarios", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "login_id"
+    t.integer  "pessoa_id"
   end
 
   create_table "logins", force: :cascade do |t|
@@ -94,12 +103,20 @@ ActiveRecord::Schema.define(version: 20170425013929) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "logradouros", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "logs", force: :cascade do |t|
     t.string   "motivo"
     t.date     "data"
     t.time     "hora"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "requisicao_id"
+    t.integer  "pessoa_id"
   end
 
   create_table "pessoas", force: :cascade do |t|
@@ -108,6 +125,7 @@ ActiveRecord::Schema.define(version: 20170425013929) do
     t.string   "rg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "login_id"
   end
 
   create_table "requisicaos", force: :cascade do |t|
@@ -117,6 +135,11 @@ ActiveRecord::Schema.define(version: 20170425013929) do
     t.date     "data_emissao"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "endereco_id"
+    t.integer  "documentos_id"
+    t.integer  "pessoa_id"
+    t.integer  "funcionario_id"
+    t.integer  "carteirinha_id"
   end
 
 end
