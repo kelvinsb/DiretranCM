@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Responsavel nome:</strong>
+  <%= @requisicao.responsavel_nome %>
+</p>
+
+<p>
+  <strong>Responsavel cpf:</strong>
+  <%= @requisicao.responsavel_cpf %>
+</p>
+
+<p>
+  <strong>Data requisicao:</strong>
+  <%= @requisicao.data_requisicao %>
+</p>
+
+<p>
+  <strong>Data emissao:</strong>
+  <%= @requisicao.data_emissao %>
+</p>
+
+<%= link_to 'Edit', edit_requisicao_path(@requisicao) %> |
+<%= link_to 'Back', requisicaos_path %>

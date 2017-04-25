@@ -1,0 +1,27 @@
+<%= form_for(cid) do |f| %>
+  <% if cid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cid.errors.count, "error") %> prohibited this cid from being saved:</h2>
+
+      <ul>
+      <% cid.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cod_doenca %>
+    <%= f.text_field :cod_doenca %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome_doenca %>
+    <%= f.text_field :nome_doenca %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

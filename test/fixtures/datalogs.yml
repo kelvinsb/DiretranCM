@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valor_anterior: 1
+  valor_atual: 1
+  campo_alterado: 1
+
+two:
+  valor_anterior: 1
+  valor_atual: 1
+  campo_alterado: 1

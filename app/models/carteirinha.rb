@@ -1,0 +1,2 @@
+class Carteirinha < ApplicationRecord
+end
