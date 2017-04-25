@@ -1,2 +1,0 @@
-module DatalogsHelper
-end

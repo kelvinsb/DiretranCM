@@ -1,2 +1,0 @@
-class Datalog < ApplicationRecord
-end

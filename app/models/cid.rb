@@ -1,2 +1,0 @@
-class Cid < ApplicationRecord
-end
