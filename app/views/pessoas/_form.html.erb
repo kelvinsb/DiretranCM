@@ -1,6 +1,8 @@
 <%= form_for(pessoa) do |f| %>
   <% if pessoa.errors.any? %>
-    <div id="error_explanation">
+  <% #id="error_explanation"
+  %>
+    <div class="bg-danger alerta col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <h2><%= pluralize(pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
 
       <ul>
@@ -11,29 +13,38 @@
     </div>
   <% end %>
 
-  <div class="field col-xs-12 col-sm-12 col-md-4 col-lg-4">
-    <%= f.label :cpf %>
-    
+  <div class="row">
+    <div class="field col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :cpf ,class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 text-uppercase"%>
+      <%= f.text_field :cpf ,class: "col-xs-12 col-sm-12 col-md-6 col-lg-6"%>
+    </div>
   </div>
-  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-    <%= f.text_field :cpf %>
+  
+  <div class="row">
+    <div class="field col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :nome ,class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 text-uppercase"%>
+      <%= f.text_field :nome ,class: "col-xs-12 col-sm-12 col-md-6 col-lg-6"%>
+    </div>
   </div>
+  
+  <div class="row">
+    <div class="field col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :email ,class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 text-uppercase"%>
+       <%= f.text_field :email ,class: "col-xs-12 col-sm-12 col-md-6 col-lg-6"%>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="field col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :rg ,class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 text-uppercase"%>
+      <%= f.text_field :rg ,class: "col-xs-12 col-sm-12 col-md-6 col-lg-6"%>
+    </div>
+  </div>
+  
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
 
-  <div class="field">
-    <%= f.label :rg %>
-    <%= f.text_field :rg %>
-  </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Cadastrar" , class: "btn btn-success"%>
   </div>
 <% end %>
