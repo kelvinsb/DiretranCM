@@ -21,6 +21,7 @@ rails generate scaffold Logradouro nome:string
 
 
 rails generate migration add_column_login_id_to_pessoa login_id:integer
+rails generate migration add_column_email_to_pessoa email:string
 
 rails generate migration add_column_login_id_to_funcionario login_id:integer
 rails generate migration add_column_pessoa_id_to_funcionario pessoa_id:integer
