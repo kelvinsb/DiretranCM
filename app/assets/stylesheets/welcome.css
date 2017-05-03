@@ -3,6 +3,10 @@
   They will automatically be included in application.css.
 */
 
+body
+{
+	background-color: #ffff00;
+}
 
 body.index
 {
@@ -38,9 +42,36 @@ body.index
 }
 .headr
 {
-	padding-top:50px;
+	padding-top:15px;
 }
 .tabela tr:nth-child(2n)
 {
 	background-color: #b3daff;
+}
+.field_with_errors
+{
+	ẁidth:100% !important;
+	min-width: 50%;
+	max-width: 100%;
+	color: #FFFFFF;
+	padding: 5px;
+}
+.field_with_errors input
+{
+	width: 100%;
+	color: #000000;
+}
+.alerta
+{
+	padding-top:5px;
+	padding-left:15px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	border-style: dashed;
+	border-width: 1px;
+}
+.alerta *
+{
+	font-size:90% !important;
 }
