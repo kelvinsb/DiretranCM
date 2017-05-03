@@ -9,6 +9,28 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <div id="main-container" class="container-fluid">
+      
+      <div id="titulo" class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: #D8BFD8"> <!-- color Thistle -->
+      	<h1> Título </h1>
+      </div>
+
+      <div class="row">
+        
+        <div id="lateral" class="col-xs-6 col-sm-6 col-md-2 col-lg-3" style="background-color: #B0E0E6"><!--color PowderBlue -->
+          <h3> Lateral </h3>
+        </div>
+        
+        <div id="principal" class="col-xs-6 col-sm-6 col-md-10 col-lg-9">
+          <%= yield %>
+        </div>
+      
+      </div>
+
+   </div>
+  
+    
+  
   </body>
 </html>
