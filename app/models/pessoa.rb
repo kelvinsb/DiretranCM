@@ -18,4 +18,9 @@ class Pessoa < ApplicationRecord
 	length: {minimum: 9, maximum: 9},
 	numericality: {only_integer: true}
 
+	validates :email,
+	confirmation: true,
+	email_format: {massege: ": endereço inválido"}
+
+
 end
