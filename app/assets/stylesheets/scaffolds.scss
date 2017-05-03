@@ -21,15 +21,10 @@ pre {
 }
 
 a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
+  color: #0000FF;
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #000000;
   }
 }
 
@@ -86,4 +81,30 @@ div {
 
 label {
   display: block;
+}
+
+#titulo{
+  background-color: #ADD8E6;
+}
+
+#lateral{
+  background-color: #00BFFF;
+  padding: 1px 1px 1px 1px;
+  border: 1;
+  align-items: left;
+  a {
+    color: #000000;
+    &:hover {
+    color: #FFFFFF;
+  }
+  }
+
+}
+
+#menu_lateral{
+  ul{
+    padding: 1px 1px 1px 1px;
+    margin-right: 0;
+    margin-right: 0;
+  }
 }

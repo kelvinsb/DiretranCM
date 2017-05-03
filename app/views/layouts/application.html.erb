@@ -12,9 +12,9 @@
 
   <div id="main-container" class="container-fluid">
       
-      <div id="titulo" class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: #B0E0E6"> <!-- color Thistle -->
+      <div id="titulo" class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" > <!-- color Thistle -->
       	
-      	<div id="titulo_central" class="col-xs-11 col-sm-11 col-md-11 col-lg-11" style="background-color: #B0E0E6">
+      	<div id="titulo_central" class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
 	      	
 	      	<h2>
 	      		<%= image_tag 'logo_prefeitura.png' %>
@@ -23,7 +23,7 @@
 	      	
       	</div>
       	
-      	<div id="titulo_canto" class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="background-color: #B0E0E6">
+      	<div id="titulo_canto" class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
 	      	<div id="pessoa_logada" align="right" align="top">
 	      		<h5>
 	      		adm
@@ -38,15 +38,24 @@
 
       <div class="row">
         
-        <div id="lateral" class="col-xs-5 col-sm-5 col-md-2 col-lg-3" style="background-color: #D8BFD8"><!--color PowderBlue -->
-        	<ul class= "menu_lateral">
-        		<li>
-        			<a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+        <div id="lateral" class="col-xs-5 col-sm-5 col-md-2 col-lg-2" >
+        	
+          <ul class= "menu_lateral">
+        		<h5>Carteirinha de Estacionamento Especial</h5>
+            <li>
+        			Nova carteirinha
         		</li>
+            <li>
+              Renovação
+            </li>
+            <li>
+              Atualizar dados
+            </li>
         	</ul>
+        
         </div>
         
-        <div id="principal" class="col-xs-7 col-sm-7 col-md-10 col-lg-9">
+        <div id="principal" class="col-xs-7 col-sm-7 col-md-10 col-lg-10">
           <%= yield %>
         </div>
       
