@@ -1,5 +1,30 @@
-<h1>New Pessoa</h1>
 
-<%= render 'form', pessoa: @pessoa %>
 
-<%= link_to 'Back', pessoas_path %>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <%= csrf_meta_tags %>
+
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+  <div class="container-fluid headr">
+    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<h1>Cadastrar</h1>
+
+		<%= render 'form', pessoa: @pessoa %>
+
+		<%= link_to 'Voltar', pessoas_path %>
+    </div>
+  </div>
+
+</body>
+</html>
+

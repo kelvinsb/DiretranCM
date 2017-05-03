@@ -1,0 +1,46 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+body.index
+{
+	background-color:  #339cff !important;
+}
+.tela-login
+{
+	background-color: #cedcdf;
+	padding: 25px;
+	border-radius: 10px;
+	border-color: #000000;
+	border-width: 0.2px;
+	border-style: solid;
+	margin-top: 5%;
+}
+.tela-login button
+{
+  margin-top: 10px;
+}
+.tela-login input
+{
+  margin-top:3px;
+}
+.tabela td
+{
+	padding-right:10px;
+}
+.tabela th
+{
+	background-color: #339cff;
+	color: #FFFFFF;
+	font-size:120%;
+}
+.headr
+{
+	padding-top:50px;
+}
+.tabela tr:nth-child(2n)
+{
+	background-color: #b3daff;
+}
