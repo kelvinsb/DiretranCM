@@ -57,7 +57,10 @@ gem "cpf_cnpj"
 gem "validators"
 
 #validate Cep
-gem 'correios-cep'
+gem "correios-cep"
+
+#validate email
+gem "validates_email_format_of"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
