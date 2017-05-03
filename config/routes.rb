@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  get 'welcome/dash'
+  root 'welcome#index'
+
   resources :logradouros
   resources :cids
   resources :cidades
@@ -15,4 +19,7 @@ Rails.application.routes.draw do
   resources :funcionarios
   resources :estados
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
+  
 end
