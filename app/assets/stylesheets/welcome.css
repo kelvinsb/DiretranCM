@@ -110,11 +110,15 @@ body.index
 {
 	text-transform: uppercase;
 }
-a li{
+a li,
+a{
 	color: #000000;
 }
-a li:hover{
+a li:hover,
+a:hover{
 	color: #FFFFFF;
+	text-decoration: none;
+	background-color: transparent;
 }
 #lateral
 {
