@@ -1,6 +1,11 @@
+
+
+
 <%= form_for(requisicao) do |f| %>
   <% if requisicao.errors.any? %>
-    <div id="error_explanation">
+  <% #id="error_explanation"
+  %>
+    <div class="bg-danger alerta col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <h2><%= pluralize(requisicao.errors.count, "error") %> prohibited this requisicao from being saved:</h2>
 
       <ul>
@@ -11,27 +16,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :responsavel_nome %>
-    <%= f.text_field :responsavel_nome %>
+  <div class="row">
+    <div class="field col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :responsavel_nome ,class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 text-uppercase"%>
+      <%= f.text_field :responsavel_nome ,class: "col-xs-12 col-sm-12 col-md-6 col-lg-6"%>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="field col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :responsavel_cpf ,class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 text-uppercase"%>
+      <%= f.text_field :responsavel_cpf ,class: "col-xs-12 col-sm-12 col-md-6 col-lg-6"%>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="field col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :data_requisicao ,class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 text-uppercase"%>
+       <%= f.text_field :data_requisicao ,class: "col-xs-12 col-sm-12 col-md-6 col-lg-6"%>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="field col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= f.label :data_emissao ,class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 text-uppercase"%>
+      <%= f.text_field :data_emissao ,class: "col-xs-12 col-sm-12 col-md-6 col-lg-6"%>
+    </div>
+  </div>
+  
+
+  <h2>Endereço</h2>
+  <%= f.fields_for :enderecos do |ff| %>
+  <div class="row">
+    <div class="field col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <%= ff.label :numero ,class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 text-uppercase"%>
+      <%= ff.text_field :numero ,class: "col-xs-12 col-sm-12 col-md-6 col-lg-6"%>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :responsavel_cpf %>
-    <%= f.text_field :responsavel_cpf %>
-  </div>
 
-  <div class="field">
-    <%= f.label :data_requisicao %>
-    <%= f.date_select :data_requisicao %>
-  </div>
 
-  <div class="field">
-    <%= f.label :data_emissao %>
-    <%= f.date_select :data_emissao %>
-  </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Concluir" , class: "btn btn-success"%>
   </div>
+
 <% end %>
+  <% end %>
