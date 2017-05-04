@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Lato"' %>
   </head>
 
   <body>
@@ -45,24 +46,40 @@
         	
           <ul class= "list-unstyled menu_lateral">
         		<h5>Carteirinha de Estacionamento Especial</h5>
-            
-            <a href="#">
-              <li>
-          			cadastrar
+            <li class="title">
+              <strong>Pessoa</strong>
+            </li>
+            <%= link_to(new_pessoa_path) do %>
+              <li class="child">
+          			Cadastrar pessoa
           		</li>
             </a>
+            <% end %>
             
-            <a href="#">
-              <li>
-                Renovação
+            <%= link_to(pessoas_path) do %>
+              <li class="child">
+                Listar pessoas
               </li>
-            </a>
-            <a href="#">
-              <li>
-                Atualizar dados
+            <% end %>
+
+            <li class="title">
+              <strong>Requisição</strong>
+            </li>
+            <%= link_to(requisicaos_path) do %>
+              <li class="child">
+                Listar Requisições
               </li>
-            </a>
-        	</ul>
+            <% end %>
+
+          <li class="title">
+              <strong>Carteirinha</strong>
+            </li>
+            <%= link_to(carteirinhas_path) do %>
+              <li class="child">
+                Listar Carteirinhas
+              </li>
+            <% end %>
+          </ul>
         
         </div>
         

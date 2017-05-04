@@ -1,33 +1,38 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Requisicaos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Responsavel nome</th>
-      <th>Responsavel cpf</th>
-      <th>Data requisicao</th>
-      <th>Data emissao</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container-fluid headr">
+  <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <%= link_to 'Nova Requisição', new_requisicao_path, class: "btn btn-primary" %>
 
-  <tbody>
-    <% @requisicaos.each do |requisicao| %>
-      <tr>
-        <td><%= requisicao.responsavel_nome %></td>
-        <td><%= requisicao.responsavel_cpf %></td>
-        <td><%= requisicao.data_requisicao %></td>
-        <td><%= requisicao.data_emissao %></td>
-        <td><%= link_to 'Show', requisicao %></td>
-        <td><%= link_to 'Edit', edit_requisicao_path(requisicao) %></td>
-        <td><%= link_to 'Destroy', requisicao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <p id="notice"><%= notice %></p>
 
-<br>
+    <h1>Requisições</h1>
 
-<%= link_to 'New Requisicao', new_requisicao_path %>
+    <table class="tabela col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <thead>
+        <tr>
+          <th>Nome do responsável</th>
+          <th>Cpf do responsável</th>
+          <th>Data de requisição</th>
+          <th>Data de emissão</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+         <% @requisicaos.each do |requisicao| %>
+          <tr>
+            <td><%= requisicao.responsavel_nome %></td>
+            <td><%= requisicao.responsavel_cpf %></td>
+            <td><%= requisicao.data_requisicao %></td>
+            <td><%= requisicao.data_emissao %></td>
+            <td><%= link_to 'Mostrar', requisicao %></td>
+            <td><%= link_to 'Editar', edit_requisicao_path(requisicao) %></td>
+            <td><%= link_to 'Excluir', requisicao, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
