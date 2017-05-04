@@ -1,14 +1,26 @@
 class Endereco < ApplicationRecord
-	belongs_to :requisicao
-	has_one :estado
-	has_one :cidade
-	has_one :bairro
-	has_one :logradouro
+  belongs_to :requisicao
+
+  validates :estado,
+	presence: {message: ": deve ser preenchido!"},
+	length: {maximum: 50}
+
+  validates :cidade,
+  presence: {message: ": deve ser preenchido!"},
+  length: {maximum: 50}
+
+  validates :bairro,
+  presence: {message: ": deve ser preenchido!"},
+  length: {maximum: 255}
+
+  validates :logradouro,
+	presence: {message: ": deve ser preenchido!"},
+	length: {maximum: 255}
 
 	validates :numero,
 	presence: {message: ": deve ser preenchido!"},
-	length: {maximum: 5},
-	numericality: {only_integer: true}
+	length: {maximum: 5, message: ": deve conter até 5 caracteres"},
+	numericality: {only_integer: true, message: ": não é um número"}
 
 	validates :complemento,
 	presence: {message: ": deve ser preenchido!"},
@@ -16,29 +28,8 @@ class Endereco < ApplicationRecord
 
 	validates :cep,
 	presence: {message: ": deve ser preenchido!"},
-	length: {minimum: 8, maximum: 8},
-	numericality: {only_integer: true}
-
-#-------------------------------------------------------------------------------
-#	require 'correios-cep'
-
-# With "get" instance method
-#finder = Correios::CEP::AddressFinder.new
-#address = finder.get("54250610")
-
-# With "get" class method
-#address = Correios::CEP::AddressFinder.get("54250610")
-
-#address # =>
-#{
-#  :address => "Rua Fernando Amorim",
-#  :neighborhood => "Cavaleiro",
-#  :city => "Jaboatão dos Guararapes",
-#  :state => "PE",
-#  :zipcode => "54250610",
-#  :complement => ""
-#}
-
+	length: {minimum: 8, maximum: 8, message: ": deve conter 8 caracteres"},
+	numericality: {only_integer: true, message: ": não é um número"}
 
 
 end

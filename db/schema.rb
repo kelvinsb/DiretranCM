@@ -10,16 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425013948) do
+ActiveRecord::Schema.define(version: 20170504060645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "bairros", force: :cascade do |t|
-    t.string   "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "carteirinhas", force: :cascade do |t|
     t.integer  "via"
@@ -33,12 +27,6 @@ ActiveRecord::Schema.define(version: 20170425013948) do
   end
 
   create_table "categoria", force: :cascade do |t|
-    t.string   "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "cidades", force: :cascade do |t|
     t.string   "nome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,22 +59,15 @@ ActiveRecord::Schema.define(version: 20170425013948) do
   end
 
   create_table "enderecos", force: :cascade do |t|
-    t.integer  "numero"
+    t.string   "estado"
+    t.string   "cidade"
+    t.string   "bairro"
     t.string   "cep"
+    t.string   "logradouro"
+    t.string   "numero"
     t.string   "complemento"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "estado_id"
-    t.integer  "cidade_id"
-    t.integer  "logradouro_id"
-    t.integer  "bairro_id"
-  end
-
-  create_table "estados", force: :cascade do |t|
-    t.string   "nome"
-    t.string   "uf"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "funcionarios", force: :cascade do |t|
@@ -99,12 +80,6 @@ ActiveRecord::Schema.define(version: 20170425013948) do
   create_table "logins", force: :cascade do |t|
     t.string   "nome"
     t.string   "senha"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "logradouros", force: :cascade do |t|
-    t.string   "nome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -127,6 +102,7 @@ ActiveRecord::Schema.define(version: 20170425013948) do
     t.datetime "updated_at", null: false
     t.integer  "login_id"
     t.string   "email"
+    t.string   "sexo"
   end
 
   create_table "requisicaos", force: :cascade do |t|
