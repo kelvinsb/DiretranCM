@@ -1,23 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Cpf:</strong>
-  <%= @pessoa.cpf %>
-</p>
+<div class="row show-inf">
+	<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+		<strong>Cpf:</strong>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+		<p><%= @pessoa.cpf %></p>
+	</div>
+</div>
+<div class="row show-inf">
+	<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+		<strong>Nome:</strong>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+		<p><%= @pessoa.nome %></p>
+	</div>
+</div>
+<div class="row show-inf">
+	<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+		<strong>Rg:</strong>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+		<p><%= @pessoa.rg %></p>
+	</div>
+</div>
+<div class="row show-inf">
+	<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+		<strong>Email:</strong>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+		<p><%= @pessoa.email %></p>
+	</div>
+</div>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @pessoa.nome %>
-</p>
-
-<p>
-  <strong>Rg:</strong>
-  <%= @pessoa.rg %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= @pessoa.email %>
-</p>
-
-<%= link_to 'Edit', edit_pessoa_path(@pessoa) %> |
-<%= link_to 'Back', pessoas_path %>
+<%= link_to 'Editar', edit_pessoa_path(@pessoa), class: "btn btn-primary" %> 
+<%= link_to 'Voltar', pessoas_path, class: "btn btn-info" %>
