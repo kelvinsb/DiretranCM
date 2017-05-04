@@ -3,15 +3,15 @@ class Login < ApplicationRecord
 	#belongs_to: pessoa
 
 	validates :nome,
-	presence: true,
-	uniqueness: true,
-  	length: { minimum: 5, maximum: 50 }
+	presence: {message: ": deve ser preenchido!"},
+	uniqueness: {message: ": valor já existe"},
+  	length: {minimum: 5, message: ": deve conter no mínimo 5 caracteres", maximum: 50 , message: ": deve conter no máximo 50 caracteres"}
   	#exclusion: { in: %w(admin), message: "%{value} é um usuário reservado"}
 
  	validates :senha,
- 	presence: true,
- 	length: {minimum: 8}
- 	
+ 	presence: {message: ": deve ser preenchido!"},
+ 	length: {minimum: 8, message: ": deve conter no mínimo 8 caracteres"}
+
    	#has_secure_password
 
 end

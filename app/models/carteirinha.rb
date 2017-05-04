@@ -4,15 +4,15 @@ class Carteirinha < ApplicationRecord
 	has_many :categorium
 
 	validates :via,
-	presence: true
+	presence: {message: ": deve ser preenchido!"}
 
-    validates :status,
-    presence: true
+  validates :status,
+  presence: {message: ": deve ser preenchido!"}
 
-    validates :categoria_id,
-    presence: true
+  validates :categoria_id,
+  presence: {message: ": deve ser preenchido!"}
 
-    validates :cid_id,
-    presence: true
+  validates :cid_id,
+  presence: {message: ": deve ser preenchido!"}
 
 end
