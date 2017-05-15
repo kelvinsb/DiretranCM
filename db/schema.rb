@@ -10,114 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170504060645) do
+ActiveRecord::Schema.define(version: 20170515002912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "carteirinhas", force: :cascade do |t|
-    t.integer  "via"
-    t.string   "status"
-    t.datetime "data_criacao"
-    t.date     "data_vencimento"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "categoria_id"
-    t.integer  "cid_id"
+  create_table "administradors", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_administradors_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_administradors_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "categoria", force: :cascade do |t|
+  create_table "cadastros", force: :cascade do |t|
     t.string   "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "cids", force: :cascade do |t|
-    t.string   "cod_doenca"
-    t.string   "nome_doenca"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "datalogs", force: :cascade do |t|
-    t.integer  "valor_anterior"
-    t.integer  "valor_atual"
-    t.integer  "campo_alterado"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "log_id"
-  end
-
-  create_table "documentos", force: :cascade do |t|
-    t.string   "rg"
-    t.string   "cpf"
-    t.string   "cid"
-    t.string   "foto"
-    t.string   "comp_residencia"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "enderecos", force: :cascade do |t|
-    t.string   "estado"
-    t.string   "cidade"
-    t.string   "bairro"
-    t.string   "cep"
-    t.string   "logradouro"
-    t.string   "numero"
+    t.integer  "rg"
+    t.integer  "cpf"
+    t.date     "data_nascimento"
+    t.string   "rua"
+    t.integer  "numero"
     t.string   "complemento"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "requisicao_id"
+    t.string   "bairro"
+    t.string   "cidade"
+    t.string   "telefone"
+    t.string   "celular"
+    t.integer  "usuarios_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["usuarios_id"], name: "index_cadastros_on_usuarios_id", using: :btree
   end
 
-  create_table "funcionarios", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "login_id"
-    t.integer  "pessoa_id"
+  create_table "usuarios", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "logins", force: :cascade do |t|
-    t.string   "nome"
-    t.string   "senha"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "logs", force: :cascade do |t|
-    t.string   "motivo"
-    t.date     "data"
-    t.time     "hora"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "requisicao_id"
-    t.integer  "pessoa_id"
-  end
-
-  create_table "pessoas", force: :cascade do |t|
-    t.string   "cpf"
-    t.string   "nome"
-    t.string   "rg"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "login_id"
-    t.string   "email"
-    t.string   "sexo"
-  end
-
-  create_table "requisicaos", force: :cascade do |t|
-    t.string   "responsavel_nome"
-    t.string   "responsavel_cpf"
-    t.date     "data_requisicao"
-    t.date     "data_emissao"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "endereco_id"
-    t.integer  "documentos_id"
-    t.integer  "pessoa_id"
-    t.integer  "funcionario_id"
-    t.integer  "carteirinha_id"
-  end
-
+  add_foreign_key "cadastros", "usuarios", column: "usuarios_id"
 end

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,7 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# DiretranCM
-Software para emissão de carteirinhas de idoso/deficiente
->>>>>>> d843becb22cf0d4b17c5aca9c9e7bf10c9ddbcaa

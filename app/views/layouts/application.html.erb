@@ -6,95 +6,49 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Lato"' %>
   </head>
 
   <body>
 
-  <div id="main-container" class="container-fluid">
-      
-      <div id="titulo" class="row" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" > <!-- color Thistle -->
-      	
-      	<div id="titulo_central" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-	      	
-	      	<h2 class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
-	      		<%= image_tag 'logo_prefeitura.png' %>
-          </h2>
-      		<h2 class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-center">Diretran CM - Departamento de Trânsito de Campo Mourão</h2>
-	      	
-	      	
-      	</div>
-      	
-      	<div id="titulo_canto" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-	      	<div id="pessoa_logada" align="right" align="top">
-	      		<h5 class="text-center">
-	      		<%= image_tag 'no_photo.jpg' %>
-		      	</h5>
-            <h5 class="text-center">
-              Administrador
-            </h5>
-		     </div>
-	      	
-      	</div>
-		
-      	
-      </div>
+  <nav class="navbar navbar-default">
+  	<div class="container-fluid">
+  		<div class="navbar-header">
+  			<a class="navbar-brand" href="<%= dash_index_path %>">
+  				DiretranCM
+  			</a>
+  		</div>
+  		<div class="collapse navbar-collapse">
+  			<ul class="nav navbar-nav">
+  				<li class="<%= 'active' if (current_page?(root_path) || current_page?(dash_index_path)) %>">
+  					<a href="<%= dash_index_path %>">Página Inicial</a>
+	  			</li>
+          <% if usuario_signed_in? %>
+	  			<li class="<%= 'active' if current_page?(cadastros_path) %>">
+	  				<a href="<%= cadastros_path %>">Gerenciar cadastros</a>
+	  			</li>
+          <% end %>
+  			</ul>
+  			
+			
+			<% if usuario_signed_in? %>
+			<p class="navbar-text navbar-right">
+				
+				<%= link_to('Sair', destroy_usuario_session_path, :method => :delete, class: "navbar-link") %>
+			</p>
+			<p class="navbar-text navbar-right">
+				<% #usuario_path(usuario_id) %>
+				Autenticado como <a class="navbar-link" href="<%= edit_usuario_registration_path %>"><%= current_usuario.email %></a>
+			</p>
+			
+			<% else %>
+			<p class="navbar-text navbar-right">
+				Não autenticado, <a class="navbar-link" href="<%= new_usuario_session_path %>">Conectar?</a> <a class="navbar-link" href="<%= new_usuario_registration_path %>">Cadastrar?</a>
+			</p>
+			<% end %>
+  		</div>
+  	</div>
+  </nav>
 
-      <div class="row ">
-        
-        <div id="lateral" class="col-xs-12 col-sm-2 col-md-2 col-lg-2" >
-        	
-          <ul class= "list-unstyled menu_lateral">
-        		<h5><a href="../welcome/dash">Página Inicial</a></h5>
-            <li class="title">
-              <strong>Pessoa</strong>
-            </li>
-            <%= link_to(new_pessoa_path) do %>
-              <li class="child">
-          			Cadastrar pessoa
-          		</li>
-            </a>
-            <% end %>
-            
-            <%= link_to(pessoas_path) do %>
-              <li class="child">
-                Listar pessoas
-              </li>
-            <% end %>
-
-            <li class="title">
-              <strong>Requisição</strong>
-            </li>
-            <%= link_to(requisicaos_path) do %>
-              <li class="child">
-                Listar Requisições
-              </li>
-            <% end %>
-
-          <li class="title">
-              <strong>Carteirinha</strong>
-            </li>
-            <%= link_to(carteirinhas_path) do %>
-              <li class="child">
-                Listar Carteirinhas
-              </li>
-            <% end %>
-          </ul>
-        
-        </div>
-        
-        <div id="principal" class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-          <%= yield %>
-        </div>
-      
-      </div>
-
- </div>
- <footer class="container">
-   <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">    &nbsp;</div>
- </footer>
-  
-    
-  
+    <%= yield %>
   </body>
 </html>
