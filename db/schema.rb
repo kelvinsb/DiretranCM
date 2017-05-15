@@ -66,8 +66,9 @@ ActiveRecord::Schema.define(version: 20170504060645) do
     t.string   "logradouro"
     t.string   "numero"
     t.string   "complemento"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "requisicao_id"
   end
 
   create_table "funcionarios", force: :cascade do |t|

@@ -4,6 +4,8 @@ class Requisicao < ApplicationRecord
 	has_one :pessoa
 	has_one :documentos
 	has_one :carteirinha
+	accepts_nested_attributes_for :endereco
+	validates_associated :endereco
 
 	validates :responsavel_nome,
 	presence: {message: ": deve ser preenchido!"},

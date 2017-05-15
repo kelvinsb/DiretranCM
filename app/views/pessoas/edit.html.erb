@@ -1,6 +1,7 @@
-<h1>Editando Pessoa</h1>
+<%= link_to ' ', pessoas_path ,class: "btn btn-primary glyphicon glyphicon-chevron-left"%>
+	<span class="h3">Editando Pessoa</span>
+	<br>
+	<br>
+
 
 <%= render 'form', pessoa: @pessoa %>
-
-<%= link_to 'Mostrar', @pessoa, class: "btn btn-primary" %> 
-<%= link_to 'Voltar', pessoas_path, class: "btn btn-info" %>

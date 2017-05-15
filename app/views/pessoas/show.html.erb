@@ -32,6 +32,14 @@
 		<p><%= @pessoa.email %></p>
 	</div>
 </div>
+<div class="row show-inf">
+	<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+		<strong>Sexo:</strong>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+		<p><%= @pessoa.sexo %></p>
+	</div>
+</div>
 
 <%= link_to 'Editar', edit_pessoa_path(@pessoa), class: "btn btn-primary" %> 
 <%= link_to 'Voltar', pessoas_path, class: "btn btn-info" %>

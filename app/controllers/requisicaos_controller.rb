@@ -15,6 +15,7 @@ class RequisicaosController < ApplicationController
   # GET /requisicaos/new
   def new
     @requisicao = Requisicao.new
+    @requisicao.build_endereco
   end
 
   # GET /requisicaos/1/edit
@@ -25,6 +26,7 @@ class RequisicaosController < ApplicationController
   # POST /requisicaos.json
   def create
     @requisicao = Requisicao.new(requisicao_params)
+    #@requisicao.assign_attributes(requisicao_params)
 
     respond_to do |format|
       if @requisicao.save
@@ -69,6 +71,6 @@ class RequisicaosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def requisicao_params
-      params.require(:requisicao).permit(:responsavel_nome, :responsavel_cpf, :data_requisicao, :data_emissao)
+      params.require(:requisicao).permit(:responsavel_nome, :responsavel_cpf, :data_requisicao, :data_emissao, :endereco_attributes => [:estado, :cidade, :bairro, :cep, :logradouro, :numero, :complemento])
     end
 end

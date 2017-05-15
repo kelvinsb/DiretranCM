@@ -13,6 +13,7 @@
           <th>Nome</th>
           <th>Rg</th>
           <th>Email</th>
+          <th>Sexo</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -24,6 +25,7 @@
             <td><%= pessoa.nome %></td>
             <td><%= pessoa.rg %></td>
             <td><%= pessoa.email %></td>
+            <td><%= pessoa.sexo %></td>
             <td><%= link_to 'Mostrar', pessoa %></td>
             <td><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
             <td><%= link_to 'Excluir', pessoa, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>

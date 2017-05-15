@@ -1,5 +1,6 @@
 class Endereco < ApplicationRecord
   belongs_to :requisicao
+  validates_presence_of :requisicao
 
   validates :estado,
 	presence: {message: ": deve ser preenchido!"},
