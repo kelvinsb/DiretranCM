@@ -32,6 +32,16 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#validate CPF/CNPJ brazilian
+gem "cpf_cnpj"
+gem "validators"
+
+#validate Cep
+gem "correios-cep"
+
+#validate email
+gem "validates_email_format_of"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
