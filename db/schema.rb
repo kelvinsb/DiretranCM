@@ -32,27 +32,6 @@ ActiveRecord::Schema.define(version: 20170518053308) do
     t.index ["reset_password_token"], name: "index_administradors_on_reset_password_token", unique: true, using: :btree
   end
 
-<<<<<<< HEAD
-  create_table "cadastros", force: :cascade do |t|
-    t.string   "nome"
-    t.integer  "rg"
-    t.integer  "cpf"
-    t.date     "data_nascimento"
-    t.string   "rua"
-    t.integer  "numero"
-    t.string   "complemento"
-    t.string   "bairro"
-    t.string   "cidade"
-    t.string   "telefone"
-    t.string   "celular"
-    t.integer  "usuarios_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["usuarios_id"], name: "index_cadastros_on_usuarios_id", using: :btree
-  end
-
-=======
->>>>>>> 7a4a216e0b439ee569f750a6b55579f2b88f1532
   create_table "enderecos", force: :cascade do |t|
     t.string   "cep"
     t.string   "cidade"
@@ -96,10 +75,6 @@ ActiveRecord::Schema.define(version: 20170518053308) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
   end
 
-<<<<<<< HEAD
-  add_foreign_key "cadastros", "usuarios", column: "usuarios_id"
-=======
->>>>>>> 7a4a216e0b439ee569f750a6b55579f2b88f1532
   add_foreign_key "enderecos", "pessoas"
   add_foreign_key "pessoas", "usuarios"
 end
