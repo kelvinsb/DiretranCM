@@ -265,4 +265,8 @@ pt-BR:
       #new
   log_sess_new: "Entrar"
 
+  #Dicionário Scaffold
+    #new
+  new: "Criar"
+
 
