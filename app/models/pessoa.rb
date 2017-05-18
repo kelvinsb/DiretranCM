@@ -1,13 +1,13 @@
 class Pessoa < ApplicationRecord
   belongs_to :usuario
 
-   	validates :nome,
+  	validates :nome,
 	presence: {message: ": deve ser preenchido"},
 	length: {maximum: 255}
 
 	validates :rg,
 	presence: {message: ": deve ser preenchido"},
-	length: {minimum:3, maximum:, message: ": deve ser preenchido com 9 digitos"}	
+	length: {minimum:8, maximum:14, message: ": deve ser preenchido com 9 digitos"}	
 
 	validates :cpf,
 	presence: {message: ": deve ser preenchido"},
@@ -29,5 +29,4 @@ class Pessoa < ApplicationRecord
 
 	validates :usuario_id,
   	uniqueness: true
-
 end
