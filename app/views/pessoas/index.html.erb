@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Nome</th>
+      <th>Sexo</th>
       <th>Rg</th>
       <th>Cpf</th>
       <th>Data nascimento</th>
@@ -20,15 +21,16 @@
     <% @pessoas.each do |pessoa| %>
       <tr>
         <td><%= pessoa.nome %></td>
+        <td><%= pessoa.sexo %></td>
         <td><%= pessoa.rg %></td>
         <td><%= pessoa.cpf %></td>
         <td><%= pessoa.data_nascimento %></td>
         <td><%= pessoa.telefone %></td>
         <td><%= pessoa.celular %></td>
         <td><%= pessoa.usuario.email %></td>
-        <td><%= link_to 'Mostrar', pessoa %></td>
-        <td><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
-        <td><%= link_to 'Remover', pessoa, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
+        <td><%= link_to 'Show', pessoa %></td>
+        <td><%= link_to 'Edit', edit_pessoa_path(pessoa) %></td>
+        <td><%= link_to 'Destroy', pessoa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +38,4 @@
 
 <br>
 
-<%= link_to 'Cadastrar pessoa', new_pessoa_path %>
+<%= link_to 'New Pessoa', new_pessoa_path %>
