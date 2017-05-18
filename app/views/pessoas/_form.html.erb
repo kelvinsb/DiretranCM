@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :sexo, "Sexo" %>
+    <%= f.text_field :sexo, :enum => ["Masculino", "Feminino"] %>
+  </div>
+
+  <div class="field">
     <%= f.label :rg, "RG" %>
     <%= f.text_field :rg, :maxlength => 14, :size => 14 %> 
   </div>
@@ -27,7 +32,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :data_nascimento %>
+    <%= f.label :data_nascimento, "Data de nascimento" %>
     <%= f.date_select :data_nascimento, :start_year => Date.current.year - 120, :end_year => Date.current.year %>
   </div>
 

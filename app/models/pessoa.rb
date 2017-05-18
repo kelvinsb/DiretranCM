@@ -1,7 +1,7 @@
 class Pessoa < ApplicationRecord
   belongs_to :usuario
 
-  	validates :nome,
+   	validates :nome,
 	presence: {message: ": deve ser preenchido"},
 	length: {maximum: 255}
 

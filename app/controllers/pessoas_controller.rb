@@ -25,11 +25,11 @@ class PessoasController < ApplicationController
   # POST /pessoas.json
   def create
     @pessoa = Pessoa.new(pessoa_params)
-    @pessoa.usuario_id = current_usuario.id
+    @pessoa.usuario_id=current_usuario.id
 
     respond_to do |format|
       if @pessoa.save
-        format.html { redirect_to @pessoa, notice: 'Pessoa cadastrada com sucesso.' }
+        format.html { redirect_to @pessoa, notice: 'Pessoa was successfully created.' }
         format.json { render :show, status: :created, location: @pessoa }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PessoasController < ApplicationController
   def update
     respond_to do |format|
       if @pessoa.update(pessoa_params)
-        format.html { redirect_to @pessoa, notice: 'Pessoa alterada com sucesso.' }
+        format.html { redirect_to @pessoa, notice: 'Pessoa was successfully updated.' }
         format.json { render :show, status: :ok, location: @pessoa }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class PessoasController < ApplicationController
   def destroy
     @pessoa.destroy
     respond_to do |format|
-      format.html { redirect_to pessoas_url, notice: 'Pessoa removida com sucesso.' }
+      format.html { redirect_to pessoas_url, notice: 'Pessoa was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class PessoasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pessoa_params
-      params.require(:pessoa).permit(:nome, :rg, :cpf, :data_nascimento, :telefone, :celular, :usuario_id)
+      params.require(:pessoa).permit(:nome, :sexo, :rg, :cpf, :data_nascimento, :telefone, :celular, :usuario_id)
     end
 end

@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Nome</th>
+      <th>Sexo</th>
       <th>Rg</th>
       <th>Cpf</th>
       <th>Data nascimento</th>
@@ -20,6 +21,7 @@
     <% @pessoas.each do |pessoa| %>
       <tr>
         <td><%= pessoa.nome %></td>
+        <td><%= pessoa.sexo %></td>
         <td><%= pessoa.rg %></td>
         <td><%= pessoa.cpf %></td>
         <td><%= pessoa.data_nascimento %></td>
@@ -36,4 +38,4 @@
 
 <br>
 
-<%= link_to 'Cadastrar pessoa', new_pessoa_path %>
+<%= link_to 'Criar Pessoa', new_pessoa_path %>

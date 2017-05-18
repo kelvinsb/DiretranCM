@@ -2,6 +2,7 @@ class CreatePessoas < ActiveRecord::Migration[5.0]
   def change
     create_table :pessoas do |t|
       t.string :nome
+      t.string :sexo
       t.string :rg
       t.string :cpf
       t.date :data_nascimento

@@ -25,10 +25,10 @@
         <td><%= endereco.logradouro %></td>
         <td><%= endereco.numero %></td>
         <td><%= endereco.complemento %></td>
-        <td><%= endereco.pessoa %></td>
-        <td><%= link_to 'Show', endereco %></td>
-        <td><%= link_to 'Edit', edit_endereco_path(endereco) %></td>
-        <td><%= link_to 'Destroy', endereco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= endereco.pessoa.id %></td>
+        <td><%= link_to 'Mostrar', endereco %></td>
+        <td><%= link_to 'Editar', edit_endereco_path(endereco) %></td>
+        <td><%= link_to 'Remover', endereco, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Endereco', new_endereco_path %>
+<%= link_to 'Novo Endereço', new_endereco_path %>
