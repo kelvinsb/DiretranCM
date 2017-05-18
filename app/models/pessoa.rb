@@ -7,7 +7,7 @@ class Pessoa < ApplicationRecord
 
 	validates :rg,
 	presence: {message: ": deve ser preenchido"},
-	length: {minimum:9, maximum:9, message: ": deve ser preenchido com 9 digitos"}	
+	length: {minimum:3, maximum:, message: ": deve ser preenchido com 9 digitos"}	
 
 	validates :cpf,
 	presence: {message: ": deve ser preenchido"},
