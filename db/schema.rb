@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20170518042739) do
 
   create_table "cadastros", force: :cascade do |t|
     t.string   "nome"
-    t.string   "rg"
-    t.string   "cpf"
+    t.integer  "rg"
+    t.integer  "cpf"
     t.date     "data_nascimento"
     t.string   "rua"
     t.integer  "numero"
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 20170518042739) do
     t.string   "cidade"
     t.string   "telefone"
     t.string   "celular"
-    t.integer  "usuario_id"
+    t.integer  "usuarios_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["usuario_id"], name: "index_cadastros_on_usuario_id", using: :btree
+    t.index ["usuarios_id"], name: "index_cadastros_on_usuarios_id", using: :btree
   end
 
   create_table "enderecos", force: :cascade do |t|
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20170518042739) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "cadastros", "usuarios"
+  add_foreign_key "cadastros", "usuarios", column: "usuarios_id"
   add_foreign_key "enderecos", "pessoas"
   add_foreign_key "pessoas", "usuarios"
 end
