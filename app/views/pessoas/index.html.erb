@@ -28,9 +28,9 @@
         <td><%= pessoa.telefone %></td>
         <td><%= pessoa.celular %></td>
         <td><%= pessoa.usuario.email %></td>
-        <td><%= link_to 'Show', pessoa %></td>
-        <td><%= link_to 'Edit', edit_pessoa_path(pessoa) %></td>
-        <td><%= link_to 'Destroy', pessoa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', pessoa %></td>
+        <td><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
+        <td><%= link_to 'Remover', pessoa, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Pessoa', new_pessoa_path %>
+<%= link_to 'Criar Pessoa', new_pessoa_path %>
