@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= f.label :cep, "CEP" %>
-    <%= f.text_field :cep %>
+    <%= f.text_field :cep,:maxlength => 8, :size => 8 %>
   </div>
 
   <div class="field">
     <%= f.label :cidade, "Cidade atual" %>
-    <%= f.text_field :cidade %>
+    <%= f.text_field :cidade, :maxlength => 50, :size => 50 %>
   </div>
 
   <div class="field">
     <%= f.label :bairro, "Bairro" %>
-    <%= f.text_field :bairro %>
+    <%= f.text_field :bairro, :maxlength => 30, :size => 30 %>
   </div>
 
   <div class="field">
-    <%= f.label :logradouro, "Rua" %>
-    <%= f.text_field :logradouro %>
+    <%= f.label :logradouro, "Longradouro" %> (Ex. Rua, Avenida...)
+    <%= f.text_field :logradouro, :maxlength => 130, :size => 130 %>
   </div>
 
   <div class="field">
     <%= f.label :numero, "Numero" %>
-    <%= f.number_field :numero %>
+    <%= f.number_field :numero, :maxlength => 4, :size =>4  %>
   </div>
 
   <div class="field">
