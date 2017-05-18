@@ -1,1 +1,34 @@
+<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<h1>Dashboard</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="btn btn-primary">Solicitar nova carteira</div>
+          <a href="<%= new_pessoa_path %>"><div class="btn btn-success">Editar dados da conta</div></a>
+          <a href="<%= new_endereco_path %>"><div class="btn btn-info">Editar endereço</div></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<h3>Progresso da carteirinha</h3>
+				</div>
+			</div>
+			<div class="row">
+				<table class="table table-hover">
+					<tr class="success">
+						<td>Carteirinha aprovada e aguardando impressão</td>
+					</tr>
+					<tr class="info">
+						<td>Conferindo dados</td>
+					</tr>
+					<tr class="active">
+						<td>Dados enviados</td>
+					</tr>
+				</table> 
+			</div>
+
+
 <%= yield %>
