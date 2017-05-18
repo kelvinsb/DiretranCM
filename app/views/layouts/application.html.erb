@@ -23,8 +23,8 @@
   					<a href="<%= dash_index_path %>">Página Inicial</a>
 	  			</li>
           <% if usuario_signed_in? %>
-	  			<li class="<%= 'active' if current_page?(cadastros_path) %>">
-	  				<a href="<%= cadastros_path %>">Gerenciar cadastros</a>
+	  			<li class="<%= 'active' if current_page?(pessoas_path) %>">
+	  				<a href="<%= pessoas_path %>">Gerenciar pessoas</a>
 	  			</li>
           <% end %>
   			</ul>	
