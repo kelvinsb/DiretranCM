@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518011531) do
+ActiveRecord::Schema.define(version: 20170518042739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,31 @@ ActiveRecord::Schema.define(version: 20170518011531) do
     t.index ["usuario_id"], name: "index_cadastros_on_usuario_id", using: :btree
   end
 
+  create_table "enderecos", force: :cascade do |t|
+    t.string   "cidade"
+    t.string   "bairro"
+    t.string   "logradouro"
+    t.integer  "numero"
+    t.string   "complemento"
+    t.integer  "pessoa_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["pessoa_id"], name: "index_enderecos_on_pessoa_id", using: :btree
+  end
+
+  create_table "pessoas", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "rg"
+    t.string   "cpf"
+    t.date     "data_nascimento"
+    t.string   "telefone"
+    t.string   "celular"
+    t.integer  "usuario_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["usuario_id"], name: "index_pessoas_on_usuario_id", using: :btree
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -68,4 +93,6 @@ ActiveRecord::Schema.define(version: 20170518011531) do
   end
 
   add_foreign_key "cadastros", "usuarios"
+  add_foreign_key "enderecos", "pessoas"
+  add_foreign_key "pessoas", "usuarios"
 end
