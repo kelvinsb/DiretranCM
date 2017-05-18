@@ -13,12 +13,18 @@ class Cadastro < ApplicationRecord
 	validates :cpf,
 	presence: {message: ": deve ser preenchido"},
 	length: {minimum: 11, maximum: 11, message: ": deve ser preenchido com 11 digitos"},
+<<<<<<< HEAD
 	numericality: {only_integer: true, message: ": deve ser preenchido com números"}
 	#uniqueness: true
 
 	validates_cpf_format_of :cpf, message: 'invalido'
 	#validates_cpf :cpf
 
+=======
+	numericality: {only_integer: true, message: ": deve ser preenchido com números"},
+	uniqueness: true
+  validates_cpf_format_of :cpf, message: 'inválido inserido'
+>>>>>>> db8f6677e9517454990114aefd87146b6bc25128
 
 	validates :data_nascimento,
 	presence: {message: ": deve ser preenchido"}

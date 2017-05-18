@@ -101,7 +101,11 @@ GEM
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+<<<<<<< HEAD
     ox (2.4.13)
+=======
+    ox (2.5.0)
+>>>>>>> db8f6677e9517454990114aefd87146b6bc25128
     pg (0.20.0)
     puma (3.8.2)
     rack (2.0.2)
