@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :enderecos
   resources :pessoas
-  resources :cadastros
   get 'dash/index'
 
   root 'dash#index'
