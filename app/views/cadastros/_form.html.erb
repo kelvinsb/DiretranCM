@@ -1,114 +1,77 @@
-<%= form_for @cadastro, :html => { :class => "form-horizontal cadastro" } do |f| %>
+<%= form_for(cadastro) do |f| %>
+  <% if cadastro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
 
-  <% if @cadastro.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@cadastro.errors.count, "erros") %> impedem salvar o cadastro:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @cadastro.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+      <ul>
+      <% cadastro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :nome, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :nome, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:nome) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :rg, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :rg, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:rg) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :cpf, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :cpf, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:cpf) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :data_nascimento, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.date_field :data_nascimento, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:data_nascimento) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :rua, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :rua, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:rua) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :numero, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :numero, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:numero) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :complemento, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :complemento, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:complemento) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :bairro, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :bairro, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:bairro) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :cidade, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :cidade, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:cidade) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :telefone, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :telefone, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:telefone) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :celular, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :celular, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:celular) %>
-  </div>
-  <% #!LER Deletar? %>
-  
-  <div class="form-group">
-    <%= f.label :usuarios_id, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :usuarios_id, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:usuarios_id) %>
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
   </div>
 
-
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                cadastros_path, :class => 'btn btn-default' %>
-    </div>
+  <div class="field">
+    <%= f.label :rg %>
+    <%= f.text_field :rg %>
   </div>
 
+  <div class="field">
+    <%= f.label :cpf %>
+    <%= f.text_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data_nascimento %>
+    <%= f.date_select :data_nascimento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rua %>
+    <%= f.text_field :rua %>
+  </div>
+
+  <div class="field">
+    <%= f.label :numero %>
+    <%= f.number_field :numero %>
+  </div>
+
+  <div class="field">
+    <%= f.label :complemento %>
+    <%= f.text_field :complemento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bairro %>
+    <%= f.text_field :bairro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cidade %>
+    <%= f.text_field :cidade %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefone %>
+    <%= f.text_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :celular %>
+    <%= f.text_field :celular %>
+  </div>
+
+  <div class="field">
+    <%= f.label :usuario_id %>
+    <%= f.text_field :usuario_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

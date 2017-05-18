@@ -2,9 +2,9 @@
 
 one:
   nome: MyString
-  rg: 1
-  cpf: 1
-  data_nascimento: 2017-05-14
+  rg: MyString
+  cpf: MyString
+  data_nascimento: 2017-05-17
   rua: MyString
   numero: 1
   complemento: MyString
@@ -12,13 +12,13 @@ one:
   cidade: MyString
   telefone: MyString
   celular: MyString
-  usuarios: one
+  usuario: one
 
 two:
   nome: MyString
-  rg: 1
-  cpf: 1
-  data_nascimento: 2017-05-14
+  rg: MyString
+  cpf: MyString
+  data_nascimento: 2017-05-17
   rua: MyString
   numero: 1
   complemento: MyString
@@ -26,4 +26,4 @@ two:
   cidade: MyString
   telefone: MyString
   celular: MyString
-  usuarios: two
+  usuario: two

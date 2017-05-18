@@ -1,7 +1,5 @@
 class CadastrosController < ApplicationController
   before_action :set_cadastro, only: [:show, :edit, :update, :destroy]
- # !LER : Obrigar autenticação para acessar essa página
-  before_filter :authenticate_usuario!
 
   # GET /cadastros
   # GET /cadastros.json
@@ -17,6 +15,7 @@ class CadastrosController < ApplicationController
   # GET /cadastros/new
   def new
     @cadastro = Cadastro.new
+    
   end
 
   # GET /cadastros/1/edit
@@ -27,9 +26,7 @@ class CadastrosController < ApplicationController
   # POST /cadastros.json
   def create
     @cadastro = Cadastro.new(cadastro_params)
-    #!LER : Verificar isso
-    @cadastro.usuarios_id = current_usuario #usar o id do usuário logado para cadastrar uma pessoa
-
+    @cadastro.usuario_id = current_usuario.id
 
     respond_to do |format|
       if @cadastro.save
@@ -74,6 +71,6 @@ class CadastrosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cadastro_params
-      params.require(:cadastro).permit(:nome, :rg, :cpf, :data_nascimento, :rua, :numero, :complemento, :bairro, :cidade, :telefone, :celular, :usuarios_id)
+      params.require(:cadastro).permit(:nome, :rg, :cpf, :data_nascimento, :rua, :numero, :complemento, :bairro, :cidade, :telefone, :celular, :usuario_id)
     end
 end

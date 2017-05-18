@@ -33,12 +33,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 #validate CPF/CNPJ brazilian
-gem "cpf_cnpj"
-gem "validators"
+#gem "cpf_cnpj"
+#gem "validators"
 
 #validate Cep
 gem "correios-cep"
-
+gem "cpf_cnpj"
+gem 'validators'
 #validate email
 gem "validates_email_format_of"
 

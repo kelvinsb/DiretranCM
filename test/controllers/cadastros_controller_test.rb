@@ -17,7 +17,7 @@ class CadastrosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cadastro" do
     assert_difference('Cadastro.count') do
-      post cadastros_url, params: { cadastro: { bairro: @cadastro.bairro, celular: @cadastro.celular, cidade: @cadastro.cidade, complemento: @cadastro.complemento, cpf: @cadastro.cpf, data_nascimento: @cadastro.data_nascimento, nome: @cadastro.nome, numero: @cadastro.numero, rg: @cadastro.rg, rua: @cadastro.rua, telefone: @cadastro.telefone, usuarios_id: @cadastro.usuarios_id } }
+      post cadastros_url, params: { cadastro: { bairro: @cadastro.bairro, celular: @cadastro.celular, cidade: @cadastro.cidade, complemento: @cadastro.complemento, cpf: @cadastro.cpf, data_nascimento: @cadastro.data_nascimento, nome: @cadastro.nome, numero: @cadastro.numero, rg: @cadastro.rg, rua: @cadastro.rua, telefone: @cadastro.telefone, usuario_id: @cadastro.usuario_id } }
     end
 
     assert_redirected_to cadastro_url(Cadastro.last)
@@ -34,7 +34,7 @@ class CadastrosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cadastro" do
-    patch cadastro_url(@cadastro), params: { cadastro: { bairro: @cadastro.bairro, celular: @cadastro.celular, cidade: @cadastro.cidade, complemento: @cadastro.complemento, cpf: @cadastro.cpf, data_nascimento: @cadastro.data_nascimento, nome: @cadastro.nome, numero: @cadastro.numero, rg: @cadastro.rg, rua: @cadastro.rua, telefone: @cadastro.telefone, usuarios_id: @cadastro.usuarios_id } }
+    patch cadastro_url(@cadastro), params: { cadastro: { bairro: @cadastro.bairro, celular: @cadastro.celular, cidade: @cadastro.cidade, complemento: @cadastro.complemento, cpf: @cadastro.cpf, data_nascimento: @cadastro.data_nascimento, nome: @cadastro.nome, numero: @cadastro.numero, rg: @cadastro.rg, rua: @cadastro.rua, telefone: @cadastro.telefone, usuario_id: @cadastro.usuario_id } }
     assert_redirected_to cadastro_url(@cadastro)
   end
 

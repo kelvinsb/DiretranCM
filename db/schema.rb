@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515002912) do
+ActiveRecord::Schema.define(version: 20170518011531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20170515002912) do
 
   create_table "cadastros", force: :cascade do |t|
     t.string   "nome"
-    t.integer  "rg"
-    t.integer  "cpf"
+    t.string   "rg"
+    t.string   "cpf"
     t.date     "data_nascimento"
     t.string   "rua"
     t.integer  "numero"
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 20170515002912) do
     t.string   "cidade"
     t.string   "telefone"
     t.string   "celular"
-    t.integer  "usuarios_id"
+    t.integer  "usuario_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["usuarios_id"], name: "index_cadastros_on_usuarios_id", using: :btree
+    t.index ["usuario_id"], name: "index_cadastros_on_usuario_id", using: :btree
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -67,5 +67,5 @@ ActiveRecord::Schema.define(version: 20170515002912) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "cadastros", "usuarios", column: "usuarios_id"
+  add_foreign_key "cadastros", "usuarios"
 end
