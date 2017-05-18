@@ -27,14 +27,7 @@
 	  				<a href="<%= cadastros_path %>">Gerenciar cadastros</a>
 	  			</li>
           <% end %>
-  			</ul>
-  			
-			
-			<% if usuario_signed_in? %>
-			<p class="navbar-text navbar-right">
-			 <%= link_to('Sair', destroy_usuario_session_path, :method => :delete, class: "navbar-link") %>
-			</p>
-      <% end %>
+  			</ul>	
 
 		  <p class="navbar-text pull-right">
         <% if usuario_signed_in? %>
