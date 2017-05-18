@@ -222,3 +222,38 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
+
+
+  hello: "Olá"
+  edit: "Editar"
+
+  
+
+  # Dicionário Devise (views pt-BR)
+    #confirmations
+  resend: "Reeviar instruções de confirmação"
+    #mailer
+      #confirmation
+  you_can: "Você pode confirmar através da sua conta de email clicando no link abaixo"
+  confirm: "Confirmar minha conta"
+      #email_changed
+  email_change: "Nós estamos lhe avisando que o seu email está sendo alterado para"
+  email_change2: "Nós estamos lhe avisando que o seu email foi alterado para"
+      #password_change
+  pass_change: "Nós estamos que avisando que sua senha foi alterada"
+      #reset_passw
+  someone_pass: "Alguém solicitou um link para alterar sua senha, você pode fazer isso através do link abaixo"
+  if_pass: "Se você não solictou isso, por favor ignore este email"
+  your_pass: "Sua senha não será alterada até que você clique no link abaixo e crie uma nova"
+      #unlock_instructions
+  your_unlock: "Sua conta foi bloqueada devido a um número excessivo de tentativas de login sem êxito"
+  click_unlock: "Clique no link abaixo para desbloquear sua conta"
+    #passwords
+      #edit
+  change_edit_pass: "Mudar sua senha"
+  leave_edit_pass: "Deixe em branco caso não deseje alterar a senha"  
+  character_edit_pass: "caracteres mínimos"
+  we_edit_pass: "Nós precisamos de sua senha atual para confirmar suas alterações"
+  cancel_edit: "Cancelar minha conta"
+
+
