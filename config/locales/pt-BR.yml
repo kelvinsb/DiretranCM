@@ -250,10 +250,23 @@ pt-BR:
   click_unlock: "Clique no link abaixo para desbloquear sua conta"
     #passwords
       #edit
-  change_edit_pass: "Mudar sua senha"
+  change_edit_pass: "Mudar sua senha"  
+  character_edit_pass: "caracteres mínimos"  
+      #new
+  forgot_pass_new: "Esqueceu sua senha?"
+    #registrations
+      #edit
   leave_edit_pass: "Deixe em branco caso não deseje alterar a senha"  
-  character_edit_pass: "caracteres mínimos"
   we_edit_pass: "Nós precisamos de sua senha atual para confirmar suas alterações"
   cancel_edit: "Cancelar minha conta"
+      #new
+  sign_reg_new: "Cadastrar"
+    #sessions
+      #new
+  log_sess_new: "Entrar"
+
+  #Dicionário Scaffold
+    #new
+  new: "Criar"
 
 
