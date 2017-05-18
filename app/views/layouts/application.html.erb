@@ -13,16 +13,17 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-logo">
-       <a href="<%= dash_index_path %>">
+      <a href = "app/views/usuarios/sessions/new.html.erb">
       <h4 class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+
             <%= image_tag 'prefeitura_logo.png' %>
       </h4>
       </a>
       </div>
       <div class="navbar-header" >
-        <a class="navbar-brand" href="<%= dash_index_path %>">
-          <h1>Diretran CM</h1>
-        </a>
+       <h1>
+        <%= link_to "Diretran CM", new_usuario_session_path, :class => 'navbar-brand'  %>
+        </h1>
       </div>
       <!--
       <div class="collapse navbar-collapse">
