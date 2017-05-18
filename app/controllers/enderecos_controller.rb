@@ -25,7 +25,6 @@ class EnderecosController < ApplicationController
   # POST /enderecos.json
   def create
     @endereco = Endereco.new(endereco_params)
-    
 
     respond_to do |format|
       if @endereco.save
