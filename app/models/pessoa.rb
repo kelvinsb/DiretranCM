@@ -28,5 +28,5 @@ class Pessoa < ApplicationRecord
 	numericality: {only_integer: true, message: ": deve ser preenchido com números"}
 
 	validates :usuario_id,
-  	uniqueness: true
+  	uniqueness: true.
 end
