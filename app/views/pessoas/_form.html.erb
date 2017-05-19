@@ -1,13 +1,15 @@
 <%= form_for(pessoa) do |f| %>
   <% if pessoa.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
+    <div class="row">
+      <div id="aerror_explanation">
+        <h2><%= pluralize(pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
 
-      <ul>
-      <% pessoa.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% pessoa.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
@@ -18,12 +20,13 @@
 
   <div class="field">
     <%= f.label :sexo, "Sexo" %>
-    <%= f.text_field :sexo, :enum => ["Masculino", "Feminino"] %>
+    <%= f.select :sexo, ['Masculino', 'Feminino'] %>
+    <% # f.text_field :sexo, :enum => ["Masculino", "Feminino"] %>
   </div>
 
   <div class="field">
     <%= f.label :rg, "RG" %>
-    <%= f.text_field :rg, :maxlength => 14, :size => 14 %> 
+    <%= f.text_field :rg, :maxlength => 14, :size => 14, :data => {:mask=> '999-999-9999'}%>
   </div>
 
   <div class="field">
@@ -46,7 +49,7 @@
     <%= f.text_field :celular, :maxlength => 11, :size => 11%> somente números
   </div>
 
-  <div class="field"> 
+  <div class="field">
     <!--<%= f.label :usuario_id %> -->
     <%= f.hidden_field :usuario_id %>
   </div>
