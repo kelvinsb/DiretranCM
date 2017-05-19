@@ -10,7 +10,26 @@
 	                        <h1 class="glyphicon glyphicon-user"></h1>
 	                    </div>
 	                    <div class="col-xs-9 text-left">
-	                        	<div id="dashboxtittle"><h3>Pessoas</h3></div>
+	                        	<div id="dashboxtittle"><h3>Editar cadastro</h3></div>
+	                    </div>
+	                </div>
+	            </div>
+	                <div class="panel-footer">
+	                    <div class="clearfix"></div>
+	                </div>
+	        </div>
+        </a>
+    </div>
+    <div class="col-xs-3 col-lg-3 col-md-3">
+	    <a href="#">
+	        <div class="panel panel-primary">
+	            <div class="panel-heading">
+	                <div class="row">
+	                    <div class="col-xs-3 text-right">
+	                        <h1 class="glyphicon glyphicon-asterisk"></h1>
+	                    </div>
+	                    <div class="col-xs-9 text-left">
+	                        	<div id="dashboxtittle"><h3>Minhas Requisições</h3></div>
 	                    </div>
 	                </div>
 	            </div>
@@ -29,26 +48,7 @@
 	                        <h1 class="glyphicon glyphicon-flag"></h1>
 	                    </div>
 	                    <div class="col-xs-9 text-left">
-	                        	<div id="dashboxtittle"><h3>Requisições</h3></div>
-	                    </div>
-	                </div>
-	            </div>
-	                <div class="panel-footer">
-	                    <div class="clearfix"></div>
-	                </div>
-	        </div>
-        </a>
-    </div>
-    <div class="col-xs-3 col-lg-3 col-md-3">
-	    <a href="#">
-	        <div class="panel panel-primary">
-	            <div class="panel-heading">
-	                <div class="row">
-	                    <div class="col-xs-3 text-right">
-	                        <h1 class="glyphicon glyphicon-print"></h1>
-	                    </div>
-	                    <div class="col-xs-9 text-left">
-	                        	<div id="dashboxtittle"><h3>Impressão</h3></div>
+	                        	<div id="dashboxtittle"><h3>Solicitar Carteirinha</h3></div>
 	                    </div>
 	                </div>
 	            </div>
@@ -59,4 +59,26 @@
         </a>
     </div>
 </div>
+
+<div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h3>Progresso da carteirinha</h3>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-hover">
+                    <tr class="success">
+                        <td>Carteirinha aprovada e aguardando impressão</td>
+                    </tr>
+                    <tr class="info">
+                        <td>Conferindo dados</td>
+                    </tr>
+                    <tr class="active">
+                        <td>Dados enviados</td>
+                    </tr>
+                </table>
+            </div>
+
+
+<%= yield %>
 
