@@ -15,28 +15,29 @@
 
   <div class="field">
     <%= f.label :nome, "Nome completo" %>
-    <%= f.text_field :nome, :maxlength => 80, :size => 80 %>
+    <div class="asterisco"> <%= f.text_field :nome, :maxlength => 80, :size => 80 %>  * </div>
+
   </div>
 
   <div class="field">
     <%= f.label :sexo, "Sexo" %>
-    <%= f.select :sexo, ['Masculino', 'Feminino'] %>
+    <%= f.select :sexo, ['Masculino', 'Feminino'] %> *
     <% # f.text_field :sexo, :enum => ["Masculino", "Feminino"] %>
   </div>
 
   <div class="field">
     <%= f.label :rg, "RG" %>
-    <%= f.text_field :rg, :maxlength => 14, :size => 14, :data => {:mask=> '999-999-9999'}%>
+    <%= f.text_field :rg, :maxlength => 14, :size => 14, :data => {:mask=> '999-999-9999'}%> *
   </div>
 
   <div class="field">
     <%= f.label :cpf, "CPF" %>
-    <%= f.text_field :cpf, :maxlength => 11, :size => 11%> somente números
+    <%= f.text_field :cpf, :maxlength => 11, :size => 11%> * somente números
   </div>
 
   <div class="field">
     <%= f.label :data_nascimento, "Data de nascimento" %>
-    <%= f.date_select :data_nascimento, :start_year => Date.current.year - 120, :end_year => Date.current.year %>
+    <%= f.date_select :data_nascimento, :start_year => Date.current.year - 120, :end_year => Date.current.year %> *
   </div>
 
   <div class="field">
@@ -46,7 +47,7 @@
 
   <div class="field">
     <%= f.label :celular, "Telefone celular" %>
-    <%= f.text_field :celular, :maxlength => 11, :size => 11%> somente números
+    <%= f.text_field :celular, :maxlength => 11, :size => 11%> * somente números
   </div>
 
   <div class="field">
