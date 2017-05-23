@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   resources :enderecos
   resources :pessoas
   get 'dash/index'
+  get "dash/dashFuncionario", to: "dash#dashFuncionario"
+  get "dash/dashUsuario", to: "dash#dashUsuario"
 
-  root 'dash#index'
+  root 'dash#dashFuncionario'
 
  # devise_for :administradors
   devise_for :usuarios
