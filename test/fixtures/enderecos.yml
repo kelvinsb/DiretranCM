@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  cep: MyString
-  cidade: MyString
-  bairro: MyString
-  logradouro: MyString
-  numero: 1
-  complemento: MyString
+  cep: '87310500'
+  cidade: 'Campo Mourão'
+  bairro: 'Jardim Paulista'
+  logradouro: 'Rua Ferrucio Trivelatto'
+  numero: 595
+  complemento: ''
   pessoa: one
 
 two:
-  cep: MyString
-  cidade: MyString
-  bairro: MyString
-  logradouro: MyString
-  numero: 1
-  complemento: MyString
+  cep: '87310000'
+  cidade: Peabiru
+  bairro: Centro
+  logradouro: 'Rua União da Vitória'
+  numero: 123
+  complemento: 'casa'
   pessoa: two
