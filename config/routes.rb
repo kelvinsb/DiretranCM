@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get "dash/dashFuncionario", to: "dash#dashFuncionario"
   get "dash/dashUsuario", to: "dash#dashUsuario"
 
-  root 'dash#dashFuncionario'
+  root 'dash#index'
 
- # devise_for :administradors
+  devise_for :administradors
   devise_for :usuarios
 
   devise_scope :usuario do
