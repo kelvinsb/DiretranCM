@@ -28,5 +28,5 @@ class Pessoa < ApplicationRecord
 	numericality: {only_integer: true}
 
 	validates :usuario_id,
-  uniqueness: true
+  	uniqueness: true
 end
