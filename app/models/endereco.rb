@@ -24,7 +24,7 @@ class Endereco < ApplicationRecord
   numericality: {only_integer: true, message: ": deve ser preenchido com números"}
 
   validates :complemento,
-  presence: {message: ": deve ser preenchido"},
+  #presence: {message: ": deve ser preenchido"},
   length: {maximum: 255, message: ": maximo de 255 digitos"}
 
 end
