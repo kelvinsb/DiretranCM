@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+end_Jennifer:
   cep: '87310500'
   cidade: 'Campo Mourão'
   bairro: 'Jardim Paulista'
@@ -9,11 +9,11 @@ one:
   complemento: ''
   pessoa: one
 
-two:
-  cep: '87310000'
+end_Rafael:
+  cep: '87250000'
   cidade: Peabiru
   bairro: Centro
   logradouro: 'Rua União da Vitória'
-  numero: 123
+  numero: 703
   complemento: 'casa'
   pessoa: two

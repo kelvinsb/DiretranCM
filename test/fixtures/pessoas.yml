@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+Jennifer:
   nome: Jennifer  
   sexo: Feminino
   rg: '92542157'
@@ -10,7 +10,7 @@ one:
   celular: '44999073938'
   usuario: one
 
-two:
+Rafael:
   nome: Rafael
   sexo: Masculino
   rg: '12345678'
