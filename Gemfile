@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 gem "cpf_cnpj"
 gem "validators"
 
+gem 'rspec-rails'
+
 #validate Cep
 gem "correios-cep"
 
