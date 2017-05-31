@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* instalar imageMagick (sudo apt-get install imagemagick -y)
