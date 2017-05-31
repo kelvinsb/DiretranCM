@@ -29,8 +29,9 @@ class PessoasController < ApplicationController
 
     respond_to do |format|
       if @pessoa.save
-        format.html { redirect_to @pessoa, notice: 'Pessoa criada com sucesso.' }
-        format.json { render :show, status: :created, location: @pessoa }
+        format.html { redirect_to new_endereco_path }
+        #format.html { redirect_to @pessoa, notice: 'Pessoa criada com sucesso.' }
+        #format.json { render :show, status: :created, location: @pessoa }
       else
         format.html { render :new }
         format.json { render json: @pessoa.errors, status: :unprocessable_entity }
@@ -43,8 +44,10 @@ class PessoasController < ApplicationController
   def update
     respond_to do |format|
       if @pessoa.update(pessoa_params)
-        format.html { redirect_to @pessoa, notice: 'Pessoa atualizada com sucesso.' }
-        format.json { render :show, status: :ok, location: @pessoa }
+        #format.html { render :edit, notice: 'Atualizado com sucesso.' }
+        format.html {redirect_to edit_endereco_path}
+        #format.html { redirect_to @pessoa, notice: 'Atualizado com sucesso.' }
+        #format.json { render :show, status: :ok, location: @pessoa }
       else
         format.html { render :edit }
         format.json { render json: @pessoa.errors, status: :unprocessable_entity }
