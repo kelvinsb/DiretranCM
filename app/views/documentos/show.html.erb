@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= image_tag @documento.cpf.url(:medium) %>
+</p>
+
+<p>
+  <strong>RG:</strong>
+  <%= image_tag @documento.rg.url(:medium) %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag @documento.foto.url(:medium) %>
+</p>
+
+<p>
+  <strong>CID:</strong>
+  <%= image_tag @documento.cid.url(:medium) %>
+</p>
+
+<p>
+  <strong>Comprovante de Residencia:</strong>
+  <%= image_tag @documento.comp_residencia.url(:medium) %>
+</p>
+
+
+<%= link_to 'Edit', edit_documento_path(@documento) %> |
+<%= link_to 'Back', documentos_path %>

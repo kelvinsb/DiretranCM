@@ -38,6 +38,12 @@ gem "validators"
 
 gem 'rspec-rails'
 
+#Imagens deve instalar o imageMagick (sudo apt-get install imagemagick -y)
+gem "paperclip", "~> 4.2"
+
+#Masck views
+gem 'meiomask-rails'
+
 #validate Cep
 gem "correios-cep"
 

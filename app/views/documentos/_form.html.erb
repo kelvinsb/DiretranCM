@@ -1,0 +1,32 @@
+<%= form_for documento, html: { multipart: true } do |f| %>
+  <% if documento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(documento.errors.count, "error") %> prohibited this documento from being saved:</h2>
+
+      <ul>
+      <% documento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :cpf, "CPF" %>
+  <%= f.file_field :cpf %>
+
+  <%= f.label :rg, "RG" %>
+  <%= f.file_field :rg %>
+
+  <%= f.label :foto, "Foto" %>
+  <%= f.file_field :foto %>
+
+  <%= f.label :cid, "CID" %>
+  <%= f.file_field :cid %>
+
+  <%= f.label :cid, "Comprovante de Residencia" %>
+  <%= f.file_field :comp_residencia %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

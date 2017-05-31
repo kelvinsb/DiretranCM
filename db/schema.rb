@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518093422) do
+ActiveRecord::Schema.define(version: 20170531225538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,31 @@ ActiveRecord::Schema.define(version: 20170518093422) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_administradors_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_administradors_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "documentos", force: :cascade do |t|
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "cpf_file_name"
+    t.string   "cpf_content_type"
+    t.integer  "cpf_file_size"
+    t.datetime "cpf_updated_at"
+    t.string   "rg_file_name"
+    t.string   "rg_content_type"
+    t.integer  "rg_file_size"
+    t.datetime "rg_updated_at"
+    t.string   "foto_file_name"
+    t.string   "foto_content_type"
+    t.integer  "foto_file_size"
+    t.datetime "foto_updated_at"
+    t.string   "cid_file_name"
+    t.string   "cid_content_type"
+    t.integer  "cid_file_size"
+    t.datetime "cid_updated_at"
+    t.string   "comp_residencia_file_name"
+    t.string   "comp_residencia_content_type"
+    t.integer  "comp_residencia_file_size"
+    t.datetime "comp_residencia_updated_at"
   end
 
   create_table "enderecos", force: :cascade do |t|
