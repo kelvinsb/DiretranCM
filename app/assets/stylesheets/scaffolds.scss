@@ -50,9 +50,12 @@ div {
 }
 
 .field_with_errors {
+  /*background-color: red;
   padding: 2px;
-  background-color: red;
-  display: table;
+  display: table;*/
+  color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
 }
 
 #error_explanation {
@@ -87,4 +90,20 @@ label {
 .navbar-brand{
     font-size: 37px;
 
+}
+.has-error
+{
+  text-transform: capitalize;
+}
+.field_with_errors input
+{
+  border-color: #FFFFFF !important;
+}
+.field_with_errors input
+{
+  width: 100%;
+}
+.form-control
+{
+  width: auto;
 }

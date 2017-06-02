@@ -1,61 +1,78 @@
-<%= form_for(pessoa) do |f| %>
-  <% if pessoa.errors.any? %>
-    <div class="row">
-      <div id="aerror_explanation">
-        <h2><%= pluralize(pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
+<%= form_for @pessoa, :html => { :class => "form-horizontal pessoa" } do |f| %>
 
-        <ul>
-        <% pessoa.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
+  
+  <div class="form-group">
+    <%= f.label :nome, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.text_field :nome, :class => 'form-control', :maxlength => 80, :size => 80 %>
     </div>
-  <% end %>
+    <div class="col-lg-4">
+      <%=f.error_span(:nome) %>
+    </div>
+    
+  </div>
+  <div class="form-group">
+    <%= f.label :sexo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.select :sexo, ['Masculino', 'Feminino'] %> *
+    </div>
+    <div class="col-lg-4">
+      <%=f.error_span(:sexo) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :rg, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.text_field :rg, :class => 'form-control', :maxlength => 14, :size => 14 %>
+    </div>
+    <div class="col-lg-4">
+      <%=f.error_span(:rg) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cpf, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.text_field :cpf, :class => 'form-control', :maxlength => 11, :size => 11 %>
+    </div>
+    <div class="col-lg-4">
+      <%=f.error_span(:cpf) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :data_nascimento, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.date_select :data_nascimento, :start_year => Date.current.year - 120, :end_year => Date.current.year %> *
+    </div>
+    <div class="col-lg-4">
+      <%=f.error_span(:data_nascimento) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :telefone, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.text_field :telefone, :class => 'form-control', :maxlength => 10, :size => 10 %>
+    </div>
+    <div class="col-lg-4">
+      <%=f.error_span(:telefone) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :celular, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.text_field :celular, :class => 'form-control', :maxlength => 14, :size => 14 %>
+    </div>
+    <div class="col-lg-4">
+      <%=f.error_span(:celular) %>
+    </div>
+  </div>
+  
 
-  <div class="field">
-    <%= f.label :nome, "Nome completo" %>
-    <div class="asterisco"> <%= f.text_field :nome, :maxlength => 80, :size => 80 %>  * </div>
-
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                pessoas_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :sexo, "Sexo" %>
-    <%= f.select :sexo, ['Masculino', 'Feminino'] %> *
-    <% # f.text_field :sexo, :enum => ["Masculino", "Feminino"] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :rg, "RG" %>
-    <%= f.text_field :rg, :maxlength => 14, :size => 14, :data => {:mask=> '999-999-9999'}%> *
-  </div>
-
-  <div class="field">
-    <%= f.label :cpf, "CPF" %>
-    <%= f.text_field :cpf, :maxlength => 11, :size => 11%> * somente números
-  </div>
-
-  <div class="field">
-    <%= f.label :data_nascimento, "Data de nascimento" %>
-    <%= f.date_select :data_nascimento, :start_year => Date.current.year - 120, :end_year => Date.current.year %> *
-  </div>
-
-  <div class="field">
-    <%= f.label :telefone, "Telefone residencial" %>
-    <%= f.text_field :telefone, :maxlength => 10, :size => 10%> somente números
-  </div>
-
-  <div class="field">
-    <%= f.label :celular, "Telefone celular" %>
-    <%= f.text_field :celular, :maxlength => 11, :size => 11%> * somente números
-  </div>
-
-  <div class="field">
-    <!--<%= f.label :usuario_id %> -->
-    <%= f.hidden_field :usuario_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

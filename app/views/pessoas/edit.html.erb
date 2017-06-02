@@ -1,6 +1,5 @@
-<h1><%=I18n.t 'edit'%> Pessoa</h1>
-
-<%= render 'form', pessoa: @pessoa %>
-
-<%= link_to 'Mostrar', @pessoa %> |
-<%= link_to 'Voltar', pessoas_path %>
+<%- model_class = Pessoa -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>
