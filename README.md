@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * instalar imageMagick (sudo apt-get install imagemagick -y)
+
+* DB drop, create e migrate (rake db:drop && rake db:create && rake db:migrate)

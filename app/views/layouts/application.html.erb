@@ -40,7 +40,7 @@
       -->
 		  <p class="navbar-text pull-right">
         <% if usuario_signed_in? %>
-          Entrou como: <strong><%= current_usuario.email %></strong>.
+          Entrou como: <strong><%= current_usuario.cpf %></strong>.
           <%= link_to 'Editar perfil', edit_usuario_registration_path, :class => 'navbar-link' %> |
           <%= link_to "Sair", destroy_usuario_session_path, method: :delete, :class => 'navbar-link'  %>
         <% else %>
