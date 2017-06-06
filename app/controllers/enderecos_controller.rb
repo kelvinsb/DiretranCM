@@ -27,7 +27,17 @@ class EnderecosController < ApplicationController
   # POST /enderecos.json
   def create
     @endereco = Endereco.new(endereco_params)
-    @endereco.pessoa_id=Pessoa.find_by_usuario_id(current_usuario.id).id
+    @endereco.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
+
+
+
+    #require 'correios-cep'
+    #address = Correios::CEP::AddressFinder.get @endereco.cep
+    #address {:address => "Rua Fernando Amorim",:neighborhood => "Cavaleiro",:city => "Jaboatão dos Guararapes",:state => "PE",:zipcode => "54250610",:complement => ""}
+
+    #@endereco.bairro = address{:neighborhood}
+
+
 
     respond_to do |format|
       if @endereco.save

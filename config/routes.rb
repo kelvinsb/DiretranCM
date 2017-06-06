@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :carteirinhas
+  resources :cids
   resources :documentos
   resources :enderecos
   resources :pessoas

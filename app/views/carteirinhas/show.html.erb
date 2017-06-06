@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Via:</strong>
+  <%= @carteirinha.via %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @carteirinha.status %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @carteirinha.categoria %>
+</p>
+
+<p>
+  <strong>Data emissao:</strong>
+  <%= @carteirinha.data_emissao %>
+</p>
+
+<p>
+  <strong>Data vencimento:</strong>
+  <%= @carteirinha.data_vencimento %>
+</p>
+
+<p>
+  <strong>Cid:</strong>
+  <%= @carteirinha.cid %>
+</p>
+
+<%= link_to 'Edit', edit_carteirinha_path(@carteirinha) %> |
+<%= link_to 'Back', carteirinhas_path %>
