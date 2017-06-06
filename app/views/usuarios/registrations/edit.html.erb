@@ -5,8 +5,8 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email, "Email" %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :cpf, "CPF" %><br />
+    <%= f.text_field :cpf, autofocus: true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

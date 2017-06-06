@@ -9,8 +9,8 @@
 
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                   <div class="field" id="userName" class="form-control input-sm chat-input">
-                    <%= f.label :email, "Email" %>
-                    <%= f.email_field :email, autofocus: true %>
+                    <%= f.label :cpf, "CPF" %>
+                    <%= f.text_field :cpf, autofocus: true %>
                   </div>
                   <br />
                   <div class="field" id="userPassword" class="form-control input-sm chat-input">
