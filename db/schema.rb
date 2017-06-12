@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 20170606004816) do
   end
 
   create_table "usuarios", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
+    t.string   "cpf",                                 null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 20170606004816) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
+    t.index ["cpf"], name: "index_usuarios_on_cpf", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
   end
 

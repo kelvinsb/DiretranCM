@@ -4,11 +4,27 @@ class ApplicationController < ActionController::Base
 
   # !LER redirecionar, mudar ainda
   def after_sign_in_path_for(resource)
-  	dash_dashUsuario_path
+    if(getPessoa() != nil)
+  	 dash_dashUsuario_path
+    else
+     new_pessoa_path
+    end 
   end
   def after_sign_out_path_for(resource)
     root_path
   end
+
+  helper_method :getPessoa
+  def getPessoa()
+    @Pessoas = Pessoa.all
+    @Pessoas.each do |pessoa|
+      if pessoa.usuario_id == current_usuario.id
+        return pessoa
+      end
+    end
+    return nil
+  end
+
   helper_method :getUserId
   def getUserId(idDeviseUser)
     @Pessoas = Pessoa.all
