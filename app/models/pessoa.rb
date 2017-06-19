@@ -22,4 +22,5 @@ class Pessoa < ApplicationRecord
 
 	validates :usuario_id,
   	uniqueness: true
+
 end
