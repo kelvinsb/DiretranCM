@@ -29,8 +29,9 @@ class DocumentosController < ApplicationController
 
     respond_to do |format|
       if @documento.save
-        format.html { redirect_to @documento, notice: 'Documento was successfully created.' }
-        format.json { render :show, status: :created, location: @documento }
+        #format.html { redirect_to @documento, notice: 'Documento was successfully created.' }
+        #format.json { render :show, status: :created, location: @documento }
+        format.html { redirect_to new_root_path }
       else
         format.html { render :new }
         format.json { render json: @documento.errors, status: :unprocessable_entity }

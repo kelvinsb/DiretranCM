@@ -1,6 +1,9 @@
 class Documento < ApplicationRecord
   belongs_to :pessoa
 
+  validates :pessoa_id
+  presence: true 
+
   has_attached_file :cpf, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :cpf, content_type: /\Aimage\/.*\z/
 
