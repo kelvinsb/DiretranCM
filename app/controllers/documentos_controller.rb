@@ -25,6 +25,7 @@ class DocumentosController < ApplicationController
   # POST /documentos.json
   def create
     @documento = Documento.new(documento_params)
+    @documento.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
 
     respond_to do |format|
       if @documento.save
@@ -69,6 +70,6 @@ class DocumentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def documento_params
-      params.fetch(:documento).permit(:cpf, :rg, :foto, :cid, :comp_residencia)
+      params.fetch(:documento).permit(:cpf, :rg, :foto, :cid, :comp_residencia, :pessoa_id)
     end
 end
