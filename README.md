@@ -5,9 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.4.0
 
 * System dependencies
+      imageMagick (sudo apt-get install imagemagick -y)
 
 * Configuration
 
@@ -20,7 +21,5 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* instalar imageMagick (sudo apt-get install imagemagick -y)
 
 * DB drop, create e migrate (rake db:drop && rake db:create && rake db:migrate)
