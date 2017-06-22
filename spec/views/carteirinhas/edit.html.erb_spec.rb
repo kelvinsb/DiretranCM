@@ -3,10 +3,9 @@ require 'rails_helper'
 RSpec.describe "carteirinhas/edit", type: :view do
   before(:each) do
     @carteirinha = assign(:carteirinha, Carteirinha.create!(
-      :via => 1,
+      :via => "MyString",
       :status => "MyString",
-      :categoria => "MyString",
-      :cid => nil
+      :categoria => "MyString"
     ))
   end
 
@@ -20,8 +19,6 @@ RSpec.describe "carteirinhas/edit", type: :view do
       assert_select "input#carteirinha_status[name=?]", "carteirinha[status]"
 
       assert_select "input#carteirinha_categoria[name=?]", "carteirinha[categoria]"
-
-      assert_select "input#carteirinha_cid_id[name=?]", "carteirinha[cid_id]"
     end
   end
 end

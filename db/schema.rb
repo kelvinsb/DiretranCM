@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620041038) do
+ActiveRecord::Schema.define(version: 20170621174529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,22 +33,23 @@ ActiveRecord::Schema.define(version: 20170620041038) do
   end
 
   create_table "carteirinhas", force: :cascade do |t|
-    t.integer  "via"
+    t.string   "via"
     t.string   "status"
     t.string   "categoria"
-    t.date     "data_emissao"
     t.date     "data_vencimento"
-    t.integer  "cid_id"
+    t.integer  "requisicao_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["cid_id"], name: "index_carteirinhas_on_cid_id", using: :btree
+    t.index ["requisicao_id"], name: "index_carteirinhas_on_requisicao_id", using: :btree
   end
 
   create_table "cids", force: :cascade do |t|
-    t.string   "cod_doenca"
+    t.string   "codigo"
     t.string   "nome_doenca"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "carteirinha_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["carteirinha_id"], name: "index_cids_on_carteirinha_id", using: :btree
   end
 
   create_table "documentos", force: :cascade do |t|
@@ -110,8 +111,10 @@ ActiveRecord::Schema.define(version: 20170620041038) do
     t.integer  "qtde_carteirinhas"
     t.string   "responsavel_nome"
     t.string   "responsavel_cpf"
+    t.integer  "pessoa_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.index ["pessoa_id"], name: "index_requisicoes_on_pessoa_id", using: :btree
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -131,8 +134,10 @@ ActiveRecord::Schema.define(version: 20170620041038) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "carteirinhas", "cids"
+  add_foreign_key "carteirinhas", "requisicoes"
+  add_foreign_key "cids", "carteirinhas"
   add_foreign_key "documentos", "pessoas"
   add_foreign_key "enderecos", "pessoas"
   add_foreign_key "pessoas", "usuarios"
+  add_foreign_key "requisicoes", "pessoas"
 end

@@ -25,11 +25,13 @@ class RequisicoesController < ApplicationController
   # POST /requisicoes.json
   def create
     @requisicao = Requisicao.new(requisicao_params)
+    @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
 
     respond_to do |format|
       if @requisicao.save
-        format.html { redirect_to @requisicao, notice: 'Requisicao was successfully created.' }
-        format.json { render :show, status: :created, location: @requisicao }
+          format.html { redirect_to new_carteirinha_path }
+        #format.html { redirect_to @requisicao, notice: 'Requisicao was successfully created.' }
+        #format.json { render :show, status: :created, location: @requisicao }
       else
         format.html { render :new }
         format.json { render json: @requisicao.errors, status: :unprocessable_entity }
@@ -69,6 +71,6 @@ class RequisicoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def requisicao_params
-      params.require(:requisicao).permit(:data_requisicao, :data_emissao, :qtde_carteirinhas, :responsavel_nome, :responsavel_cpf)
+      params.require(:requisicao).permit(:data_requisicao, :data_emissao, :qtde_carteirinhas, :responsavel_nome, :responsavel_cpf, :pessoa_id)
     end
 end

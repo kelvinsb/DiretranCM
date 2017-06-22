@@ -6,6 +6,7 @@ class CreateRequisicoes < ActiveRecord::Migration[5.0]
       t.integer :qtde_carteirinhas
       t.string :responsavel_nome
       t.string :responsavel_cpf
+      t.references :pessoa, foreign_key: true
 
       t.timestamps
     end

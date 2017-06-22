@@ -25,6 +25,7 @@ class CidsController < ApplicationController
   # POST /cids.json
   def create
     @cid = Cid.new(cid_params)
+    @cid.carteirinha_id = Carteirinha.find_by_usuario_id(current_usuario.id).id
 
     respond_to do |format|
       if @cid.save
@@ -69,6 +70,6 @@ class CidsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cid_params
-      params.require(:cid).permit(:cod_doenca, :nome_doenca)
+      params.require(:cid).permit(:codigo, :nome_doenca, :carteirinha_id)
     end
 end
