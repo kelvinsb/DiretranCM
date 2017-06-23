@@ -25,11 +25,13 @@ class CarteirinhasController < ApplicationController
   # POST /carteirinhas.json
   def create
     @carteirinha = Carteirinha.new(carteirinha_params)
+    @carteirinha.requisicao_id = current_usuario.id
 
     respond_to do |format|
       if @carteirinha.save
-        format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully created.' }
-        format.json { render :show, status: :created, location: @carteirinha }
+        #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully created.' }
+        #format.json { render :show, status: :created, location: @carteirinha }
+        format.html { redirect_to new_cid_path }
       else
         format.html { render :new }
         format.json { render json: @carteirinha.errors, status: :unprocessable_entity }
@@ -42,8 +44,10 @@ class CarteirinhasController < ApplicationController
   def update
     respond_to do |format|
       if @carteirinha.update(carteirinha_params)
-        format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully updated.' }
-        format.json { render :show, status: :ok, location: @carteirinha }
+        #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @carteirinha }
+        format.html { redirect_to edit_cid_path }
+
       else
         format.html { render :edit }
         format.json { render json: @carteirinha.errors, status: :unprocessable_entity }
@@ -69,6 +73,6 @@ class CarteirinhasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def carteirinha_params
-      params.require(:carteirinha).permit(:via, :status, :categoria, :data_emissao, :data_vencimento, :cid_id)
+      params.require(:carteirinha).permit(:via, :status, :categoria, :data_vencimento, :requisicao_id)
     end
 end

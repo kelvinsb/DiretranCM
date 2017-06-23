@@ -74,3 +74,4 @@ gem 'twitter-bootstrap-rails'
 
 # prawn
 gem "prawn", "0.8.4"
+gem "rails-erd"
