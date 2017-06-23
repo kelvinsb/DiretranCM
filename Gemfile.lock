@@ -115,6 +115,13 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.20.0)
+    prawn (0.8.4)
+      prawn-core (>= 0.8.4, < 0.9)
+      prawn-layout (>= 0.8.4, < 0.9)
+      prawn-security (>= 0.8.4, < 0.9)
+    prawn-core (0.8.4)
+    prawn-layout (0.8.4)
+    prawn-security (0.8.4)
     puma (3.8.2)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -229,6 +236,7 @@ DEPENDENCIES
   meiomask-rails
   paperclip (~> 4.2)
   pg (~> 0.18)
+  prawn (= 0.8.4)
   puma (~> 3.0)
   rails (~> 5.0.3)
   rspec-rails

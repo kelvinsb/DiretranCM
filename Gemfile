@@ -71,3 +71,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'twitter-bootstrap-rails'
+
+# prawn
+gem "prawn", "0.8.4"
