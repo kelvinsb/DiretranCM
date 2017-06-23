@@ -25,12 +25,13 @@ class CidsController < ApplicationController
   # POST /cids.json
   def create
     @cid = Cid.new(cid_params)
-    @cid.carteirinha_id = Carteirinha.find_by_usuario_id(current_usuario.id).id
+    @cid.carteirinha_id = current_usuario.id
 
     respond_to do |format|
       if @cid.save
-        format.html { redirect_to @cid, notice: 'Cid was successfully created.' }
-        format.json { render :show, status: :created, location: @cid }
+        #format.html { redirect_to @cid, notice: 'Cid was successfully created.' }
+        #format.json { render :show, status: :created, location: @cid }
+        format.html { redirect_to root_path }
       else
         format.html { render :new }
         format.json { render json: @cid.errors, status: :unprocessable_entity }
@@ -43,8 +44,10 @@ class CidsController < ApplicationController
   def update
     respond_to do |format|
       if @cid.update(cid_params)
-        format.html { redirect_to @cid, notice: 'Cid was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cid }
+        #format.html { redirect_to @cid, notice: 'Cid was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @cid }
+        format.html { redirect_to root_path }
+
       else
         format.html { render :edit }
         format.json { render json: @cid.errors, status: :unprocessable_entity }
