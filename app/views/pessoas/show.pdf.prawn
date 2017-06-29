@@ -1,8 +1,8 @@
 require 'prawn'
 
-pdf = Prawn::Document.new
+Prawn::Document.generate("hello.pdf") do
+  pdf.text "Hello World!"
 
-pdf.font "Helvetica"
-stroke_axis
-
+  pdf.stroke_axis
+  pdf.stroke_circle [0,0], 10
 end
