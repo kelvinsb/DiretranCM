@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
   def isLogged()
     if usuario_signed_in?
       return dash_dashUsuario_path
-    elsif administrador_signed_in?
+    elsif current_usuario.try(:admin?)
        return dash_dashFuncionario_path
     else
       return usuario_session_path
