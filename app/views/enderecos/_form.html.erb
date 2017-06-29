@@ -1,52 +1,75 @@
-<%= form_for(endereco) do |f| %>
-  <% if endereco.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(endereco.errors.count, "error") %> prohibited this endereco from being saved:</h2>
+<%= form_for @endereco, :html => { :class => "form-horizontal endereco" } do |f| %>
 
-      <ul>
-      <% endereco.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @endereco.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@endereco.errors.count, "error") %> prohibited this endereco from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @endereco.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :cep, "CEP" %>
-    <%= f.text_field :cep,:maxlength => 8, :size => 8 %>
+  <div class="form-group">
+    <%= f.label :cep, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :cep, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:cep) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cidade, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :cidade, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:cidade) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bairro, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :bairro, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:bairro) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :logradouro, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :logradouro, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:logradouro) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :numero, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :numero, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:numero) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :complemento, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :complemento, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:complemento) %>
+  </div>
+  <div class="form-group">
+      <div class="col-lg-10">
+      <%= f.hidden_field :pessoa_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:pessoa_id) %>
   </div>
 
-  <div class="field">
-    <%= f.label :cidade, "Cidade atual" %>
-    <%= f.text_field :cidade, :maxlength => 50, :size => 50 %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                enderecos_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :bairro, "Bairro" %>
-    <%= f.text_field :bairro, :maxlength => 30, :size => 30 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :logradouro, "Longradouro" %> (Ex. Rua, Avenida...)
-    <%= f.text_field :logradouro, :maxlength => 130, :size => 130 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :numero, "Numero" %>
-    <%= f.number_field :numero, :maxlength => 4, :size =>4  %>
-  </div>
-
-  <div class="field">
-    <%= f.label :complemento, "Complemento" %>
-    <%= f.text_field :complemento %>
-  </div>
-
-  <div class="field">
-    <!--<%= f.label :pessoa_id %>-->
-    <%= f.hidden_field :pessoa_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
