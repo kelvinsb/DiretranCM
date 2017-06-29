@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20170621174529) do
   end
 
   create_table "documentos", force: :cascade do |t|
-    t.integer  "pessoa_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "cpf_file_name"
@@ -76,7 +75,6 @@ ActiveRecord::Schema.define(version: 20170621174529) do
     t.string   "comp_residencia_content_type"
     t.integer  "comp_residencia_file_size"
     t.datetime "comp_residencia_updated_at"
-    t.index ["pessoa_id"], name: "index_documentos_on_pessoa_id", using: :btree
   end
 
   create_table "enderecos", force: :cascade do |t|
@@ -134,9 +132,7 @@ ActiveRecord::Schema.define(version: 20170621174529) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "carteirinhas", "requisicoes"
-  add_foreign_key "cids", "carteirinhas"
-  add_foreign_key "documentos", "pessoas"
+
   add_foreign_key "enderecos", "pessoas"
   add_foreign_key "pessoas", "usuarios"
   add_foreign_key "requisicoes", "pessoas"
