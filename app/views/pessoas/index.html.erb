@@ -36,7 +36,7 @@
                       pessoa_path(pessoa), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_pessoa_path(pessoa), :class => 'btn btn-default btn-xs' %>
-          <% if administrador_signed_in? %>           
+          <% if current_usuario.try(:admin?) %>           
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       pessoa_path(pessoa),
                       :method => :delete,
