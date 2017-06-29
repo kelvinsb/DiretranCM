@@ -31,7 +31,12 @@ class CarteirinhasController < ApplicationController
       if @carteirinha.save
         #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully created.' }
         #format.json { render :show, status: :created, location: @carteirinha }
-        format.html { redirect_to new_cid_path }
+        if @carteirinha.categoria == "Deficiente" || @carteirinha.categoria == "Deficente temporário"
+          format.html { redirect_to new_cid_path }
+        else
+          format.html {redirect_to root_path}
+        end
+        
       else
         format.html { render :new }
         format.json { render json: @carteirinha.errors, status: :unprocessable_entity }
@@ -46,7 +51,7 @@ class CarteirinhasController < ApplicationController
       if @carteirinha.update(carteirinha_params)
         #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully updated.' }
         #format.json { render :show, status: :ok, location: @carteirinha }
-        format.html { redirect_to edit_cid_path }
+        #format.html { redirect_to edit_cid_path }
 
       else
         format.html { render :edit }

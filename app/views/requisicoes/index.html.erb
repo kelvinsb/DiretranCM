@@ -11,6 +11,8 @@
       <th><%= model_class.human_attribute_name(:qtde_carteirinhas) %></th>
       <th><%= model_class.human_attribute_name(:responsavel_nome) %></th>
       <th><%= model_class.human_attribute_name(:responsavel_cpf) %></th>
+      <th><%= model_class.human_attribute_name(:categoria) %></th>
+      <th><%= model_class.human_attribute_name(:funcionario) %></th>
       <th><%= model_class.human_attribute_name(:pessoa_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -25,6 +27,8 @@
         <td><%= requisicao.qtde_carteirinhas %></td>
         <td><%= requisicao.responsavel_nome %></td>
         <td><%= requisicao.responsavel_cpf %></td>
+        <td><%= requisicao.categoria %></td>
+        <td><%= requisicao.funcionario %></td>
         <td><%= requisicao.pessoa_id %></td>
         <td><%=l requisicao.created_at %></td>
         <td>

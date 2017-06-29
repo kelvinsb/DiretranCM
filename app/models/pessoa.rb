@@ -2,6 +2,7 @@ class Pessoa < ApplicationRecord
   belongs_to :usuario
   has_one :documento
   has_one :endereco
+  has_many :requisicao
 
   validates :nome,
 	presence: {message: ": deve ser preenchido"},

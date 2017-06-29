@@ -1,6 +1,6 @@
 class RequisicoesController < ApplicationController
   before_action :set_requisicao, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /requisicoes
   # GET /requisicoes.json
   def index
@@ -29,9 +29,14 @@ class RequisicoesController < ApplicationController
 
     respond_to do |format|
       if @requisicao.save
-          format.html { redirect_to new_carteirinha_path }
+          
         #format.html { redirect_to @requisicao, notice: 'Requisicao was successfully created.' }
         #format.json { render :show, status: :created, location: @requisicao }
+        if @requisicao.categoria == "Deficiente" || @requisicao.categoria == "Deficente temporário"
+          format.html { redirect_to new_cid_path }
+        else
+          format.html {redirect_to root_path}
+        end
       else
         format.html { render :new }
         format.json { render json: @requisicao.errors, status: :unprocessable_entity }
@@ -71,6 +76,6 @@ class RequisicoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def requisicao_params
-      params.require(:requisicao).permit(:data_requisicao, :data_emissao, :qtde_carteirinhas, :responsavel_nome, :responsavel_cpf, :pessoa_id)
+      params.require(:requisicao).permit(:data_requisicao, :data_emissao, :qtde_carteirinhas, :responsavel_nome, :responsavel_cpf, :pessoa_id, :categoria, :funcionario)
     end
 end

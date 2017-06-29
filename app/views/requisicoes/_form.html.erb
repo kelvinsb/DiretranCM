@@ -15,6 +15,12 @@
     </div>
   <% end %>
 
+  <div class="form-group">
+    <%= f.label :categoria, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :categoria, ["Idoso", "Deficiente", "Deficente temporário"] %>
+    </div>
+    <%=f.error_span(:categoria) %>
   <div class="form-group">    
     <div class="col-lg-10">
       <%= f.hidden_field :data_requisicao, :class => 'form-control' %>
@@ -36,14 +42,14 @@
     <%=f.error_span(:qtde_carteirinhas) %>
   </div>
   <div class="form-group">
-    <%= f.label :"Nome do responsavel", :class => 'control-label col-lg-2' %>
+    <%= f.label :"Nome do responsavel", :class => 'control-label col-lg-2' %> (Nome de quem vai retirar a carteirinha, caso aprovada.)
     <div class="col-lg-10">
       <%= f.text_field :responsavel_nome, :class => 'form-control' %>
     </div>
     <%=f.error_span(:responsavel_nome) %>
   </div>
   <div class="form-group">
-    <%= f.label :"CPF do responsavel", :class => 'control-label col-lg-2' %>
+    <%= f.label :"CPF do responsavel", :class => 'control-label col-lg-2' %>(Nome de quem vai retirar a carteirinha, caso aprovada.)
     <div class="col-lg-10">
       <%= f.text_field :responsavel_cpf, :class => 'form-control' %>
     </div>
@@ -55,6 +61,12 @@
       <%= f.hidden_field :pessoa_id, :class => 'form-control' %>
     </div>
     <%=f.error_span(:pessoa_id) %>
+  </div>
+
+  <div class="col-lg-10">
+      <%= f.hidden_field :funcionario, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:funcionario) %>
   </div>
 
   <div class="form-group">
