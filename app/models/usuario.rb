@@ -1,6 +1,7 @@
 class Usuario < ApplicationRecord
-	belongs_to :endereco, optional: true
-	belongs_to :pessoa, optional: true
+	#belongs_to :endereco, optional: true
+	#belongs_to :pessoa, optional: true
+  has_one :pessoa
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
