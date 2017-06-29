@@ -1,7 +1,7 @@
 class Cid < ApplicationRecord
-  belongs_to :carteirinha
+  belongs_to :requisicao
 
-  validates :carteirinha_id,
+  validates :requisicao_id,
   presence: true
 
 end

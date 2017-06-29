@@ -1,5 +1,5 @@
-<h1>New Requisicao</h1>
-
-<%= render 'form', requisicao: @requisicao %>
-
-<%= link_to 'Back', requisicoes_path %>
+<%- model_class = Requisicao -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

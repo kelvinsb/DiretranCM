@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Requisicao -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Data requisicao:</strong>
-  <%= @requisicao.data_requisicao %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:data_requisicao) %>:</strong></dt>
+  <dd><%= @requisicao.data_requisicao %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data_emissao) %>:</strong></dt>
+  <dd><%= @requisicao.data_emissao %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:qtde_carteirinhas) %>:</strong></dt>
+  <dd><%= @requisicao.qtde_carteirinhas %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:responsavel_nome) %>:</strong></dt>
+  <dd><%= @requisicao.responsavel_nome %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:responsavel_cpf) %>:</strong></dt>
+  <dd><%= @requisicao.responsavel_cpf %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pessoa_id) %>:</strong></dt>
+  <dd><%= @requisicao.pessoa_id %></dd>
+</dl>
 
-<p>
-  <strong>Data emissao:</strong>
-  <%= @requisicao.data_emissao %>
-</p>
-
-<p>
-  <strong>Qtde carteirinhas:</strong>
-  <%= @requisicao.qtde_carteirinhas %>
-</p>
-
-<p>
-  <strong>Responsavel nome:</strong>
-  <%= @requisicao.responsavel_nome %>
-</p>
-
-<p>
-  <strong>Responsavel cpf:</strong>
-  <%= @requisicao.responsavel_cpf %>
-</p>
-
-<%= link_to 'Edit', edit_requisicao_path(@requisicao) %> |
-<%= link_to 'Back', requisicoes_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              requisicoes_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_requisicao_path(@requisicao), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              requisicao_path(@requisicao),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

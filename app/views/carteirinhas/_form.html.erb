@@ -15,31 +15,30 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :via, :class => 'control-label col-lg-2' %>
+  <div class="form-group">    
     <div class="col-lg-10">
-      <%= f.text_field :via, :class => 'form-control' %>
+      <%= f.hidden_field :via, :class => 'form-control', :maxlength => 1, :size => 1 %>
     </div>
     <%=f.error_span(:via) %>
   </div>
   <div class="form-group">
-    <%= f.label :status, :class => 'control-label col-lg-2' %>
+    
     <div class="col-lg-10">
-      <%= f.text_field :status, :class => 'form-control' %>
+      <%= f.hidden_field :status, :class => 'form-control' %>
     </div>
     <%=f.error_span(:status) %>
   </div>
   <div class="form-group">
     <%= f.label :categoria, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :categoria, :class => 'form-control' %>
+      <%= f.hidden_field :categoria, :class => 'form-control' %>
     </div>
     <%=f.error_span(:categoria) %>
   </div>
   <div class="form-group">
-    <%= f.label :data_vencimento, :class => 'control-label col-lg-2' %>
+    
     <div class="col-lg-10">
-      <%= f.text_field :data_vencimento, :class => 'form-control' %>
+      <%= f.hidden_field :data_vencimento, :class => 'form-control' %>
     </div>
     <%=f.error_span(:data_vencimento) %>
   </div>

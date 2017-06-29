@@ -1,35 +1,52 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Requisicoes</h1>
-
-<table>
+<%- model_class = Requisicao -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Data requisicao</th>
-      <th>Data emissao</th>
-      <th>Qtde carteirinhas</th>
-      <th>Responsavel nome</th>
-      <th>Responsavel cpf</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:data_requisicao) %></th>
+      <th><%= model_class.human_attribute_name(:data_emissao) %></th>
+      <th><%= model_class.human_attribute_name(:qtde_carteirinhas) %></th>
+      <th><%= model_class.human_attribute_name(:responsavel_nome) %></th>
+      <th><%= model_class.human_attribute_name(:responsavel_cpf) %></th>
+      <th><%= model_class.human_attribute_name(:categoria) %></th>
+      <th><%= model_class.human_attribute_name(:funcionario) %></th>
+      <th><%= model_class.human_attribute_name(:pessoa_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @requisicoes.each do |requisicao| %>
       <tr>
+        <td><%= link_to requisicao.id, requisicao_path(requisicao) %></td>
         <td><%= requisicao.data_requisicao %></td>
         <td><%= requisicao.data_emissao %></td>
         <td><%= requisicao.qtde_carteirinhas %></td>
         <td><%= requisicao.responsavel_nome %></td>
         <td><%= requisicao.responsavel_cpf %></td>
-        <td><%= link_to 'Show', requisicao %></td>
-        <td><%= link_to 'Edit', edit_requisicao_path(requisicao) %></td>
-        <td><%= link_to 'Destroy', requisicao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= requisicao.categoria %></td>
+        <td><%= requisicao.funcionario %></td>
+        <td><%= requisicao.pessoa_id %></td>
+        <td><%=l requisicao.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      requisicao_path(requisicao), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_requisicao_path(requisicao), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      requisicao_path(requisicao),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Requisicao', new_requisicao_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_requisicao_path,
+            :class => 'btn btn-primary' %>

@@ -3,7 +3,7 @@ class CreateCids < ActiveRecord::Migration[5.0]
     create_table :cids do |t|
       t.string :codigo
       t.string :nome_doenca
-      t.references :carteirinha, foreign_key: true
+      t.references :requisicao, foreign_key: true
 
       t.timestamps
     end
