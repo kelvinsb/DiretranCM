@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   # !LER redirecionar, mudar ainda
   def after_sign_in_path_for(resource)
     if(getPessoa() != nil)
-  	 dash_dashUsuario_path
+     dash_dashUsuario_path
     else
      new_pessoa_path
     end 
@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
   def isLogged()
     if usuario_signed_in?
       return dash_dashUsuario_path
-    elsif administrador_signed_in?
+    elsif current_usuario.try(:admin?)
        return dash_dashFuncionario_path
     else
       return usuario_session_path
