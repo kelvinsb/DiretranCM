@@ -76,6 +76,28 @@ class ApplicationController < ActionController::Base
     redirect_to isLogged()
   end
 
+  helper_method :returnReqq
+  def returnReqq()
+    @req = Requisicao.all
+    @reqId
+    @pes = Pessoa.all
+    @pesId
+    @retorno
+    @pes.each do |pes|
+      if pes.usuario_id == current_usuario.id
+        @pesId = pes.id
+      end
+    end
+    if @pesId == nil
+      return nil
+    end
+    @req.each do |req|
+      if req.pessoa_id == @pesId
+        return req.id
+      end
+    end
+    return nil
+  end
 
   #Pessoa init
   helper_method :returnPes
@@ -212,14 +234,15 @@ class ApplicationController < ActionController::Base
   #Carteirinha init
   helper_method :returnCar
   def returnCar()
-    @documentos = Carteirinha.all
-    @pessoaId = returnPes()
-    if @pessoaId != nil
-      @pessoa = Pessoa.find(@pessoaId)
+    @carteirinhas = Carteirinha.all
+
+    @reqId = returnReqq()
+    if @reqId != nil
+      @req = Requisicao.find(@reqId)
       #return @pessoa.id
       @retorno
-      @documentos.each do |itera|
-        if itera.pessoa_id == @pessoa.id
+      @carteirinhas.each do |itera|
+        if itera.requisicao_id == @req.id
            return itera.id
         else
           @retorno = nil

@@ -24,6 +24,11 @@
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
+      <p class="navbar-text pull-left">
+
+          Telefone: (44) <strong> 3017 - 1020</strong>
+        </p>
+
   		  <p class="navbar-text pull-right">
 
           <% if usuario_signed_in? %>
@@ -64,27 +69,27 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav col-lg-12">
       
-      <li class="<% if current_page?(dash_dashUsuario_url) %>active<% end %> col-lg-2" >
+      <li class="home<% if current_page?(dash_dashUsuario_url) %> ativo<% end %> col-lg-2" >
         <%= link_to "Página inicial", root_path %>
       </li>
-      <li  class="colorb color0<% if current_page?(edit_usuario_registration_path) %> active<% end %> col-lg-1" >
+      <li  class="colorb color0<% if current_page?(edit_usuario_registration_path) %> ativo<% end %> col-lg-1" >
         <%= link_to "Perfil",  edit_usuario_registration_path %>
       </li>
       
-      <li class="colorb color1<% if current_page?(returnPesEnd) %> active<% end %> col-lg-1" >
+      <li class="colorb color1<% if current_page?(returnPesEnd) %> ativo<% end %> col-lg-1" >
         <%= link_to "Pessoa", returnPesEnd %>
       </li>
-      <% if returnPes() != nil %>
-      <li class="colorb color2<% if current_page?(returnDocEnd) %> active<% end %> col-lg-2" >
-        <%= link_to "Documento", returnDocEnd %>
-      </li>
-     <li class="colorb color3<% if current_page?(returnEndEnd) %> active<% end %> col-lg-2" >
+     <li class="colorb color3<% if current_page?(returnEndEnd) %> ativo<% end %> col-lg-2" >
         <%= link_to "Endereço", returnEndEnd %>
       </li>
-      <li class="colorb color4<% if current_page?(returnReqEnd) %> active<% end %> col-lg-2" >
+      <% if returnPes() != nil %>
+      <li class="colorb color2<% if current_page?(returnDocEnd) %> ativo<% end %> col-lg-2" >
+        <%= link_to "Documento", returnDocEnd %>
+      </li>
+      <li class="colorb color4<% if current_page?(returnReqEnd) %> ativo<% end %> col-lg-2" >
         <%= link_to "Requisição", returnReqEnd %>
       </li>
-      <li class="colorb color5<% if current_page?(returnCarEnd) %> active<% end %> col-lg-2" >
+      <li class="colorb color5<% if current_page?(returnCarEnd) %> ativo<% end %> col-lg-2" >
         <%= link_to "Carteirinha", returnCarEnd %>
       </li>
       <% end %>

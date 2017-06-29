@@ -67,10 +67,12 @@
 {
   color: #FFFFFF !important;
 }
-.colorb.active,
-.colorb.active *
+.colorb.ativo
 {
-  background-color: #000000 !important;
+  border-width: 2px;
+  font-weight: bold;
+  font-size: 110%;
+  border-style: solid;
 }
 .navbar-nav .col-lg-2,
 .navbar-nav .col-lg-1
@@ -100,4 +102,12 @@ li.danger
   border-width: 1px;
   border-style: solid;
   margin-bottom: 1px;
+}
+.home
+{
+  background-color: #000000;
+}
+.home a
+{
+  color: #FFFFFF !important;
 }
