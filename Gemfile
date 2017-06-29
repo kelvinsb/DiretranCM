@@ -50,6 +50,9 @@ gem "correios-cep"
 #validate email
 gem "validates_email_format_of"
 
+gem 'prawn', '>= 2.2.2'
+gem 'prawnto', '>= 0.1.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -71,3 +74,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'twitter-bootstrap-rails'
+
+gem 'devise-bootstrap-views'

@@ -1,39 +1,50 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Enderecos</h1>
-
-<table>
+<%- model_class = Endereco -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Cep</th>
-      <th>Cidade</th>
-      <th>Bairro</th>
-      <th>Logradouro</th>
-      <th>Numero</th>
-      <th>Complemento</th>
-      <th>Pessoa</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:cep) %></th>
+      <th><%= model_class.human_attribute_name(:cidade) %></th>
+      <th><%= model_class.human_attribute_name(:bairro) %></th>
+      <th><%= model_class.human_attribute_name(:logradouro) %></th>
+      <th><%= model_class.human_attribute_name(:numero) %></th>
+      <th><%= model_class.human_attribute_name(:complemento) %></th>
+      <th><%= model_class.human_attribute_name(:pessoa_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @enderecos.each do |endereco| %>
       <tr>
+        <td><%= link_to endereco.id, endereco_path(endereco) %></td>
         <td><%= endereco.cep %></td>
         <td><%= endereco.cidade %></td>
         <td><%= endereco.bairro %></td>
         <td><%= endereco.logradouro %></td>
         <td><%= endereco.numero %></td>
         <td><%= endereco.complemento %></td>
-        <td><%= endereco.pessoa.id %></td>
-        <td><%= link_to 'Mostrar', endereco %></td>
-        <td><%= link_to 'Editar', edit_endereco_path(endereco) %></td>
-        <td><%= link_to 'Remover', endereco, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
+        <td><%= endereco.pessoa_id %></td>
+        <td><%=l endereco.created_at %></td>
+        <td>         
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_endereco_path(endereco), :class => 'btn btn-default btn-xs' %>
+          <% if administrador_signed_in? %>             
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      endereco_path(endereco),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+           <% end %>           
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Novo Endereço', new_endereco_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_endereco_path,
+            :class => 'btn btn-primary' %>

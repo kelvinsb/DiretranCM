@@ -1,39 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Endereco -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Cep:</strong>
-  <%= @endereco.cep %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:cep) %>:</strong></dt>
+  <dd><%= @endereco.cep %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cidade) %>:</strong></dt>
+  <dd><%= @endereco.cidade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:bairro) %>:</strong></dt>
+  <dd><%= @endereco.bairro %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:logradouro) %>:</strong></dt>
+  <dd><%= @endereco.logradouro %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero) %>:</strong></dt>
+  <dd><%= @endereco.numero %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:complemento) %>:</strong></dt>
+  <dd><%= @endereco.complemento %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pessoa_id) %>:</strong></dt>
+  <dd><%= @endereco.pessoa_id %></dd>
+</dl>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @endereco.cidade %>
-</p>
-
-<p>
-  <strong>Bairro:</strong>
-  <%= @endereco.bairro %>
-</p>
-
-<p>
-  <strong>Logradouro:</strong>
-  <%= @endereco.logradouro %>
-</p>
-
-<p>
-  <strong>Numero:</strong>
-  <%= @endereco.numero %>
-</p>
-
-<p>
-  <strong>Complemento:</strong>
-  <%= @endereco.complemento %>
-</p>
-
-<p>
-  <strong>Pessoa:</strong>
-  <%= @endereco.pessoa.id %>
-</p>
-
-<%= link_to 'Editar', edit_endereco_path(@endereco) %> |
-<%= link_to 'Voltar', enderecos_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              index_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_endereco_path(@endereco), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              endereco_path(@endereco),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
