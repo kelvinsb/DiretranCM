@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get "dash/dashUsuario", to: "dash#dashUsuario"
 
   root 'dash#index'
+  
 
-  devise_for :administradors
   devise_for :usuarios
 
   devise_scope :usuario do
