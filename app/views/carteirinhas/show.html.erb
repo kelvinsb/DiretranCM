@@ -1,24 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Carteirinha -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Via:</strong>
-  <%= @carteirinha.via %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:via) %>:</strong></dt>
+  <dd><%= @carteirinha.via %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @carteirinha.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:categoria) %>:</strong></dt>
+  <dd><%= @carteirinha.categoria %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data_vencimento) %>:</strong></dt>
+  <dd><%= @carteirinha.data_vencimento %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:requisicao_id) %>:</strong></dt>
+  <dd><%= @carteirinha.requisicao_id %></dd>
+</dl>
 
-<p>
-  <strong>Status:</strong>
-  <%= @carteirinha.status %>
-</p>
-
-<p>
-  <strong>Categoria:</strong>
-  <%= @carteirinha.categoria %>
-</p>
-
-<p>
-  <strong>Data vencimento:</strong>
-  <%= @carteirinha.data_vencimento %>
-</p>
-
-<%= link_to 'Edit', edit_carteirinha_path(@carteirinha) %> |
-<%= link_to 'Back', carteirinhas_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              carteirinhas_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_carteirinha_path(@carteirinha), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              carteirinha_path(@carteirinha),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

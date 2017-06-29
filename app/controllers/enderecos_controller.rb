@@ -27,7 +27,7 @@ class EnderecosController < ApplicationController
   # POST /enderecos.json
   def create
     @endereco = Endereco.new(endereco_params)
-    @endereco.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
+    @endereco.pessoa_id = current_usuario.id
 
 
 
