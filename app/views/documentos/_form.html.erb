@@ -19,7 +19,10 @@
     <%= f.label :cpf, "CPF", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <div class="col-lg-12">
+      <% if @documento.cpf_file_name != nil %>
         <%= image_tag @documento.cpf.url(:medium) %>
+      <% end %>
+        
       </div>
       <div class="col-lg-12">
         <%= f.file_field :cpf %>
@@ -32,7 +35,9 @@
     <%= f.label :rg, "RG", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <div class="col-lg-12">
-        <%= image_tag @documento.rg.url(:medium) %>
+        <% if @documento.rg_file_name != nil %>
+          <%= image_tag @documento.rg.url(:medium) %>
+        <% end %>
       </div>
       <div class="col-lg-12">
         <%= f.file_field :rg %>
@@ -40,11 +45,16 @@
     </div>
     <%=f.error_span(:pessoa_id) %>
   </div>
+
+  
+
   <div class="form-group">
     <%= f.label :foto, "Foto", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <div class="col-lg-12">
-        <%= image_tag @documento.foto.url(:medium) %>
+        <% if @documento.foto_file_name != nil %>
+          <%= image_tag @documento.foto.url(:medium) %>
+        <% end %>
       </div>
       <div class="col-lg-12">
         <%= f.file_field :foto %>
@@ -56,7 +66,9 @@
     <%= f.label :cid, "CID", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <div class="col-lg-12">
+      <% if @documento.cid_file_name != nil %>
         <%= image_tag @documento.cid.url(:medium) %>
+      <% end %>
       </div>
       <div class="col-lg-12">
         <%= f.file_field :cid %>
@@ -68,7 +80,9 @@
     <%= f.label :comp_residencia, "Comprovante de Residencia", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <div class="col-lg-12">
+      <% if @documento.comp_residencia_file_name != nil %>
         <%= image_tag @documento.comp_residencia.url(:medium) %>
+      <% end %>
       </div>
       <div class="col-lg-12">
         <%= f.file_field :comp_residencia %>
