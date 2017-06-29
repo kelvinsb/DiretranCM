@@ -1,5 +1,6 @@
 class Endereco < ApplicationRecord
   belongs_to :pessoa
+  has_one :pessoa
 
   validates :cep,
   presence:  {message: ": deve ser preenchido"},
