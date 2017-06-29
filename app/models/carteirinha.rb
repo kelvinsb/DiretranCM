@@ -1,3 +1,7 @@
 class Carteirinha < ApplicationRecord
-  belongs_to :cid
+  belongs_to :requisicao
+
+  validates :requisicao_id,
+  presence: true
+
 end

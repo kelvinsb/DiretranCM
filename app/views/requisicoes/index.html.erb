@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Requisicoes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data requisicao</th>
+      <th>Data emissao</th>
+      <th>Qtde carteirinhas</th>
+      <th>Responsavel nome</th>
+      <th>Responsavel cpf</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requisicoes.each do |requisicao| %>
+      <tr>
+        <td><%= requisicao.data_requisicao %></td>
+        <td><%= requisicao.data_emissao %></td>
+        <td><%= requisicao.qtde_carteirinhas %></td>
+        <td><%= requisicao.responsavel_nome %></td>
+        <td><%= requisicao.responsavel_cpf %></td>
+        <td><%= link_to 'Show', requisicao %></td>
+        <td><%= link_to 'Edit', edit_requisicao_path(requisicao) %></td>
+        <td><%= link_to 'Destroy', requisicao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Requisicao', new_requisicao_path %>

@@ -11,21 +11,27 @@
     </div>
   <% end %>
 
+  </br>
   <%= f.label :cpf, "CPF" %>
+  <%= image_tag @documento.cpf.url(:medium) %>
   <%= f.file_field :cpf %>
-
+  </br>
   <%= f.label :rg, "RG" %>
+  <%= image_tag @documento.rg.url(:medium) %>
   <%= f.file_field :rg %>
-
+  </br>
   <%= f.label :foto, "Foto" %>
+  <%= image_tag @documento.foto.url(:medium) %>
   <%= f.file_field :foto %>
-
+  </br>
   <%= f.label :cid, "CID" %>
+  <%= image_tag @documento.cid.url(:medium) %>
   <%= f.file_field :cid %>
-
+  </br>
   <%= f.label :cid, "Comprovante de Residencia" %>
+  <%= image_tag @documento.comp_residencia.url(:medium) %>
   <%= f.file_field :comp_residencia %>
-
+  </br>
   <div class="actions">
     <%= f.submit %>
   </div>

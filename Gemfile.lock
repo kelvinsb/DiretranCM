@@ -43,6 +43,7 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
+    choice (0.2.0)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -117,12 +118,6 @@ GEM
       mimemagic (= 0.3.0)
     pdf-core (0.7.0)
     pg (0.20.0)
-    prawn (2.2.2)
-      pdf-core (~> 0.7.0)
-      ttfunk (~> 1.5)
-    prawnto (0.1.1)
-      prawn
-      rails (>= 2.1)
     puma (3.8.2)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -142,6 +137,11 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-erd (1.5.2)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     railties (5.0.3)
@@ -174,6 +174,7 @@ GEM
       rspec-mocks (~> 3.6.0)
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
+    ruby-graphviz (1.2.3)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -239,10 +240,9 @@ DEPENDENCIES
   meiomask-rails
   paperclip (~> 4.2)
   pg (~> 0.18)
-  prawn (>= 2.2.2)
-  prawnto (>= 0.1.1)
   puma (~> 3.0)
   rails (~> 5.0.3)
+  rails-erd
   rspec-rails
   sass-rails (~> 5.0)
   spring
