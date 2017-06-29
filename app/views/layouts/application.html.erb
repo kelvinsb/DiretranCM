@@ -22,10 +22,10 @@
       <div class="hidden-xs hidden-sm col-md-2 col-lg-2">
           <%= image_tag 'prefeitura_logo.png' %>
       </div>
+
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
+        <p class="navbar-text pull-left"> <strong> Rua Harrison José Borges - 1360 - Anexo à casa do empreeendedor</strong></p>
   		  <p class="navbar-text pull-right">
-
           <% if usuario_signed_in? %>
             Entrou como: <strong><%= pessoa = getPessoa()
                                     if (pessoa != nil)
@@ -56,21 +56,21 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    
+
   </div>
 
-  
+
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav col-lg-12">
-      
+
       <li class="<% if current_page?(dash_dashUsuario_url) %>active<% end %> col-lg-2" >
         <%= link_to "Página inicial", root_path %>
       </li>
       <li  class="colorb color0<% if current_page?(edit_usuario_registration_path) %> active<% end %> col-lg-1" >
         <%= link_to "Perfil",  edit_usuario_registration_path %>
       </li>
-      
+
       <li class="colorb color1<% if current_page?(returnPesEnd) %> active<% end %> col-lg-1" >
         <%= link_to "Pessoa", returnPesEnd %>
       </li>
@@ -88,11 +88,11 @@
         <%= link_to "Carteirinha", returnCarEnd %>
       </li>
       <% end %>
-      
-      
+
+
     </ul>
-    
-    
+
+
   </div><!-- /.navbar-collapse -->
 
 </nav><% end %>
