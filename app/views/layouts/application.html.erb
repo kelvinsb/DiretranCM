@@ -15,7 +15,7 @@
       <div class="navbar-logo">
       <h4 class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
 
-            <%= image_tag 'prefeitura_logo.png' %>
+            <%= image_tag 'brasao_diretran.png' %>
       </h4>
       </div>
       <div class="navbar-header" >
@@ -26,8 +26,15 @@
         </h1>
       </div>
 
+      <div class="navbar-logo">
+      <h4 class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+
+            <%= image_tag 'prefeitura_logo.png' %>
+      </h4>
+      </div>
+
 		  <p class="navbar-text pull-right">
-        
+
         <% if usuario_signed_in? %>
           Entrou como: <strong><%= pessoa = getPessoa()
                                   if (pessoa != nil)

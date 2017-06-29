@@ -1,6 +1,5 @@
-<h1>Editing Cid</h1>
-
-<%= render 'form', cid: @cid %>
-
-<%= link_to 'Show', @cid %> |
-<%= link_to 'Back', cids_path %>
+<%- model_class = Cid -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>
