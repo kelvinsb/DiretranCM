@@ -118,6 +118,12 @@ GEM
       mimemagic (= 0.3.0)
     pdf-core (0.7.0)
     pg (0.20.0)
+    prawn (2.2.2)
+      pdf-core (~> 0.7.0)
+      ttfunk (~> 1.5)
+    prawnto (0.1.1)
+      prawn
+      rails (>= 2.1)
     puma (3.8.2)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -240,6 +246,8 @@ DEPENDENCIES
   meiomask-rails
   paperclip (~> 4.2)
   pg (~> 0.18)
+  prawn (>= 2.2.2)
+  prawnto (>= 0.1.1)
   puma (~> 3.0)
   rails (~> 5.0.3)
   rails-erd
