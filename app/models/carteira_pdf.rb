@@ -1,0 +1,2 @@
+class CarteiraPdf < ApplicationRecord
+end

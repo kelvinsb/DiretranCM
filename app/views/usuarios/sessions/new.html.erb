@@ -5,8 +5,10 @@
     <div class="row">
         <div class="col-md-offset-5 col-md-3">
             <div class="form-login">
-
                 <h2><%=I18n.t'log_sess_new'%> </h2>
+                <%= devise_error_messages! %>
+                  <br>
+                  <br>
 
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                   <div class="field" id="userName" class="form-control input-sm chat-input">
@@ -35,9 +37,13 @@
                 <% end %>
                 </span>
             </div>
-            </div>
+          </div>
+          <h4>
+          <%= render "usuarios/shared/links" %>
+          </h4>
+        </div>
+      </div>
+    </div>
                
-              <h4>
-                <%= render "usuarios/shared/links" %>
-              </h4>
+    
 

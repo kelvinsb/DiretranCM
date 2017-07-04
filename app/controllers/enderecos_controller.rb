@@ -1,7 +1,9 @@
 class EnderecosController < ApplicationController
   before_action :set_endereco, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_usuario!, only: [:show, :update, :index]
-  before_action :authenticate_administrador!, only: [:destroy]
+  before_action :authenticate_usuario!, only: [:show, :new, :edit]
+  before_action :authAdmin, only: [:index, :destroy]
+  #before_action :authenticate_usuario!, only: [:show, :update, :index]
+
 
   # GET /enderecos
   # GET /enderecos.json
@@ -27,8 +29,7 @@ class EnderecosController < ApplicationController
   # POST /enderecos.json
   def create
     @endereco = Endereco.new(endereco_params)
-    @endereco.pessoa_id = current_usuario.id
-
+    @endereco.pessoa_id = returnPes()
 
 
     #require 'correios-cep'
@@ -56,7 +57,8 @@ class EnderecosController < ApplicationController
   def update
     respond_to do |format|
       if @endereco.update(endereco_params)
-        format.html { redirect_to edit_documento_path}
+        format.html { redirect_to returnDocEnd()}
+        #edit_documento_path
         # format.html { redirect_to @endereco, notice: 'Endereco editado com sucesso.' }
         # format.json { render :show, status: :ok, location: @endereco }
       else
@@ -69,6 +71,7 @@ class EnderecosController < ApplicationController
   # DELETE /enderecos/1
   # DELETE /enderecos/1.json
   def destroy
+    @endereco = Endereco.find(params[:id])
     @endereco.destroy
     respond_to do |format|
       format.html { redirect_to enderecos_url, notice: 'Endereco apagado com sucesso.' }

@@ -15,3 +15,10 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+
+
+function closeDiv(id)
+{
+	document.getElementById(id).className = "hide";
+}

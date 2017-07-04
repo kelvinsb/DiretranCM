@@ -167,7 +167,8 @@ excess_text = pdf.text_box string,
 	:at => [385, 485],
 	:size => 9
 
-string = "Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira 333"
+#string = "Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira 333"
+string = getPessoa().nome
 excess_text = pdf.text_box string,
 	:at => [477, 490],
 	:size => 15,
@@ -180,7 +181,8 @@ excess_text = pdf.text_box string,
 	:at => [390, 453],
 	:size => 9
 
-string = "1234667891011"
+#string = "1234667891011"
+string = getPessoa().rg
 excess_text = pdf.text_box string,
 	:at => [408, 455],
 	:size => 12

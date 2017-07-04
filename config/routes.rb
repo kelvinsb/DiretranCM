@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'msg/index'
+
   resources :cids
   resources :carteirinhas
   resources :requisicoes

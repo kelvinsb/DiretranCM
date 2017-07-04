@@ -1,5 +1,8 @@
 class CarteirinhasController < ApplicationController
   before_action :set_carteirinha, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_usuario!, only: [:show, :new, :edit]
+  before_action :authAdmin, only: [:index, :destroy]
+
 
   # GET /carteirinhas
   # GET /carteirinhas.json
@@ -25,21 +28,31 @@ class CarteirinhasController < ApplicationController
   # POST /carteirinhas.json
   def create
     @carteirinha = Carteirinha.new(carteirinha_params)
-    @carteirinha.requisicao_id = current_usuario.id
+    @carteirinha.requisicao_id = returnReq()
 
-    respond_to do |format|
-      if @carteirinha.save
-        #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully created.' }
-        #format.json { render :show, status: :created, location: @carteirinha }
-        if @carteirinha.categoria == "Deficiente" || @carteirinha.categoria == "Deficente temporário"
-          format.html { redirect_to new_cid_path }
+    if @carteirinha.via == nil
+      @carteirinha.via = 0
+    else
+      @carteirinha.via = 2
+    end
+    @carteirinha.status = "Analise"
+    @carteirinha.categoria = Requisicao.find(returnReq()).categoria
+
+    if ( returnPes() != nil ) && ( returnEnd() != nil ) && ( returnDoc() != nil ) && ( returnReq() != nil )
+      respond_to do |format|
+        if @carteirinha.save
+          #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully created.' }
+          #format.json { render :show, status: :created, location: @carteirinha }
+          if @carteirinha.categoria == "Deficiente" || @carteirinha.categoria == "Deficente temporário"
+            format.html { redirect_to new_cid_path }
+          else
+            format.html {redirect_to root_path}
+          end
+          
         else
-          format.html {redirect_to root_path}
+          format.html { render :new }
+          format.json { render json: @carteirinha.errors, status: :unprocessable_entity }
         end
-        
-      else
-        format.html { render :new }
-        format.json { render json: @carteirinha.errors, status: :unprocessable_entity }
       end
     end
   end

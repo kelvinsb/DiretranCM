@@ -96,12 +96,22 @@
 {
   color: #000000;
 }
+.lista-dash li
+{
+  border-width: 1px;
+  border-style: solid;
+  padding: 15px;
+  font-size: 200%;
+  text-align: center;
+  list-style-type: none;
+}
 li.danger
 {
   background-color: #f2dede;
-  border-width: 1px;
-  border-style: solid;
-  margin-bottom: 1px;
+}
+li.info
+{
+  background-color: #D9EDF7;
 }
 .home
 {
@@ -110,4 +120,22 @@ li.danger
 .home a
 {
   color: #FFFFFF !important;
+}
+a.btn-primary
+{
+  color: #FFFFFF !important;
+}
+#flash_alert
+{
+  float: left;
+}
+.close-div
+{
+  text-align: right;
+}
+.dev-alert
+{
+  list-style-type: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
