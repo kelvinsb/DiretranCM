@@ -1,23 +1,27 @@
 
+
+
 <div class="row" id="dashquadrados">
 
 	<div class="col-xs-12 col-lg-12 col-md-12">
-		<ul>
+		<ul class="lista-dash">
 			<% if returnPes==nil %>
 			<li class="danger">Falta Adicionar Dados Pessoais</li>
-			<% end %>
-			<% if returnDoc==nil %>
-			<li class="danger">Falta Adicionar Documentos</li>
 			<% end %>
 			<% if returnEnd==nil %>
 			<li class="danger">Falta Adicionar Dados Do Endereço</li>
 			<% end %>
+			<% if returnDoc==nil %>
+			<li class="danger">Falta Adicionar Documentos</li>
+			<% end %>
 			<% if returnReq==nil %>
-			<li class="danger">Falta Adicionar Requerimento</li>
+			<li class="danger">Falta Adicionar Requisição</li>
+			<% end %>
+			<% if (returnCar!=nil) %>
+			<li class="info">A carteirinha foi requisitada, aguarde a resposta!</li>
+			<% elsif (returnPes!=nil) && (returnEnd!=nil) && (returnDoc!=nil) && (returnReq!=nil) %>
+			<li class="info">A carteirinha está disponível para ser requisitada</li>
 			<% end %>
 		</ul>
   	</div>
-</div>
-
-
 </div>

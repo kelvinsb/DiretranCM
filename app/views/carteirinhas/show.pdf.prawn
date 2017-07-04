@@ -186,6 +186,10 @@ excess_text = pdf.text_box string,
 	:at => [390, 453],
 	:size => 9
 
+<<<<<<< HEAD:app/views/carteirinhas/show.pdf.prawn
+=======
+#string = "1234667891011"
+>>>>>>> bade0b8005968355ef74bfcdfd24b92e9ff0909f:app/views/pessoas/show.pdf.prawn
 string = getPessoa().rg
 excess_text = pdf.text_box string,
 	:at => [408, 455],

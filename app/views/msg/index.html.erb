@@ -1,0 +1,25 @@
+<% flash.each do |name, msg| %>
+  <div class="container">
+  	  <div class="row" id="showMsgError">
+	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center alert-danger">
+	    <% if msg.class == Array %>
+	      <% msg.each do |message| %>
+	        <%= content_tag :div, message, :id => "flash_#{name}" %>
+	      <% end %>
+	    <% else %>
+
+	      <%= content_tag :div, msg, :id => "flash_#{name}", :class => "col-xs-11 col-sm-11 col-md-11 col-lg-11" %>
+
+	    <% end %>
+	      <a href="#" onclick="closeDiv(showMsgError)">
+	        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right close-div">
+	          x
+	        </div>
+	      </a>
+	      
+	     </div>
+	  </div>
+  </div>
+
+  
+  <% end %>

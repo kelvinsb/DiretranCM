@@ -1,5 +1,7 @@
 class DocumentosController < ApplicationController
   before_action :set_documento, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_usuario!, only: [:show, :new, :edit]
+  before_action :authAdmin, only: [:index, :destroy]
 
   # GET /documentos
   # GET /documentos.json
@@ -25,13 +27,16 @@ class DocumentosController < ApplicationController
   # POST /documentos.json
   def create
     @documento = Documento.new(documento_params)
-    @documento.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
+    @documento.pessoa_id = returnPes()
+
+    #@documento.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
 
     respond_to do |format|
       if @documento.save
         #format.html { redirect_to @documento, notice: 'Documento was successfully created.' }
         #format.json { render :show, status: :created, location: @documento }
-        format.html { redirect_to new_requisicao_path }
+        format.html { redirect_to new_requisicao_path, notice: "Documento criado" }
+        #new_requisicao_path
       else
         format.html { render :new }
         format.json { render json: @documento.errors, status: :unprocessable_entity }
@@ -46,7 +51,7 @@ class DocumentosController < ApplicationController
       if @documento.update(documento_params)
         #format.html { redirect_to @documento, notice: 'Documento was successfully updated.' }
         #format.json { render :show, status: :ok, location: @documento }
-        format.html { redirect_to root_path }
+        format.html { redirect_to returnReqEnd() }
       else
         format.html { render :edit }
         format.json { render json: @documento.errors, status: :unprocessable_entity }
@@ -72,6 +77,7 @@ class DocumentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def documento_params
-      params.fetch(:documento).permit(:cpf, :rg, :foto, :cid, :comp_residencia, :pessoa_id)
+      params.require(:documento).permit(:cpf, :rg, :foto, :cid, :comp_residencia, :pessoa_id)
+      #fetch or require
     end
 end
