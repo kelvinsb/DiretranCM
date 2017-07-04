@@ -10,51 +10,94 @@
 
   <body>
 
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default topo">
     <div class="container-fluid">
       <div class="navbar-logo">
-      <h4 class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
-
-            <%= image_tag 'brasao_diretran.png' %>
-      </h4>
+        <div class="hidden-xs hidden-sm col-md-4 col-lg-2">
+          <%= image_tag 'brasao_diretran.png' %>
+        </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+        <h1><%=  link_to "Prefeitura de Campo Mourão Diretoria de trânsito - Diretran", root_path %></h1>
       </div>
-      <div class="navbar-header" >
-       <h1>
-        <%=  link_to "Prefeitura de Campo Mourão", root_path,  :class => 'navbar-brand'  %>
-        </br>
-        <%=  link_to "Diretoria de trânsito - Diretran", root_path,  :class => 'navbar-brand'  %>
-        </h1>
+      <div class="hidden-xs hidden-sm col-md-2 col-lg-2">
+          <%= image_tag 'prefeitura_logo.png' %>
       </div>
 
-      <div class="navbar-logo">
-      <h4 class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
 
-            <%= image_tag 'prefeitura_logo.png' %>
-      </h4>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p class="navbar-text pull-left"> <strong> Rua Harrison José Borges - 1360 - Anexo à casa do empreeendedor</strong></p>
+  		  <p class="navbar-text pull-right">
+          <% if usuario_signed_in? %>
+            Entrou como: <strong><%= pessoa = getPessoa()
+                                    if (pessoa != nil)
+                                        pessoa.nome
+                                      else
+                                        current_usuario.cpf
+                                      end
+                                     %></strong>.
+            <%= link_to 'Editar perfil', edit_usuario_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "Sair", destroy_usuario_session_path, method: :delete, :class => 'navbar-link'  %>
+          <% else %>
+            <%= link_to "Cadastrar", new_usuario_registration_path, :class => 'navbar-link'  %> |
+            <%= link_to "Entrar", new_usuario_session_path, :class => 'navbar-link'  %>
+          <% end %>
+        </p>
       </div>
-
-		  <p class="navbar-text pull-right">
-
-        <% if usuario_signed_in? %>
-          Entrou como: <strong><%= pessoa = getPessoa()
-                                  if (pessoa != nil)
-                                      pessoa.nome
-                                    else
-                                      current_usuario.cpf
-                                    end
-                                   %></strong>.
-          <%= link_to 'Editar perfil', edit_usuario_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Sair", destroy_usuario_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-          <%= link_to "Cadastrar", new_usuario_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Entrar", new_usuario_session_path, :class => 'navbar-link'  %>
-        <% end %>
-      </p>
-
 
   		</div>
   	</div>
   </nav>
+<% if usuario_signed_in? %>
+  <nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+  </div>
+
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav col-lg-12">
+      
+      <li class="home<% if current_page?(dash_dashUsuario_url) %> ativo<% end %> col-lg-2" >
+
+        <%= link_to "Página inicial", root_path %>
+      </li>
+      <li  class="colorb color0<% if current_page?(edit_usuario_registration_path) %> ativo<% end %> col-lg-1" >
+        <%= link_to "Perfil",  edit_usuario_registration_path %>
+      </li>
+
+      <li class="colorb color1<% if current_page?(returnPesEnd) %> active<% end %> col-lg-1" >
+        <%= link_to "Pessoa", returnPesEnd %>
+      </li>
+     <li class="colorb color3<% if current_page?(returnEndEnd) %> ativo<% end %> col-lg-2" >
+        <%= link_to "Endereço", returnEndEnd %>
+      </li>
+      <% if returnPes() != nil %>
+      <li class="colorb color2<% if current_page?(returnDocEnd) %> ativo<% end %> col-lg-2" >
+        <%= link_to "Documento", returnDocEnd %>
+      </li>
+      <li class="colorb color4<% if current_page?(returnReqEnd) %> ativo<% end %> col-lg-2" >
+        <%= link_to "Requisição", returnReqEnd %>
+      </li>
+      <li class="colorb color5<% if current_page?(returnCarEnd) %> ativo<% end %> col-lg-2" >
+        <%= link_to "Carteirinha", returnCarEnd %>
+      </li>
+      <% end %>
+
+
+    </ul>
+
+
+  </div><!-- /.navbar-collapse -->
+
+</nav><% end %>
 
     <%= yield %>
   </body>

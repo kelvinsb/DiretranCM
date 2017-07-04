@@ -57,6 +57,11 @@ end
 ################### FRENTE #####################
 ################################################
 
+#marca d'agua
+logo_path =  "#{Rails.root}/app/assets/images/simbolo_deficiente_fisico-sombra.jpg"
+pdf.image logo_path, :at => [120,440], :scale => 1.6
+
+
 #estacionamento escrito em branco e rotacionado
 pdf.fill_color(0,0,0,0)
 pdf.rotate(90, :origin => [35, 255]) do
