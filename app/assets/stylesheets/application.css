@@ -139,3 +139,12 @@ a.btn-primary
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.usuario-div
+{
+  background-color: #CCCCCC;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px;
+  margin-bottom: 2px;
+}

@@ -18,7 +18,11 @@
   <div class="form-group">
     <%= f.label :categoria, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
+    <% if ( returnCar() == nil ) %>
       <%= f.select :categoria, ["Idoso", "Deficiente", "Deficente temporário"] %>
+    <% else %>
+      <%= @requisicao.categoria %>
+    <% end %>
     </div>
     <%=f.error_span(:categoria) %>
   <div class="form-group">    

@@ -64,7 +64,8 @@ class RequisicoesController < ApplicationController
   def update
     respond_to do |format|
       if @requisicao.update(requisicao_params)
-        format.html { redirect_to @requisicao, notice: 'Requisição criada com sucesso.' }
+        format.html { redirect_to returnCarEnd()}
+        #format.html { redirect_to @requisicao, notice: 'Requisição criada com sucesso.' }
         format.json { render :show, status: :ok, location: @requisicao }
       else
         format.html { render :edit }
