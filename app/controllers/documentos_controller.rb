@@ -51,7 +51,7 @@ class DocumentosController < ApplicationController
       if @documento.update(documento_params)
         #format.html { redirect_to @documento, notice: 'Documento was successfully updated.' }
         #format.json { render :show, status: :ok, location: @documento }
-        format.html { redirect_to returnReqEnd() }
+        format.html { redirect_to edit_requisicao_path }
       else
         format.html { render :edit }
         format.json { render json: @documento.errors, status: :unprocessable_entity }

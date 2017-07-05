@@ -3,7 +3,6 @@ class RequisicoesController < ApplicationController
   before_action :authenticate_usuario!, only: [:show, :new, :edit]
   before_action :authAdmin, only: [:index, :destroy]
 
-  
   # GET /requisicoes
   # GET /requisicoes.json
   def index
@@ -44,13 +43,13 @@ class RequisicoesController < ApplicationController
 
     respond_to do |format|
       if @requisicao.save
-          
+
         #format.html { redirect_to @requisicao, notice: 'Requisicao was successfully created.' }
         #format.json { render :show, status: :created, location: @requisicao }
         if @requisicao.categoria == "Deficiente" || @requisicao.categoria == "Deficente temporário"
           format.html { redirect_to new_cid_path }
         else
-          format.html {redirect_to root_path}
+          format.html {redirect_to new_carteirinha_path}
         end
       else
         format.html { render :new }
@@ -64,8 +63,13 @@ class RequisicoesController < ApplicationController
   def update
     respond_to do |format|
       if @requisicao.update(requisicao_params)
-        format.html { redirect_to @requisicao, notice: 'Requisição criada com sucesso.' }
-        format.json { render :show, status: :ok, location: @requisicao }
+        #format.html { redirect_to @requisicao, notice: 'Requisicao was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @requisicao }
+        if @requisicao.categoria == "Deficiente" || @requisicao.categoria == "Deficente temporário"
+          format.html { redirect_to edit_cid_path }
+        else
+          format.html {redirect_to edit_carteirinha_path}
+        end
       else
         format.html { render :edit }
         format.json { render json: @requisicao.errors, status: :unprocessable_entity }
