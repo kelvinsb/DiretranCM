@@ -18,35 +18,35 @@
   <div class="form-group">
     <%= f.label :cep, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :cep, :class => 'form-control', :maxlength => 8, :size => 8 %>
+      <%= f.text_field :cep, :class => 'form-control', :maxlength => 8, :size => 8 %> <font color="red" size="5"> * </font>
     </div>
     <%=f.error_span(:cep) %>
   </div>
   <div class="form-group">
     <%= f.label :cidade, :class => 'control-label col-lg-2'%>
     <div class="col-lg-10">
-      <%= f.text_field :cidade, :class => 'form-control', :maxlength => 80, :size => 30 %>
+      <%= f.text_field :cidade, :class => 'form-control', :maxlength => 80, :size => 30 %> <font color="red" size="5"> * </font>
     </div>
     <%=f.error_span(:cidade) %>
   </div>
   <div class="form-group">
     <%= f.label :bairro, :class => 'control-label col-lg-2'%>
     <div class="col-lg-10">
-      <%= f.text_field :bairro, :class => 'form-control', :maxlength => 25, :size => 25  %>
+      <%= f.text_field :bairro, :class => 'form-control', :maxlength => 25, :size => 25  %> <font color="red" size="5"> * </font>
     </div>
     <%=f.error_span(:bairro) %>
   </div>
   <div class="form-group">
     <%= f.label :logradouro, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :logradouro, :class => 'form-control', :maxlength => 80, :size => 30 %>
+      <%= f.text_field :logradouro, :class => 'form-control', :maxlength => 80, :size => 30 %> <font color="red" size="5"> * </font>
     </div>
     <%=f.error_span(:logradouro) %>
   </div>
   <div class="form-group">
     <%= f.label :numero, :class => 'control-label col-lg-2'%>
     <div class="col-lg-10">
-      <%= f.text_field :numero, :class => 'form-control', :maxlength => 4, :size => 4  %>
+      <%= f.text_field :numero, :class => 'form-control', :maxlength => 4, :size => 4  %> <font color="red" size="5"> * </font>
     </div>
     <%=f.error_span(:numero) %>
   </div>
