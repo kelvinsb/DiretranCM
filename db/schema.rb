@@ -15,6 +15,11 @@ ActiveRecord::Schema.define(version: 20170704012252) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "carteira_pdfs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "carteirinhas", force: :cascade do |t|
     t.string   "via"
     t.string   "status"
@@ -29,10 +34,10 @@ ActiveRecord::Schema.define(version: 20170704012252) do
   create_table "cids", force: :cascade do |t|
     t.string   "codigo"
     t.string   "nome_doenca"
-    t.integer  "requisicao_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["requisicao_id"], name: "index_cids_on_requisicao_id", using: :btree
+    t.integer  "carteirinha_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["carteirinha_id"], name: "index_cids_on_carteirinha_id", using: :btree
   end
 
   create_table "documentos", force: :cascade do |t|
@@ -116,16 +121,22 @@ ActiveRecord::Schema.define(version: 20170704012252) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.integer  "enderecos_id"
+    t.integer  "pessoas_id"
     t.boolean  "admin",                  default: false
     t.boolean  "funcionario",            default: false
     t.index ["cpf"], name: "index_usuarios_on_cpf", unique: true, using: :btree
+    t.index ["enderecos_id"], name: "index_usuarios_on_enderecos_id", using: :btree
+    t.index ["pessoas_id"], name: "index_usuarios_on_pessoas_id", using: :btree
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "carteirinhas", "requisicoes"
-  add_foreign_key "cids", "requisicoes"
+  add_foreign_key "cids", "carteirinhas"
   add_foreign_key "documentos", "pessoas"
   add_foreign_key "enderecos", "pessoas"
   add_foreign_key "pessoas", "usuarios"
   add_foreign_key "requisicoes", "pessoas"
+  add_foreign_key "usuarios", "enderecos", column: "enderecos_id"
+  add_foreign_key "usuarios", "pessoas", column: "pessoas_id"
 end

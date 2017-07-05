@@ -31,9 +31,14 @@
   <div class="form-group">
     <%= f.label :categoria, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.hidden_field :categoria, :class => 'form-control' %>
+      <%
+      @requisicao = Requisicao.find(returnReq())
+      %>
+      <%= @requisicao.categoria %>
+       
+      <%#= f.hidden_field :categoria, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:categoria) %>
+    <%#=f.error_span(:categoria) %>
   </div>
   <div class="form-group">
     
@@ -44,7 +49,7 @@
   </div>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= f.submit "Requerer carteirinha", :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 carteirinhas_path, :class => 'btn btn-default' %>
     </div>

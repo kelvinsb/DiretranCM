@@ -1,5 +1,7 @@
 class RequisicoesController < ApplicationController
   before_action :set_requisicao, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_usuario!, only: [:show, :new, :edit]
+  before_action :authAdmin, only: [:index, :destroy]
 
   # GET /requisicoes
   # GET /requisicoes.json
@@ -26,6 +28,18 @@ class RequisicoesController < ApplicationController
   def create
     @requisicao = Requisicao.new(requisicao_params)
     @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
+
+    #@requisicao.data_emissao quando aprovar
+    @requisicao.data_requisicao = Date.current
+    if @requisicao.qtde_carteirinhas == nil
+      @requisicao.qtde_carteirinhas = 0
+    else
+      @requisicao.qtde_carteirinhas = @requisicao.qtde_carteirinhas + 1
+    end
+      
+    #@requisicao.funcionario quando for aprovado
+
+    #Data requisicao, data emissao, qtd carteirinhas, funcionario
 
     respond_to do |format|
       if @requisicao.save

@@ -1,5 +1,9 @@
 class PessoasController < ApplicationController
   before_action :set_pessoa, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_usuario!, only: [:show, :new, :edit]
+  before_action :authAdmin, only: [:index, :destroy]
+
+
 
   # GET /pessoas
   # GET /pessoas.json
@@ -27,6 +31,8 @@ class PessoasController < ApplicationController
     @pessoa = Pessoa.new(pessoa_params)
     @pessoa.usuario_id=current_usuario.id
 
+    #alterPessoa(@pessoa)
+
     respond_to do |format|
       if @pessoa.save
         format.html { redirect_to new_endereco_path }
@@ -45,7 +51,9 @@ class PessoasController < ApplicationController
     respond_to do |format|
       if @pessoa.update(pessoa_params)
         #format.html { render :edit, notice: 'Atualizado com sucesso.' }
-        format.html {redirect_to edit_endereco_path}
+        #format.html {redirect_to new_endereco_path, notice: 'Dados pessoais atualizados com sucesso'}
+        format.html {redirect_to returnEndIf(), notice: 'Dados pessoais atualizados com sucesso'}
+        
         #format.html { redirect_to @pessoa, notice: 'Atualizado com sucesso.' }
         #format.json { render :show, status: :ok, location: @pessoa }
       else

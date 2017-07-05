@@ -17,12 +17,11 @@
           <%= image_tag 'brasao_diretran.png' %>
         </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-        <h1><%=  link_to "Prefeitura de Campo Mourão Diretoria de trânsito - Diretran", root_path %></h1>
+        <h1><%=  link_to "Prefeitura de Campo Mourão Diretoria de Trânsito - Diretran", root_path %></h1>
       </div>
       <div class="hidden-xs hidden-sm col-md-2 col-lg-2">
           <%= image_tag 'prefeitura_logo.png' %>
       </div>
-
 
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <p class="navbar-text pull-left"> <strong> Rua Harrison José Borges - 1360 - Anexo à casa do empreeendedor</strong></p>
@@ -47,7 +46,9 @@
   		</div>
   	</div>
   </nav>
-<% if usuario_signed_in? %>
+     
+<% if current_usuario.try(:admin?) %>
+
   <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -73,7 +74,60 @@
         <%= link_to "Perfil",  edit_usuario_registration_path %>
       </li>
 
-      <li class="colorb color1<% if current_page?(returnPesEnd) %> active<% end %> col-lg-1" >
+      <li class="colorb color1<% if current_page?(pessoas_path) %> ativo<% end %> col-lg-1" >
+        <%= link_to "Pessoas", pessoas_path %>
+      </li>
+     <li class="colorb color3<% if current_page?(enderecos_path) %> ativo<% end %> col-lg-2" >
+        <%= link_to "Endereço", enderecos_path %>
+      </li>
+      <li class="colorb color2<% if current_page?(documentos_path) %> ativo<% end %> col-lg-2" >
+        <%= link_to "Documento", documentos_path %>
+      </li>
+      <li class="colorb color4<% if current_page?(requisicoes_path) %> ativo<% end %> col-lg-2" >
+        <%= link_to "Requisição", requisicoes_path %>
+      </li>
+      <li class="colorb color5<% if current_page?(carteirinhas_path) %> ativo<% end %> col-lg-2" >
+        <%= link_to "Carteirinha", carteirinhas_path %>
+      </li>
+
+
+    </ul>
+
+
+  </div><!-- /.navbar-collapse -->
+
+</nav>
+
+
+
+
+<% elsif usuario_signed_in? %>
+  <nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+  </div>
+
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav col-lg-12">
+      
+      <li class="home<% if current_page?(dash_dashUsuario_url) %> ativo<% end %> col-lg-2" >
+
+        <%= link_to "Página inicial", root_path %>
+      </li>
+      <li  class="colorb color0<% if current_page?(edit_usuario_registration_path) %> ativo<% end %> col-lg-1" >
+        <%= link_to "Perfil",  edit_usuario_registration_path %>
+      </li>
+
+      <li class="colorb color1<% if current_page?(returnPesEnd) %> ativo<% end %> col-lg-1" >
         <%= link_to "Pessoa", returnPesEnd %>
       </li>
      <li class="colorb color3<% if current_page?(returnEndEnd) %> ativo<% end %> col-lg-2" >
@@ -98,6 +152,29 @@
   </div><!-- /.navbar-collapse -->
 
 </nav><% end %>
+
+<% flash.each do |name, msg| %>
+  <div class="row" id="showMsgError">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center btn btn-info">
+    <% if msg.class == Array %>
+      <% msg.each do |message| %>
+        <%= content_tag :div, message, :id => "flash_#{name}" %>
+      <% end %>
+    <% else %>
+
+      <%= content_tag :div, msg, :id => "flash_#{name}", :class => "col-xs-11 col-sm-11 col-md-11 col-lg-11" %>
+
+    <% end %>
+      <a href="#" onclick="closeDiv(showMsgError)">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right close-div">
+          x
+        </div>
+      </a>
+      
+     </div>
+  </div>
+  
+  <% end %>
 
     <%= yield %>
   </body>

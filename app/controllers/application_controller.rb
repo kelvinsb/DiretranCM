@@ -28,8 +28,18 @@ class ApplicationController < ActionController::Base
   end
 
 
-
-
+  helper_method :getPessoaById
+  def getPessoaById()
+    +
+    @Pessoas = Pessoa.all
+    @Pessoas.each do |pessoa|
+      if pessoa.usuario_id == current_usuario.id
+        return pessoa
+      end
+    end
+    return nil
+  end
+  
   helper_method :getUserId
   def getUserId(idDeviseUser)
     @Pessoas = Pessoa.all
@@ -41,6 +51,14 @@ class ApplicationController < ActionController::Base
     return 0
   end
 
+  helper_method :authAdmin
+  def authAdmin()
+    if current_usuario.try(:admin?)
+      true
+    else
+      redirect_to root_path
+    end 
+  end
 
 
   helper_method :verifyUser
@@ -57,18 +75,16 @@ class ApplicationController < ActionController::Base
 
   helper_method :isLogged
   def isLogged()
-    if usuario_signed_in?
+    if current_usuario.try(:admin?)
+      return dash_dashFuncionario_path
+    elsif current_usuario.try(:funcionario?)
+      return dash_dashFuncionario_path
+    elsif usuario_signed_in?
       return dash_dashUsuario_path
-    elsif current_usuario.try(:admin?)
-       return dash_dashFuncionario_path
     else
       return usuario_session_path
     end
   end
-
-
-
-
 
 
   helper_method :redirectTypeOfUser
@@ -102,9 +118,9 @@ class ApplicationController < ActionController::Base
   #Pessoa init
   helper_method :returnPes
   def returnPes()
-    @iter = Pessoa.all
+    @pessoa = Pessoa.all
     @retorno
-    @iter.each do |itera|
+    @pessoa.each do |itera|
       if itera.usuario_id == current_usuario.id
          return itera.id
       else
@@ -165,13 +181,14 @@ class ApplicationController < ActionController::Base
   #Endereço init
   helper_method :returnEnd
   def returnEnd()
-    @documentos = Endereco.all
+    @endereco = Endereco.all
     @pessoaId = returnPes()
     if @pessoaId != nil
+      
       @pessoa = Pessoa.find(@pessoaId)
       #return @pessoa.id
       @retorno
-      @documentos.each do |itera|
+      @endereco.each do |itera|
         if itera.pessoa_id == @pessoa.id
            return itera.id
         else
@@ -193,6 +210,17 @@ class ApplicationController < ActionController::Base
       return new_endereco_path
     end
   end
+
+  helper_method :returnEndIf
+  def returnEndIf()
+    @iter = returnEnd()
+    if @iter != nil
+      return root_path
+    else
+      return new_endereco_path
+    end
+
+  end
   #Endereço end
 
 
@@ -200,13 +228,13 @@ class ApplicationController < ActionController::Base
   #Requisição init
   helper_method :returnReq
   def returnReq()
-    @documentos = Requisicao.all
+    @requisicao = Requisicao.all
     @pessoaId = returnPes()
     if @pessoaId != nil
       @pessoa = Pessoa.find(@pessoaId)
       #return @pessoa.id
       @retorno
-      @documentos.each do |itera|
+      @requisicao.each do |itera|
         if itera.pessoa_id == @pessoa.id
            return itera.id
         else

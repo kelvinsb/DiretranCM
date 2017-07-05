@@ -27,7 +27,7 @@ pdf.font "Helvetica"
 #pdf.define_grid(:columns => 5, :rows => 8, :gutter => 10) 
 
 #eixo de coodernadas
-pdf.stroke_axis 
+#pdf.stroke_axis 
 
 #quadrado maior
 pdf.bounding_box([0, 500], :width => 750, :height => 250) do 
@@ -56,6 +56,11 @@ end
 ################################################
 ################### FRENTE #####################
 ################################################
+
+#marca d'agua
+logo_path =  "#{Rails.root}/app/assets/images/simbolo_deficiente_fisico-sombra.jpg"
+pdf.image logo_path, :at => [120,440], :scale => 1.6
+
 
 #estacionamento escrito em branco e rotacionado
 pdf.fill_color(0,0,0,0)
@@ -167,7 +172,8 @@ excess_text = pdf.text_box string,
 	:at => [385, 485],
 	:size => 9
 
-string = "Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira 333"
+#string = "Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira 333"
+string = getPessoa().nome
 excess_text = pdf.text_box string,
 	:at => [477, 490],
 	:size => 15,
@@ -180,7 +186,11 @@ excess_text = pdf.text_box string,
 	:at => [390, 453],
 	:size => 9
 
-string = "1234667891011"
+<<<<<<< HEAD:app/views/carteirinhas/show.pdf.prawn
+=======
+#string = "1234667891011"
+>>>>>>> bade0b8005968355ef74bfcdfd24b92e9ff0909f:app/views/pessoas/show.pdf.prawn
+string = getPessoa().rg
 excess_text = pdf.text_box string,
 	:at => [408, 455],
 	:size => 12

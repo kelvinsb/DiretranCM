@@ -1,5 +1,17 @@
 <%- model_class = Carteirinha -%>
+
+<% if ( returnPes() != nil ) && ( returnEnd() != nil ) && ( returnDoc() != nil ) && ( returnReq() != nil )
+ %>
 <div class="page-header">
   <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
 </div>
 <%= render :partial => 'form' %>
+
+<% else %>
+
+<div class="row text-center">
+	<h3 class="warning">Para solicitar a carteirinha é necessário o preenchimento de todos os passos</h3>
+</div>
+
+
+<% end %>
