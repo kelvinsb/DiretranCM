@@ -23,6 +23,11 @@ class Pessoa < ApplicationRecord
 	presence: {message: ": deve ser preenchido"},
 	numericality: {only_integer: true}
 
+  validates_format_of :email,
+                      :with => /\A[\w\._%-]+@[\w\.-]+\.[a-zA-Z]{2,4}\z/,
+                      :if => Proc.new { |u| !u.email.nil? && !u.email.blank? },
+                      :message => "Formato de email incorreto"
+
 	validates :usuario_id,
   presence: true,
   uniqueness: true
