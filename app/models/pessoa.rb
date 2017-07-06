@@ -15,9 +15,9 @@ class Pessoa < ApplicationRecord
 	validates :data_nascimento,
 	presence: {message: " deve ser preenchido"}
 
-  validates :telefone,
+  #validates :telefone,
 	#presence: {message: ": deve ser preenchido"},
-	numericality: {only_integer: true}
+	#numericality: {only_integer: true}
 
 	validates :celular,
 	presence: {message: " deve ser preenchido"},

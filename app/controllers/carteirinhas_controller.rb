@@ -91,6 +91,6 @@ class CarteirinhasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def carteirinha_params
-      params.require(:carteirinha).permit(:via, :status, :categoria, :data_vencimento, :requisicao_id)
+      params.require(:carteirinha).permit(:via, :status, :categoria, :data_vencimento, :requisicao_id, :identificador)
     end
 end
