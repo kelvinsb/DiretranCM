@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Num registro:</strong>
+  <%= @inf_carteirinha.num_registro %>
+</p>
+
+<p>
+  <strong>Validade:</strong>
+  <%= @inf_carteirinha.validade %>
+</p>
+
+<p>
+  <strong>Diretor:</strong>
+  <%= @inf_carteirinha.diretor %>
+</p>
+
+<p>
+  <strong>Nome beneficiario:</strong>
+  <%= @inf_carteirinha.nome_beneficiario %>
+</p>
+
+<p>
+  <strong>Rg:</strong>
+  <%= @inf_carteirinha.rg %>
+</p>
+
+<p>
+  <strong>Regras:</strong>
+  <%= @inf_carteirinha.regras %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @inf_carteirinha.tipo %>
+</p>
+
+<%= link_to 'Edit', edit_inf_carteirinha_path(@inf_carteirinha) %> |
+<%= link_to 'Back', inf_carteirinhas_path %>

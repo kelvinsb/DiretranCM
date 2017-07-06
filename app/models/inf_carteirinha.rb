@@ -1,0 +1,3 @@
+class InfCarteirinha < ApplicationRecord
+  
+end

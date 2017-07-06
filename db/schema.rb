@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706065612) do
+ActiveRecord::Schema.define(version: 20170706190212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170706065612) do
     t.integer  "requisicao_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "identificador"
     t.index ["requisicao_id"], name: "index_carteirinhas_on_requisicao_id", using: :btree
   end
 
@@ -78,6 +79,18 @@ ActiveRecord::Schema.define(version: 20170706065612) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["pessoa_id"], name: "index_enderecos_on_pessoa_id", using: :btree
+  end
+
+  create_table "inf_carteirinhas", force: :cascade do |t|
+    t.string   "num_registro"
+    t.date     "validade"
+    t.string   "diretor"
+    t.string   "nome_beneficiario"
+    t.string   "rg"
+    t.string   "regras"
+    t.string   "tipo"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "pessoas", force: :cascade do |t|
