@@ -60,6 +60,16 @@ class ApplicationController < ActionController::Base
     end 
   end
 
+ # helper_method :isActualUser
+ # def isActualUser()
+ #   @pessoa = returnPes()
+ #   if @pessoa == params[:id]
+ #     return true
+ #   end
+  #  return false
+ # end
+
+
 
   helper_method :verifyUser
   def verifyUser()
@@ -113,6 +123,16 @@ class ApplicationController < ActionController::Base
       end
     end
     return nil
+  end
+
+  helper_method :returnReqEnd
+  def returnReqEnd()
+    @iter = returnReqq()
+    if @iter != nil
+      return edit_requisicao_path(@iter)
+    else
+      return new_requisicao_path
+    end
   end
 
   #Pessoa init
@@ -292,5 +312,104 @@ class ApplicationController < ActionController::Base
     end
   end
   #Carteirinha end
+
+  #Cid init
+  helper_method :returnCid
+  def returnCid()
+    @cid = Cid.all
+
+    @reqId = returnReqq()
+    if @reqId != nil
+      @req = Requisicao.find(@reqId)
+      #return @pessoa.id
+      @retorno
+      @cid.each do |itera|
+        if itera.requisicao_id == @req.id
+           return itera.id
+        else
+          @retorno = nil
+        end
+      end
+      return @retorno
+    end
+  end
+
+
+
+  helper_method :returnCidEnd
+  def returnCidEnd()
+    @iter = returnCar()
+    if @iter != nil
+      return edit_cid_path(@iter)
+    else
+      return new_cid_path
+    end
+  end
+  #Cid end
+
+
+#Carteirinhas Aprovadas
+#Carteirinhas Aguardando
+#Carteirinhas Reprovadas TODO
+#Carteirinhas Vencidas TODO
+  helper_method :aguardCarteirinhas
+  def aguardCarteirinhas()
+    @carteirinhas = Carteirinha.all
+    @totalCarteirinhas = 0
+    @carteirinhas.each do |carteirinha|
+      if carteirinha.status == "Analise"
+        @totalCarteirinhas = @totalCarteirinhas + 1
+      end
+    end
+    return @totalCarteirinhas
+  end
+
+  helper_method :aprovCarteirinhas
+  def aprovCarteirinhas()
+    @carteirinhas = Carteirinha.all
+    @totalCarteirinhas = 0
+    @carteirinhas.each do |carteirinha|
+      if carteirinha.status == "Aprovadas"
+        @totalCarteirinhas = @totalCarteirinhas + 1
+      end
+    end
+    return @totalCarteirinhas
+  end
+
+  helper_method :reprovCarteirinhas
+  def reprovCarteirinhas()
+    @carteirinhas = Carteirinha.all
+    @totalCarteirinhas = 0
+    @carteirinhas.each do |carteirinha|
+      if carteirinha.status == "Reprovadas"
+        @totalCarteirinhas = @totalCarteirinhas + 1
+      end
+    end
+    return @totalCarteirinhas
+  end
+
+  helper_method :vencidasCarteirinhas
+  def vencidasCarteirinhas()
+    @carteirinhas = Carteirinha.all
+    @totalCarteirinhas = 0
+    @carteirinhas.each do |carteirinha|
+      if carteirinha.status == "Vencidas"
+        @totalCarteirinhas = @totalCarteirinhas + 1
+      end
+    end
+    return @totalCarteirinhas
+  end
+
+  helper_method :returnPessoaOnUsuario
+  def returnPessoaOnUsuario(idUsuario)
+    @pessoas = Pessoa.all
+    @pessoas.each do |pessoaa|
+      if pessoaa.usuario_id == idUsuario
+        return pessoaa.nome
+      end
+    end
+    return nil
+  end
+
 
 end

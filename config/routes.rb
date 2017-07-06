@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'usuarios/listar'
+
   get 'msg/index'
 
   resources :cids

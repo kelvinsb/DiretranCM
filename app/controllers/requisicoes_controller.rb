@@ -3,7 +3,6 @@ class RequisicoesController < ApplicationController
   before_action :authenticate_usuario!, only: [:show, :new, :edit]
   before_action :authAdmin, only: [:index, :destroy]
 
-  
   # GET /requisicoes
   # GET /requisicoes.json
   def index
@@ -28,7 +27,7 @@ class RequisicoesController < ApplicationController
   # POST /requisicoes.json
   def create
     @requisicao = Requisicao.new(requisicao_params)
-    @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
+    @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id    
 
     #@requisicao.data_emissao quando aprovar
     @requisicao.data_requisicao = Date.current
@@ -37,20 +36,20 @@ class RequisicoesController < ApplicationController
     else
       @requisicao.qtde_carteirinhas = @requisicao.qtde_carteirinhas + 1
     end
-      
+
     #@requisicao.funcionario quando for aprovado
 
     #Data requisicao, data emissao, qtd carteirinhas, funcionario
 
     respond_to do |format|
       if @requisicao.save
-          
+
         #format.html { redirect_to @requisicao, notice: 'Requisicao was successfully created.' }
         #format.json { render :show, status: :created, location: @requisicao }
         if @requisicao.categoria == "Deficiente" || @requisicao.categoria == "Deficente temporário"
           format.html { redirect_to new_cid_path }
         else
-          format.html {redirect_to root_path}
+          format.html {redirect_to new_carteirinha_path}
         end
       else
         format.html { render :new }
@@ -64,7 +63,9 @@ class RequisicoesController < ApplicationController
   def update
     respond_to do |format|
       if @requisicao.update(requisicao_params)
-        format.html { redirect_to @requisicao, notice: 'Requisição criada com sucesso.' }
+
+        format.html { redirect_to returnCarEnd()}
+        #format.html { redirect_to @requisicao, notice: 'Requisição criada com sucesso.' }
         format.json { render :show, status: :ok, location: @requisicao }
       else
         format.html { render :edit }

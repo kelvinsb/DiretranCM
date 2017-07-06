@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629070310) do
+ActiveRecord::Schema.define(version: 20170706065612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 20170629070310) do
   create_table "cids", force: :cascade do |t|
     t.string   "codigo"
     t.string   "nome_doenca"
-    t.integer  "carteirinha_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["carteirinha_id"], name: "index_cids_on_carteirinha_id", using: :btree
+    t.integer  "requisicao_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["requisicao_id"], name: "index_cids_on_requisicao_id", using: :btree
   end
 
   create_table "documentos", force: :cascade do |t|
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20170629070310) do
     t.integer  "usuario_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "email"
     t.index ["usuario_id"], name: "index_pessoas_on_usuario_id", using: :btree
   end
 
@@ -131,7 +132,7 @@ ActiveRecord::Schema.define(version: 20170629070310) do
   end
 
   add_foreign_key "carteirinhas", "requisicoes"
-  add_foreign_key "cids", "carteirinhas"
+  add_foreign_key "cids", "requisicoes"
   add_foreign_key "documentos", "pessoas"
   add_foreign_key "enderecos", "pessoas"
   add_foreign_key "pessoas", "usuarios"

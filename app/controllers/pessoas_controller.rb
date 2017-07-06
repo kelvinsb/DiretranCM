@@ -2,6 +2,7 @@ class PessoasController < ApplicationController
   before_action :set_pessoa, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_usuario!, only: [:show, :new, :edit]
   before_action :authAdmin, only: [:index, :destroy]
+  #before_action :isActualUser, only: [:edit]
 
 
 
@@ -35,7 +36,7 @@ class PessoasController < ApplicationController
 
     respond_to do |format|
       if @pessoa.save
-        format.html { redirect_to new_endereco_path }
+        format.html { redirect_to new_endereco_path, notice: 'Pessoa foi criada com sucesso' }
         #format.html { redirect_to @pessoa, notice: 'Pessoa criada com sucesso.' }
         #format.json { render :show, status: :created, location: @pessoa }
       else
@@ -53,7 +54,7 @@ class PessoasController < ApplicationController
         #format.html { render :edit, notice: 'Atualizado com sucesso.' }
         #format.html {redirect_to new_endereco_path, notice: 'Dados pessoais atualizados com sucesso'}
         format.html {redirect_to returnEndIf(), notice: 'Dados pessoais atualizados com sucesso'}
-        
+
         #format.html { redirect_to @pessoa, notice: 'Atualizado com sucesso.' }
         #format.json { render :show, status: :ok, location: @pessoa }
       else
@@ -81,6 +82,6 @@ class PessoasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pessoa_params
-      params.require(:pessoa).permit(:nome, :sexo, :rg, :cpf, :data_nascimento, :telefone, :celular, :usuario_id)
+      params.require(:pessoa).permit(:nome, :sexo, :rg, :cpf, :data_nascimento, :telefone, :celular, :usuario_id, :email)
     end
 end
