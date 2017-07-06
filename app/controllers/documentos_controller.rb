@@ -35,7 +35,7 @@ class DocumentosController < ApplicationController
       if @documento.save
         #format.html { redirect_to @documento, notice: 'Documento was successfully created.' }
         #format.json { render :show, status: :created, location: @documento }
-        format.html { redirect_to new_requisicao_path, notice: "Documento criado" }
+        format.html { redirect_to new_requisicao_path, notice: "Documento foi criado com sucesso" }
         #new_requisicao_path
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class DocumentosController < ApplicationController
       if @documento.update(documento_params)
         #format.html { redirect_to @documento, notice: 'Documento was successfully updated.' }
         #format.json { render :show, status: :ok, location: @documento }
-        format.html { redirect_to edit_requisicao_path }
+        format.html { redirect_to edit_requisicao_path , notice: 'Documento foi atualizado com sucesso'}
       else
         format.html { render :edit }
         format.json { render json: @documento.errors, status: :unprocessable_entity }
@@ -64,7 +64,7 @@ class DocumentosController < ApplicationController
   def destroy
     @documento.destroy
     respond_to do |format|
-      format.html { redirect_to documentos_url, notice: 'Documento was successfully destroyed.' }
+      format.html { redirect_to documentos_url, notice: 'Documento foi destruido com sucesso.' }
       format.json { head :no_content }
     end
   end

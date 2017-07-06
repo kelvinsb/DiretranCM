@@ -48,7 +48,7 @@ class CarteirinhasController < ApplicationController
           else
             format.html {redirect_to root_path}
           end
-          
+
         else
           format.html { render :new }
           format.json { render json: @carteirinha.errors, status: :unprocessable_entity }
@@ -78,7 +78,7 @@ class CarteirinhasController < ApplicationController
   def destroy
     @carteirinha.destroy
     respond_to do |format|
-      format.html { redirect_to carteirinhas_url, notice: 'Carteirinha was successfully destroyed.' }
+      format.html { redirect_to carteirinhas_url, notice: 'Carteirinha apagada com sucesso.' }
       format.json { head :no_content }
     end
   end

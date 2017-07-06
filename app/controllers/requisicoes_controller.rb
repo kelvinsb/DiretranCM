@@ -28,6 +28,8 @@ class RequisicoesController < ApplicationController
   def create
     @requisicao = Requisicao.new(requisicao_params)
     @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
+    @requisicao.data_requisicao = DateTime.now.utc.to_date
+    
 
     #@requisicao.data_emissao quando aprovar
     @requisicao.data_requisicao = Date.current
@@ -36,7 +38,7 @@ class RequisicoesController < ApplicationController
     else
       @requisicao.qtde_carteirinhas = @requisicao.qtde_carteirinhas + 1
     end
-      
+
     #@requisicao.funcionario quando for aprovado
 
     #Data requisicao, data emissao, qtd carteirinhas, funcionario

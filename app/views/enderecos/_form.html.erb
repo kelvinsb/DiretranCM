@@ -22,6 +22,7 @@
     </div>
     <%=f.error_span(:cep) %>
   </div>
+
   <div class="form-group">
     <%= f.label :cidade, :class => 'control-label col-lg-2'%>
     <div class="col-lg-10">
@@ -29,6 +30,7 @@
     </div>
     <%=f.error_span(:cidade) %>
   </div>
+
   <div class="form-group">
     <%= f.label :bairro, :class => 'control-label col-lg-2'%>
     <div class="col-lg-10">
@@ -36,6 +38,7 @@
     </div>
     <%=f.error_span(:bairro) %>
   </div>
+
   <div class="form-group">
     <%= f.label :logradouro, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -43,6 +46,7 @@
     </div>
     <%=f.error_span(:logradouro) %>
   </div>
+
   <div class="form-group">
     <%= f.label :numero, :class => 'control-label col-lg-2'%>
     <div class="col-lg-10">
@@ -50,13 +54,15 @@
     </div>
     <%=f.error_span(:numero) %>
   </div>
+
   <div class="form-group">
     <%= f.label :complemento, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :complemento, :class => 'form-control', :maxlength => 15, :size => 15 %>
+      <%= f.text_field :complemento, :class => 'form-control', :maxlength => 50, :size => 50 %>
     </div>
     <%=f.error_span(:complemento) %>
   </div>
+
   <div class="form-group">
       <div class="col-lg-10">
       <%= f.hidden_field :pessoa_id, :class => 'form-control' %>
@@ -67,8 +73,7 @@
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                enderecos_path, :class => 'btn btn-default' %>
+
     </div>
   </div>
 

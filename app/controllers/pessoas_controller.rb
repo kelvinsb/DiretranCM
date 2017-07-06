@@ -35,7 +35,7 @@ class PessoasController < ApplicationController
 
     respond_to do |format|
       if @pessoa.save
-        format.html { redirect_to new_endereco_path }
+        format.html { redirect_to new_endereco_path, notice: 'Pessoa foi criada com sucesso' }
         #format.html { redirect_to @pessoa, notice: 'Pessoa criada com sucesso.' }
         #format.json { render :show, status: :created, location: @pessoa }
       else
@@ -53,7 +53,7 @@ class PessoasController < ApplicationController
         #format.html { render :edit, notice: 'Atualizado com sucesso.' }
         #format.html {redirect_to new_endereco_path, notice: 'Dados pessoais atualizados com sucesso'}
         format.html {redirect_to returnEndIf(), notice: 'Dados pessoais atualizados com sucesso'}
-        
+
         #format.html { redirect_to @pessoa, notice: 'Atualizado com sucesso.' }
         #format.json { render :show, status: :ok, location: @pessoa }
       else

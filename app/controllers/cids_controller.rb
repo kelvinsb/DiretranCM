@@ -31,7 +31,7 @@ class CidsController < ApplicationController
       if @cid.save
         #format.html { redirect_to @cid, notice: 'Cid was successfully created.' }
         #format.json { render :show, status: :created, location: @cid }
-        format.html { redirect_to root_path }
+        format.html { redirect_to root_path, notice: 'Cid foi criada com sucesso'  }
       else
         format.html { render :new }
         format.json { render json: @cid.errors, status: :unprocessable_entity }
@@ -46,7 +46,7 @@ class CidsController < ApplicationController
       if @cid.update(cid_params)
         #format.html { redirect_to @cid, notice: 'Cid was successfully updated.' }
         #format.json { render :show, status: :ok, location: @cid }
-        format.html { redirect_to root_path }
+        format.html { redirect_to root_path, notice: 'Cid foi atualizado com sucesso'  }
 
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class CidsController < ApplicationController
   def destroy
     @cid.destroy
     respond_to do |format|
-      format.html { redirect_to cids_url, notice: 'Cid was successfully destroyed.' }
+      format.html { redirect_to cids_url, notice: 'Cid apagado com sucesso.' }
       format.json { head :no_content }
     end
   end
