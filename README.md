@@ -27,5 +27,5 @@ Things you may want to cover:
 Criar Admin:
 rails c
 
-admin = Usuario.new({cpf:'#cpf válido#', password: '#senha#', password_confirmation: '#senha#'})
+admin = Usuario.new({cpf:'#cpf válido#', password: '#senha#', password_confirmation: '#senha#', admin: true, funcionário: true})
 admin.save!
