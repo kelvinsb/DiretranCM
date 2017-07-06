@@ -148,3 +148,8 @@ a.btn-primary
   padding: 5px;
   margin-bottom: 2px;
 }
+.form-control,
+select
+{
+  float: left;
+}
