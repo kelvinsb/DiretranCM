@@ -1,0 +1,22 @@
+
+
+<div class="container-fluid">
+	<div class="row">
+		<% @users = Usuario.all %>
+		<% @users.each do |user| %>
+		<div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 usuario-div">
+			<div class="col-xs-1 col-lg-1 col-md-1">ID:</div>
+			<div class="col-xs-1 col-lg-1 col-md-1"><%= user.id %></div>
+			<div class="col-xs-1 col-lg-1 col-md-1">CPF:</div>
+			<div class="col-xs-2 col-lg-2 col-md-2"><%= user.cpf %></div>
+			<div class="col-xs-1 col-lg-1 col-md-1">Nome:</div>
+			<div class="col-xs-2 col-lg-2 col-md-2"><%= returnPessoaOnUsuario(user.id) %></div>
+			<div class="col-xs-1 col-lg-1 col-md-1">É funcionário?:</div>
+			<div class="col-xs-1 col-lg-1 col-md-1"><%= user.funcionario? %></div>
+			<div class="col-xs-1 col-lg-1 col-md-1">É Administrador?:</div>
+			<div class="col-xs-1 col-lg-1 col-md-1"><%= user.admin? %></div>
+			
+		</div>
+		<% end %>
+	</div>
+</div>

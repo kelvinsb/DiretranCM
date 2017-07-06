@@ -1,3 +1,5 @@
+<% if ( returnCar() == nil ) %>
+
 <%= form_for @carteirinha, :html => { :class => "form-horizontal carteirinha" } do |f| %>
 
   <% if @carteirinha.errors.any? %>
@@ -54,5 +56,10 @@
                 carteirinhas_path, :class => 'btn btn-default' %>
     </div>
   </div>
+
+<% end %>
+<% else %>
+
+<h3>Carteirinha já requerida</h3>
 
 <% end %>

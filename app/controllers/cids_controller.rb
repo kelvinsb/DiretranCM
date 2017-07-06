@@ -25,7 +25,7 @@ class CidsController < ApplicationController
   # POST /cids.json
   def create
     @cid = Cid.new(cid_params)
-    @cid.requisicao_id = current_usuario.id
+    @cid.requisicao_id = returnReqq()
 
     respond_to do |format|
       if @cid.save
