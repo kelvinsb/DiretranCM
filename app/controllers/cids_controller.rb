@@ -46,7 +46,7 @@ class CidsController < ApplicationController
       if @cid.update(cid_params)
         #format.html { redirect_to @cid, notice: 'Cid was successfully updated.' }
         #format.json { render :show, status: :ok, location: @cid }
-        format.html { redirect_to root_path, notice: 'Cid foi atualizado com sucesso'  }
+        format.html { redirect_to root_path, notice: 'Cid foi atualizado com sucesso' }
 
       else
         format.html { render :edit }
