@@ -120,10 +120,10 @@ ActiveRecord::Schema.define(version: 20170629070310) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.integer  "enderecos_id"
-    t.integer  "pessoas_id"
     t.boolean  "admin",                  default: false
     t.boolean  "funcionario",            default: false
+    t.integer  "enderecos_id"
+    t.integer  "pessoas_id"
     t.index ["cpf"], name: "index_usuarios_on_cpf", unique: true, using: :btree
     t.index ["enderecos_id"], name: "index_usuarios_on_enderecos_id", using: :btree
     t.index ["pessoas_id"], name: "index_usuarios_on_pessoas_id", using: :btree
