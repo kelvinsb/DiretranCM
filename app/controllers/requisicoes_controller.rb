@@ -27,9 +27,7 @@ class RequisicoesController < ApplicationController
   # POST /requisicoes.json
   def create
     @requisicao = Requisicao.new(requisicao_params)
-    @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
-    @requisicao.data_requisicao = DateTime.now.utc.to_date
-    
+    @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id    
 
     #@requisicao.data_emissao quando aprovar
     @requisicao.data_requisicao = Date.current

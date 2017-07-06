@@ -23,12 +23,13 @@
     <%=f.error_span(:cep) %>
   </div>
 
+  </div>
   <div class="form-group">
-    <%= f.label :cidade, :class => 'control-label col-lg-2'%>
+    <%= f.label :cidade, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :cidade, :class => 'form-control', :maxlength => 80, :size => 30 %> <font color="red" size="5"> * </font>
+      <%= f.select :cidade, ['Campo Mourão'] %> <font color="red" size="5"> * </font>
     </div>
-    <%=f.error_span(:cidade) %>
+      <%=f.error_span(:cidade) %>
   </div>
 
   <div class="form-group">
