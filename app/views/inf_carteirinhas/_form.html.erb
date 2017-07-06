@@ -1,0 +1,52 @@
+<%= form_for(inf_carteirinha) do |f| %>
+  <% if inf_carteirinha.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(inf_carteirinha.errors.count, "error") %> prohibited this inf_carteirinha from being saved:</h2>
+
+      <ul>
+      <% inf_carteirinha.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :num_registro %>
+    <%= f.text_field :num_registro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :validade %>
+    <%= f.date_select :validade %>
+  </div>
+
+  <div class="field">
+    <%= f.label :diretor %>
+    <%= f.text_field :diretor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome_beneficiario %>
+    <%= f.text_field :nome_beneficiario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rg %>
+    <%= f.text_field :rg %>
+  </div>
+
+  <div class="field">
+    <%= f.label :regras %>
+    <%= f.text_field :regras %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+    <%= f.text_field :tipo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
