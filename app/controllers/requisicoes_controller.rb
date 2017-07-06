@@ -2,6 +2,8 @@ class RequisicoesController < ApplicationController
   before_action :set_requisicao, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_usuario!, only: [:show, :new, :edit]
   before_action :authAdmin, only: [:index, :destroy]
+  before_action :authFuncionario, only: [:index, :show]
+
 
   # GET /requisicoes
   # GET /requisicoes.json
@@ -27,7 +29,7 @@ class RequisicoesController < ApplicationController
   # POST /requisicoes.json
   def create
     @requisicao = Requisicao.new(requisicao_params)
-    @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id    
+    @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
 
     #@requisicao.data_emissao quando aprovar
     @requisicao.data_requisicao = Date.current

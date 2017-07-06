@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
+
 
   # !LER redirecionar, mudar ainda
   def after_sign_in_path_for(resource)
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
      dash_dashUsuario_path
     else
      new_pessoa_path
-    end 
+    end
   end
   def after_sign_out_path_for(resource)
     root_path
@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
     end
     return nil
   end
-  
+
   helper_method :getUserId
   def getUserId(idDeviseUser)
     @Pessoas = Pessoa.all
@@ -57,7 +57,16 @@ class ApplicationController < ActionController::Base
       true
     else
       redirect_to root_path
-    end 
+    end
+  end
+
+  helper_method :authFuncionario
+  def authFuncionario()
+    if current_usuario.try(:funcionario?)
+      true
+    else
+      redirect_to root_path
+    end
   end
 
  # helper_method :isActualUser
@@ -204,7 +213,7 @@ class ApplicationController < ActionController::Base
     @endereco = Endereco.all
     @pessoaId = returnPes()
     if @pessoaId != nil
-      
+
       @pessoa = Pessoa.find(@pessoaId)
       #return @pessoa.id
       @retorno
