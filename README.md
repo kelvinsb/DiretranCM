@@ -25,5 +25,7 @@ Things you may want to cover:
 * DB drop, create e migrate (rake db:drop && rake db:create && rake db:migrate)
 
 Criar Admin:
+rails c
+
 admin = Usuario.new({cpf:'#cpf válido#', password: '#senha#', password_confirmation: '#senha#'})
 admin.save!
