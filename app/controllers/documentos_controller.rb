@@ -77,7 +77,7 @@ class DocumentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def documento_params
-      params.require(:documento).permit(:cpf, :rg, :foto, :cid, :comp_residencia, :pessoa_id)
+      params.fetch(:documento, {}).permit(:cpf, :rg, :foto, :cid, :comp_residencia, :pessoa_id)
       #fetch or require
     end
 end

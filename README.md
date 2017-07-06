@@ -23,3 +23,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * DB drop, create e migrate (rake db:drop && rake db:create && rake db:migrate)
+
+Criar Admin:
+rails c
+
+admin = Usuario.new({cpf:'#cpf válido#', password: '#senha#', password_confirmation: '#senha#', admin: true, funcionário: true})
+admin.save!
+
+
+Trocar senha de usuario:
+rails c
+
+user = Usuario.find(id)
+user.update_attribute :password, 'nova_senha'
