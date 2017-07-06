@@ -18,14 +18,14 @@
   <div class="form-group">
     <%= f.label :codigo, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :codigo, :class => 'form-control', :maxlength => 3, :size => 3  %>
+      <%= f.text_field :codigo, :class => 'form-control', :maxlength => 3, :size => 3  %><font color="red" size="5"> * </font>
     </div>
     <%=f.error_span(:codigo) %>
   </div>
   <div class="form-group">
-    <%= f.label :nome_doenca, :class => 'control-label col-lg-2', :maxlength => 20, :size => 20  %>
+    <%= f.label :nome_doenca, :class => 'control-label col-lg-2'%>
     <div class="col-lg-10">
-      <%= f.text_field :nome_doenca, :class => 'form-control' %>
+      <%= f.text_field :nome_doenca, :class => 'form-control', :maxlength => 20, :size => 20 %><font color="red" size="5"> * </font>
     </div>
     <%=f.error_span(:nome_doenca) %>
   </div>

@@ -28,8 +28,18 @@ class ApplicationController < ActionController::Base
   end
 
 
-
-
+  helper_method :getPessoaById
+  def getPessoaById()
+    +
+    @Pessoas = Pessoa.all
+    @Pessoas.each do |pessoa|
+      if pessoa.usuario_id == current_usuario.id
+        return pessoa
+      end
+    end
+    return nil
+  end
+  
   helper_method :getUserId
   def getUserId(idDeviseUser)
     @Pessoas = Pessoa.all
@@ -85,10 +95,6 @@ class ApplicationController < ActionController::Base
       return usuario_session_path
     end
   end
-
-
-
-
 
 
   helper_method :redirectTypeOfUser

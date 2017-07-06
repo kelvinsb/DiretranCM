@@ -42,7 +42,7 @@ class EnderecosController < ApplicationController
 
     respond_to do |format|
       if @endereco.save
-       format.html { redirect_to new_documento_path}
+       format.html { redirect_to new_documento_path, notice: 'Endereço foi criada com sucesso' }
        # format.html { redirect_to @endereco, notice: 'Endereco criado com sucesso.' }
        # format.json { render :show, status: :created, location: @endereco }
       else
@@ -57,7 +57,7 @@ class EnderecosController < ApplicationController
   def update
     respond_to do |format|
       if @endereco.update(endereco_params)
-        format.html { redirect_to returnDocEnd()}
+        format.html { redirect_to returnDocEnd(), notice: 'Endereço foi atualizado com sucesso' }
         #edit_documento_path
         # format.html { redirect_to @endereco, notice: 'Endereco editado com sucesso.' }
         # format.json { render :show, status: :ok, location: @endereco }

@@ -4,7 +4,7 @@
   <div class="form-group">
     <%= f.label :nome, :class => 'control-label col-lg-2' %>
     <div class="col-lg-6">
-      <%= f.text_field :nome, :class => 'form-control', :maxlength => 80, :size => 80 %>
+      <%= f.text_field :nome, :class => 'form-control', :maxlength => 80, :size => 80 %> <font color="red" size="5"> * </font>
     </div>
     <div class="col-lg-4">
       <%=f.error_span(:nome) %>
@@ -14,7 +14,7 @@
   <div class="form-group">
     <%= f.label :sexo, :class => 'control-label col-lg-2' %>
     <div class="col-lg-6">
-      <%= f.select :sexo, ['Masculino', 'Feminino'] %> *
+      <%= f.select :sexo, ['Masculino', 'Feminino'] %> <font color="red" size="5"> * </font>
     </div>
     <div class="col-lg-4">
       <%=f.error_span(:sexo) %>
@@ -24,7 +24,7 @@
   <div class="form-group">
     <%= f.label :rg, :class => 'control-label col-lg-2' %>
     <div class="col-lg-6">
-      <%= f.text_field :rg, :class => 'form-control', :maxlength => 10, :size => 10 %>
+      <%= f.text_field :rg, :class => 'form-control', :maxlength => 10, :size => 10 %> <font color="red" size="5"> * </font>
     </div>
     <div class="col-lg-4">
       <%=f.error_span(:rg) %>
@@ -34,10 +34,20 @@
   <div class="form-group">
     <%= f.label :data_nascimento, :class => 'control-label col-lg-2' %>
     <div class="col-lg-6">
-      <%= f.date_select :data_nascimento, :start_year => Date.current.year - 120, :end_year => Date.current.year %> *
+      <%= f.date_select :data_nascimento, :start_year => Date.current.year - 120, :end_year => Date.current.year %>  <font color="red" size="5"> * </font>
     </div>
     <div class="col-lg-4">
       <%=f.error_span(:data_nascimento) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.text_field :email, :class => 'form-control' %> <font color="red" size="5"> * </font>
+    </div>
+    <div class="col-lg-4">
+      <%=f.error_span(:email) %>
     </div>
   </div>
 
@@ -54,7 +64,7 @@
   <div class="form-group">
     <%= f.label :celular, :class => 'control-label col-lg-2' %>
     <div class="col-lg-6">
-      <%= f.text_field :celular, :class => 'form-control', :maxlength => 11, :size => 11 %>
+      <%= f.text_field :celular, :class => 'form-control', :maxlength => 11, :size => 11 %> <font color="red" size="5"> * </font>
     </div>
     <div class="col-lg-4">
       <%=f.error_span(:celular) %>
@@ -65,8 +75,7 @@
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                pessoas_path, :class => 'btn btn-default' %>
+      
     </div>
   </div>
 
