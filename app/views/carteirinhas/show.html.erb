@@ -271,8 +271,7 @@
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               carteirinhas_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_carteirinha_path(@carteirinha), :class => 'btn btn-default' %>
+
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               carteirinha_path(@carteirinha),
               :method => 'delete',
@@ -282,8 +281,20 @@
 
 
 <% end %>
-
-<%= form_for @carteirinha, :format => :html do |c| %>
+<br>
+<%= form_for @carteirinha, :remote => true do |c| %>
   <%= c.hidden_field :status, :value=>"Aprovado" %>
   <%= c.submit "Aprovar", :class => 'btn btn-success' %>
 <% end %>
+<%= form_for @carteirinha, :remote => true do |c| %>
+  <%= c.hidden_field :status, :value=>"Rejeitar" %>
+  <%= c.submit "Rejeitar", :class => 'btn btn-danger' %>
+<% end %>
+
+<div class="edit_carteirinha">
+  <div class="btn btn-primary">
+    Gerar PDF
+  </div>
+</div>
+
+

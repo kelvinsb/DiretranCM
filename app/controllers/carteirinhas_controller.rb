@@ -61,11 +61,12 @@ class CarteirinhasController < ApplicationController
   # PATCH/PUT /carteirinhas/1.json
   def update
     respond_to do |format|
+
       if @carteirinha.update(carteirinha_params)
         #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully updated.' }
         #format.json { render :show, status: :ok, location: @carteirinha }
         #format.html { redirect_to edit_cid_path }
-
+        format.js { redirect_to carteirinhas_path}
       else
         format.html { render :edit }
         format.json { render json: @carteirinha.errors, status: :unprocessable_entity }

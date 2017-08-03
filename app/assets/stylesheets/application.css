@@ -157,3 +157,15 @@ select
 {
   float: left;
 }
+.edit_carteirinha
+{
+  float:left;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.edit_carteirinha .btn
+{
+  font-size:200%;
+  font-weight: bold;
+}
