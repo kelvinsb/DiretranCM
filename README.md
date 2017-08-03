@@ -1,7 +1,7 @@
 # README
 
 * Objetivo geral:
-	O sistema tem como objetivo emitir carteirinhas de para estacionamento especial, na qual um cidadão faz uma solicitação e funcionários podem aprovar ou não, caso aprovada a carteirinha será preparada para impressão.
+	O sistema tem como objetivo emitir carteirinhas de estacionamento especial, na qual um cidadão faz uma solicitação e funcionários podem aprovar ou não, caso aprovada a carteirinha será preparada para impressão.
 
 * Como usar (Usuario cidadão):
 	Realizar o cadastro no sistema, após cadastrar o usuário deverá alimentar o sistema com as informações necessárias, em seguida será gerada uma solicitação.
