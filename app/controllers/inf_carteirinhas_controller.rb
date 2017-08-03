@@ -1,5 +1,6 @@
 class InfCarteirinhasController < ApplicationController
   before_action :set_inf_carteirinha, only: [:show, :edit, :update, :destroy]
+  before_action :authAdmin, only: [:index, :show, :edit, :destroy]
 
   # GET /inf_carteirinhas
   # GET /inf_carteirinhas.json
