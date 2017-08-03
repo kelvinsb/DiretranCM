@@ -17,7 +17,7 @@
           <%= image_tag 'brasao_diretran.png' %>
         </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-        <h1><%=  link_to "Prefeitura de Campo Mourão Diretoria de Trânsito - Diretran", root_path %></h1>
+        <h1><%=  link_to "Prefeitura de Campo Mourão - Diretoria de Trânsito - Diretran", root_path %></h1>
       </div>
       <div class="hidden-xs hidden-sm col-md-2 col-lg-2">
           <%= image_tag 'prefeitura_logo.png' %>
@@ -46,7 +46,7 @@
   		</div>
   	</div>
   </nav>
-     
+
 <% if current_usuario.try(:admin?) %>
 
   <nav class="navbar navbar-default" role="navigation">
@@ -65,7 +65,7 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav col-lg-12">
-      
+
       <li class="home<% if current_page?(dash_dashUsuario_url) %> ativo<% end %> col-lg-2" >
 
         <%= link_to "Página inicial", root_path %>
@@ -118,7 +118,7 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav col-lg-12">
-      
+
       <li class="home<% if current_page?(dash_dashUsuario_url) %> ativo<% end %> col-lg-2" >
 
         <%= link_to "Página inicial", root_path %>
@@ -170,10 +170,10 @@
           x
         </div>
       </a>
-      
+
      </div>
   </div>
-  
+
   <% end %>
 
     <%= yield %>
