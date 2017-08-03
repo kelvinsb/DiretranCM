@@ -58,16 +58,25 @@ end
 ################################################
 
 #marca d'agua
-logo_path =  "#{Rails.root}/app/assets/images/simbolo_deficiente_fisico-sombra.jpg"
-pdf.image logo_path, :at => [120,440], :scale => 1.6
-
-
-#estacionamento escrito em branco e rotacionado
-pdf.fill_color(0,0,0,0)
-pdf.rotate(90, :origin => [35, 255]) do
-	pdf.draw_text "ESTACIONAMENTO", :size => 18, :at => [50, 265]
+if (Carteirinha.find(params[:id]).categoria == 'Idoso')
+	logo_path =  "#{Rails.root}/app/assets/images/idoso-sombra.png"
+	pdf.image logo_path, :at => [120,440], :scale => 1.4
+	#estacionamento escrito em branco e rotacionado
+	pdf.fill_color(0,0,0,0)
+	pdf.rotate(90, :origin => [35, 255]) do
+		pdf.draw_text "IDOSO", :size => 18, :at => [120, 265]
+	end
+	pdf.fill_color(100,100,100,100)
+else
+	logo_path =  "#{Rails.root}/app/assets/images/simbolo_deficiente_fisico-sombra.jpg"
+	pdf.image logo_path, :at => [120,440], :scale => 1.6
+	#estacionamento escrito em branco e rotacionado
+	pdf.fill_color(0,0,0,0)
+	pdf.rotate(90, :origin => [35, 255]) do
+		pdf.draw_text "DEFICIENTE FÍSICO", :size => 18, :at => [70, 265]
+	end
+	pdf.fill_color(100,100,100,100)
 end
-pdf.fill_color(100,100,100,100)
 
 #brasao republica
 logo_path =  "#{Rails.root}/app/assets/images/brasao_republica.png"
