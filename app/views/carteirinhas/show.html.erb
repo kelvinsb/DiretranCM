@@ -10,7 +10,6 @@
 <% @endereco = returnEnderecoByPes(@pessoa.id) %>
 <% @documento = returnDocumentoByPes(@pessoa.id) %>
 <% @requisicao = returnRequisicaoByPes(@pessoa.id) %>
-<% @carteirinha %>
 
 <% if ( @pessoa != nil ) && ( @endereco != nil ) && ( @documento != nil ) && ( @requisicao != nil ) %>
 
@@ -279,15 +278,21 @@
               :class => 'btn btn-danger' %>
 <% if ( @pessoa != nil ) && ( @endereco != nil ) && ( @documento != nil ) && ( @requisicao != nil ) %>
 
-
 <% end %>
 <br>
 <%= form_for @carteirinha, :remote => true do |c| %>
   <%= c.hidden_field :status, :value=>"Aprovado" %>
+  <% if @carteirinha.categoria == "Idoso" || @carteirinha.categoria == "Deficiente" %>
+    <%= c.hidden_field :data_vencimento, :value=>Date.current()+2.years %>
+  <% elsif @carteirinha.categoria == "Deficente temporário" %>
+    <%= c.hidden_field :data_vencimento, :value=>Date.current()+3.months %>
+  <% end %>
+
   <%= c.submit "Aprovar", :class => 'btn btn-success' %>
 <% end %>
 <%= form_for @carteirinha, :remote => true do |c| %>
-  <%= c.hidden_field :status, :value=>"Rejeitar" %>
+  <%= c.hidden_field :status, :value=>"Rejeitado" %>
+  <%= c.hidden_field :data_vencimento, :value=>"" %>
   <%= c.submit "Rejeitar", :class => 'btn btn-danger' %>
 <% end %>
 
