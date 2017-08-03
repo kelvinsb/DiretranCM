@@ -3,6 +3,259 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+
+<% @pessoa = returnPesByCar(@carteirinha) %>
+<% #@reqObj = returnReqPes(@pessoa.id) %>
+<% # @pessoa = Pessoa.find(getPessoaByReq(@reqObj)) %>
+<% @endereco = returnEnderecoByPes(@pessoa.id) %>
+<% @documento = returnDocumentoByPes(@pessoa.id) %>
+<% @requisicao = returnRequisicaoByPes(@pessoa.id) %>
+<% @carteirinha %>
+
+<% if ( @pessoa != nil ) && ( @endereco != nil ) && ( @documento != nil ) && ( @requisicao != nil ) %>
+
+<div class="row"> 
+  <div class="col-lg-12">
+    <div class="col-lg-12">
+      <h3>Pessoa</h3>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Nome
+      </div>
+      <div class="col-lg-6">
+        <%= @pessoa.nome %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Sexo
+      </div>
+      <div class="col-lg-6">
+        <%= @pessoa.sexo %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        RG
+      </div>
+      <div class="col-lg-6">
+        <%= @pessoa.rg %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Data de nascimento
+      </div>
+      <div class="col-lg-6">
+        <%= @pessoa.data_nascimento %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Telefone
+      </div>
+      <div class="col-lg-6">
+        <%= @pessoa.telefone %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Celular
+      </div>
+      <div class="col-lg-6">
+        <%= @pessoa.celular %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="col-lg-12">
+      <h3>Endereço</h3>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        CEP
+      </div>
+      <div class="col-lg-6">
+        <%= @endereco.cep %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Cidade
+      </div>
+      <div class="col-lg-6">
+        <%= @endereco.cidade %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Bairro
+      </div>
+      <div class="col-lg-6">
+        <%= @endereco.bairro %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Logradouro
+      </div>
+      <div class="col-lg-6">
+        <%= @endereco.logradouro %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Número
+      </div>
+      <div class="col-lg-6">
+        <%= @endereco.numero %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Complemento
+      </div>
+      <div class="col-lg-6">
+        <%= @endereco.complemento %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="col-lg-12">
+      <h3>Requisição</h3>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Data requisição
+      </div>
+      <div class="col-lg-6">
+        <%= @requisicao.data_requisicao %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Nome do Responsável
+      </div>
+      <div class="col-lg-6">
+        <%= @requisicao.responsavel_nome %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        CPF do Responsável
+      </div>
+      <div class="col-lg-6">
+        <%= @requisicao.responsavel_cpf %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Categoria
+      </div>
+      <div class="col-lg-6">
+        <%= @requisicao.categoria %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="col-lg-12">
+      <h3>Documento</h3>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        CPF
+      </div>
+      <div class="col-lg-6">
+        <img src="<%= @documento.cpf %>" alt="" style="width: 150px; heigth: auto">
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        RG
+      </div>
+      <div class="col-lg-6">
+        <img src="<%= @documento.rg %>" alt="" style="width: 150px; heigth: auto">
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Foto
+      </div>
+      <div class="col-lg-6">
+        <img src="<%= @documento.foto %>" alt="" style="width: 150px; heigth: auto">
+      </div>
+    </div>
+    <% @cid = returnCidByPes(@pessoa.id) %>
+    <% if @cid != nil %>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Cid
+      </div>
+      <div class="col-lg-6">
+        <img src="<%= @documento.cid %>" alt="" style="width: 150px; heigth: auto">
+      </div>
+    </div>
+    <% end %>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Comprovante de Residencia
+      </div>
+      <div class="col-lg-6">
+        <img src="<%= @documento.comp_residencia %>" alt="" style="width: 150px; heigth: auto">
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<% if @cid != nil %>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="col-lg-12">
+      <h3>CID</h3>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Código
+      </div>
+      <div class="col-lg-6">
+        <%= @cid.cod %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="col-lg-2">
+        Nome da doença
+      </div>
+      <div class="col-lg-6">
+        <%= @cid.nome_doenca %>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<% end %>
+<% end %>
+
+
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:via) %>:</strong></dt>
   <dd><%= @carteirinha.via %></dd>
@@ -25,3 +278,12 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+<% if ( @pessoa != nil ) && ( @endereco != nil ) && ( @documento != nil ) && ( @requisicao != nil ) %>
+
+
+<% end %>
+
+<%= form_for @carteirinha, :format => :html do |c| %>
+  <%= c.hidden_field :status, :value=>"Aprovado" %>
+  <%= c.submit "Aprovar", :class => 'btn btn-success' %>
+<% end %>

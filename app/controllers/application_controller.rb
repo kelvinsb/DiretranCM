@@ -442,6 +442,33 @@ class ApplicationController < ActionController::Base
     return @requisicao.pessoa_id
   end
 
+  helper_method :getPessoaByReq
+  def getPessoaByReq(requisicao)
+    @pessoa = nil
+    @Pessoas = Pessoa.all
+    @Pessoas.each do |apessoa|
+      if apessoa.id == requisicao.pessoa_id
+        return apessoa
+      end
+    end
+    return nil
+  end
+
+  helper_method :returnPesByCar
+  def returnPesByCar(carteirinha)
+    @pessoa = nil
+
+    @requisicao = nil
+    @requisicoes  = Requisicao.all
+    @requisicoes.each do |arequisicao|
+      if arequisicao.id = carteirinha.requisicao_id
+        @pessoa = getPessoaByReq(arequisicao)
+        return @pessoa
+      end
+    end
+  end
+
+
   helper_method :printAllDocuments
   def printAllDocuments(reqId)
     @pessoa = Pessoa.find(@requisicao.pessoa_id)
@@ -496,7 +523,7 @@ class ApplicationController < ActionController::Base
   def returnCidByPes(pesId)
     @cid = Cid.all
     @cid.each do |cid|
-      if cid.pessoa_id == pesId
+      if cid.requisicao_id == returnRequisicaoByPes(pesId)
         return cid
       end
     end
