@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170706085143) do
-=======
 ActiveRecord::Schema.define(version: 20170706190212) do
->>>>>>> e49cf2b995e0fc60c30b5972d7454dcffc485fc5
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +35,10 @@ ActiveRecord::Schema.define(version: 20170706190212) do
   create_table "cids", force: :cascade do |t|
     t.string   "codigo"
     t.string   "nome_doenca"
-    t.integer  "carteirinha_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["carteirinha_id"], name: "index_cids_on_carteirinha_id", using: :btree
+    t.integer  "requisicao_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["requisicao_id"], name: "index_cids_on_requisicao_id", using: :btree
   end
 
   create_table "documentos", force: :cascade do |t|
@@ -138,10 +134,10 @@ ActiveRecord::Schema.define(version: 20170706190212) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.boolean  "admin",                  default: false
-    t.boolean  "funcionario",            default: false
     t.integer  "enderecos_id"
     t.integer  "pessoas_id"
+    t.boolean  "admin",                  default: false
+    t.boolean  "funcionario",            default: false
     t.index ["cpf"], name: "index_usuarios_on_cpf", unique: true, using: :btree
     t.index ["enderecos_id"], name: "index_usuarios_on_enderecos_id", using: :btree
     t.index ["pessoas_id"], name: "index_usuarios_on_pessoas_id", using: :btree
@@ -149,7 +145,7 @@ ActiveRecord::Schema.define(version: 20170706190212) do
   end
 
   add_foreign_key "carteirinhas", "requisicoes"
-  add_foreign_key "cids", "carteirinhas"
+  add_foreign_key "cids", "requisicoes"
   add_foreign_key "documentos", "pessoas"
   add_foreign_key "enderecos", "pessoas"
   add_foreign_key "pessoas", "usuarios"

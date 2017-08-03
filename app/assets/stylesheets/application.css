@@ -153,3 +153,7 @@ select
 {
   float: left;
 }
+.control-label 
+{
+  float: left;
+}

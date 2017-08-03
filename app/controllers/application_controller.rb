@@ -60,6 +60,15 @@ class ApplicationController < ActionController::Base
     end 
   end
 
+  helper_method :authFunc
+  def authFunc()
+    if current_usuario.try(:funcionario?)
+      true
+    else
+      redirect_to root_path
+    end 
+  end
+
  # helper_method :isActualUser
  # def isActualUser()
  #   @pessoa = returnPes()
@@ -411,5 +420,77 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+  helper_method :returnReqObj
+  def returnReqObj(reqId)
+    #Pessoa, Endereço,Documento,Requisição
+    #Pessoa.find(params[:id]).nome
+    @requisicao = Requisicao.find(reqId)
+    return @requisicao
+  end
 
+  helper_method :returnReqPes
+  def returnReqPes(requisicao)
+    return @requisicao.pessoa_id
+  end
+
+  helper_method :printAllDocuments
+  def printAllDocuments(reqId)
+    @pessoa = Pessoa.find(@requisicao.pessoa_id)
+    #@endereco = Endereco.find(@requisicao.pessoa_id)
+    #@documento = Document.find(@requisicao.pessoa_id)
+    #@requisicao = Requisicao.find(@requisicao.pessoa_id)
+    #@cid = Cid.find(@requisicao.pessoa_id)
+
+
+
+    @lista = Array.new
+    @lista << 'kelvin'
+    @lista << 'rafael'
+    return @pessoa.nome
+  end
+
+
+  helper_method :returnEnderecoByPes
+  def returnEnderecoByPes(pesId)
+    @endereco = Endereco.all
+    @endereco.each do |ender|
+      if ender.pessoa_id == pesId
+        return ender
+      end
+    end
+    return nil
+  end
+
+  helper_method :returnDocumentoByPes
+  def returnDocumentoByPes(pesId)
+    @documento = Documento.all
+    @documento.each do |doc|
+      if doc.pessoa_id == pesId
+        return doc
+      end
+    end
+    return nil
+  end
+
+  helper_method :returnRequisicaoByPes
+  def returnRequisicaoByPes(pesId)
+    @requisicao = Requisicao.all
+    @requisicao.each do |req|
+      if req.pessoa_id == pesId
+        return req
+      end
+    end
+    return nil
+  end
+
+  helper_method :returnCidByPes
+  def returnCidByPes(pesId)
+    @cid = Cid.all
+    @cid.each do |cid|
+      if cid.pessoa_id == pesId
+        return cid
+      end
+    end
+    return nil
+  end
 end
