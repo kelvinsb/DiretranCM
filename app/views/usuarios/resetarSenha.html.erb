@@ -1,0 +1,15 @@
+<% if @user %>
+<% 	if changeUserPw(@user.id, 123123) == 1 %>
+
+<p>Senha alterada</p>
+
+<% 	link_to usuarios_listar_path  %>
+<% 	else %>
+
+<p>Senha não pode ser alterada</p>
+
+<% 	end %>
+<% else %>
+<p>Usuario não encontrado</p>
+
+<% end %>

@@ -75,6 +75,10 @@ class PessoasController < ApplicationController
     end
   end
 
+  def retNome
+    return @pessoa.nome
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pessoa

@@ -22,7 +22,7 @@
       <% if @documento.cpf_file_name != nil %>
         <%= image_tag @documento.cpf.url(:medium) %>
       <% end %>
-        
+
       </div>
       <div class="col-lg-12">
         <%= f.file_field :cpf %>
@@ -46,8 +46,6 @@
     <%=f.error_span(:pessoa_id) %>
   </div>
 
-  
-
   <div class="form-group">
     <%= f.label :foto, "Foto", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -62,6 +60,7 @@
     </div>
     <%=f.error_span(:pessoa_id) %>
   </div>
+
   <div class="form-group">
     <%= f.label :cid, "CID", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -76,6 +75,7 @@
     </div>
     <%=f.error_span(:pessoa_id) %>
   </div>
+
   <div class="form-group">
     <%= f.label :comp_residencia, "Comprovante de Residencia", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -91,14 +91,10 @@
     <%=f.error_span(:pessoa_id) %>
   </div>
 
-
-
-
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                documentos_path, :class => 'btn btn-default' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), documentos_path, :class => 'btn btn-default' %>
     </div>
   </div>
 
