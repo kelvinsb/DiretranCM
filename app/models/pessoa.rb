@@ -20,8 +20,8 @@ class Pessoa < ApplicationRecord
 	#numericality: {only_integer: true}
 
 	validates :celular,
-	presence: {message: " deve ser preenchido"},
-	numericality: {only_integer: true}
+	presence: {message: " deve ser preenchido"}
+	#numericality: {only_integer: true}
 
   validates :email,
   presence: {message: "deve ser preenchido"}

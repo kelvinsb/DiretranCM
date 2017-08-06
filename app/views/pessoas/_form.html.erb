@@ -54,7 +54,7 @@
   <div class="form-group">
     <%= f.label :telefone, :class => 'control-label col-lg-2' %>
     <div class="col-lg-6">
-      <%= f.text_field :telefone, :class => 'form-control', :maxlength => 10 %>
+      <%= f.text_field :telefone, :class => 'form-control', :maxlength => 15, :size => 15, :onkeyup => "mascara( this, mtel );" %>
     </div>
     <div class="col-lg-4">
       <%=f.error_span(:telefone) %>
