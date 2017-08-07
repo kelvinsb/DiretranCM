@@ -1,5 +1,10 @@
 <%= form_for @pessoa, :html => { :class => "form-horizontal pessoa" } do |f| %>
-  <p> <span style="color: red; font-size: 15px; float: left;"> *</span> Campos Obrigatórios</p>
+  <p> <span style="color: red; font-size: 15px; float: left;"> * </span> Campos Obrigatórios</p>
+
+  <div class="form-group">
+    <%= f.label :cpf, :class => 'control-label col-lg-2' %>
+    <%= @pessoa.cpf %>
+  </div>
 
   <div class="form-group">
     <%= f.label :nome, :class => 'control-label col-lg-2' %>
@@ -54,7 +59,7 @@
   <div class="form-group">
     <%= f.label :telefone, :class => 'control-label col-lg-2' %>
     <div class="col-lg-6">
-      <%= f.text_field :telefone, :class => 'form-control', :maxlength => 10 %>
+      <%= f.text_field :telefone, :class => 'form-control', :maxlength => 15, :size => 15, :onkeyup => "mascara( this, mtel );" %>
     </div>
     <div class="col-lg-4">
       <%=f.error_span(:telefone) %>

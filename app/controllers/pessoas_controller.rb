@@ -32,6 +32,7 @@ class PessoasController < ApplicationController
   def create
     @pessoa = Pessoa.new(pessoa_params)
     @pessoa.usuario_id=current_usuario.id
+    @pessoa.cpf = current_usuario.cpf
 
     #alterPessoa(@pessoa)
 
