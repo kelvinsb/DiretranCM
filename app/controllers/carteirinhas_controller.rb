@@ -35,7 +35,7 @@ class CarteirinhasController < ApplicationController
     else
       @carteirinha.via = 2
     end
-    @carteirinha.status = "Analise"
+    @carteirinha.status = "Em Analise"
     @carteirinha.categoria = Requisicao.find(returnReq()).categoria
 
     if ( returnPes() != nil ) && ( returnEnd() != nil ) && ( returnDoc() != nil ) && ( returnReq() != nil )

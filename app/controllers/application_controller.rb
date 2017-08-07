@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-
+# Recebe objeto Pessoa do usuario atual
   helper_method :getPessoa
   def getPessoa()
     @Pessoas = Pessoa.all
@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
-
+# Recebe objeto Pessoa do usuario atual
   helper_method :getPessoaById
   def getPessoaById()
     +
@@ -40,6 +40,7 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+# Recebe id do Usuario de acordo com o id do currentusuario
   helper_method :getUserId
   def getUserId(idDeviseUser)
     @Pessoas = Pessoa.all
@@ -51,6 +52,7 @@ class ApplicationController < ActionController::Base
     return 0
   end
 
+# Se admin retorna TRUE
   helper_method :authAdmin
   def authAdmin()
     if current_usuario.try(:admin?)
@@ -60,6 +62,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+# Se funcionário retorna TRUE
   helper_method :authFuncionario
   def authFuncionario()
     if current_usuario.try(:funcionario?)
@@ -69,6 +72,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+# Se funcionário retorna TRUE
   helper_method :authFunc
   def authFunc()
     if current_usuario.try(:funcionario?)
@@ -78,17 +82,9 @@ class ApplicationController < ActionController::Base
     end 
   end
 
- # helper_method :isActualUser
- # def isActualUser()
- #   @pessoa = returnPes()
- #   if @pessoa == params[:id]
- #     return true
- #   end
-  #  return false
- # end
 
 
-
+# Usado no menu: se não exister Pessoa redireciona para criar
   helper_method :verifyUser
   def verifyUser()
     @UsuarioId = getUserId(current_usuario.id)
@@ -100,7 +96,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-
+# Usado no menu: redireciona de acordo com o tipo de usuario
   helper_method :isLogged
   def isLogged()
     if current_usuario.try(:admin?)
@@ -114,12 +110,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
+# Usado no menu: utiliza o redirect em conjunto com a def anterior
   helper_method :redirectTypeOfUser
   def redirectTypeOfUser()
     redirect_to isLogged()
   end
 
+# Retorna id da Requisicao de acordo com o usuario atual
   helper_method :returnReqq
   def returnReqq()
     @req = Requisicao.all
@@ -143,6 +140,7 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+# Retorna endereço da Requisicao de acordo com o usuario atual
   helper_method :returnReqEnd
   def returnReqEnd()
     @iter = returnReqq()
@@ -154,6 +152,7 @@ class ApplicationController < ActionController::Base
   end
 
   #Pessoa init
+# Retorna id da Pessoa atual
   helper_method :returnPes
   def returnPes()
     @pessoa = Pessoa.all
@@ -169,7 +168,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-
+# Redireciona para novo ou editar do usuario atual
   helper_method :returnPesEnd
   def returnPesEnd()
     @iter = returnPes()
@@ -183,6 +182,7 @@ class ApplicationController < ActionController::Base
 
 
   #Documento init
+# Retorna id do Documento atual
   helper_method :returnDoc
   def returnDoc()
     @documentos = Documento.all
@@ -203,7 +203,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-
+# Redireciona para novo ou editar do usuario atual
   helper_method :returnDocEnd
   def returnDocEnd()
     @iter = returnDoc()
@@ -217,6 +217,7 @@ class ApplicationController < ActionController::Base
 
 
   #Endereço init
+# Retorna id do Endereço atual
   helper_method :returnEnd
   def returnEnd()
     @endereco = Endereco.all
@@ -238,7 +239,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-
+# Redireciona para novo ou editar do usuario atual
   helper_method :returnEndEnd
   def returnEndEnd()
     @iter = returnEnd()
@@ -264,6 +265,7 @@ class ApplicationController < ActionController::Base
 
 
   #Requisição init
+# Retorna id da Requisição atual
   helper_method :returnReq
   def returnReq()
     @requisicao = Requisicao.all
@@ -284,7 +286,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-
+# Redireciona para novo ou editar do usuario atual
   helper_method :returnReqEnd
   def returnReqEnd()
     @iter = returnReq()
@@ -298,6 +300,7 @@ class ApplicationController < ActionController::Base
 
 
   #Carteirinha init
+# Retorna id da Carteirinha atual
   helper_method :returnCar
   def returnCar()
     @carteirinhas = Carteirinha.all
@@ -319,7 +322,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-
+# Redireciona para novo ou editar do usuario atual
   helper_method :returnCarEnd
   def returnCarEnd()
     @iter = returnCar()
@@ -332,6 +335,7 @@ class ApplicationController < ActionController::Base
   #Carteirinha end
 
   #Cid init
+# Retorna id da Cid atual
   helper_method :returnCid
   def returnCid()
     @cid = Cid.all
@@ -353,7 +357,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-
+# Redireciona para novo ou editar do usuario atual
   helper_method :returnCidEnd
   def returnCidEnd()
     @iter = returnCar()
@@ -366,16 +370,27 @@ class ApplicationController < ActionController::Base
   #Cid end
 
 
+  helper_method :resCart
+  def resCart()
+
+    #id carteirinha 
+    @idCar = returnCar()
+    @carteirinha = Carteirinha.find(@idCar)
+    return @carteirinha.status
+
+     
+  end
+
 #Carteirinhas Aprovadas
 #Carteirinhas Aguardando
-#Carteirinhas Reprovadas TODO
-#Carteirinhas Vencidas TODO
+#Carteirinhas Reprovadas
+#Carteirinhas Vencidas
   helper_method :aguardCarteirinhas
   def aguardCarteirinhas()
     @carteirinhas = Carteirinha.all
     @totalCarteirinhas = 0
     @carteirinhas.each do |carteirinha|
-      if carteirinha.status == "Analise"
+      if carteirinha.status == "Em Analise"
         @totalCarteirinhas = @totalCarteirinhas + 1
       end
     end
@@ -387,7 +402,7 @@ class ApplicationController < ActionController::Base
     @carteirinhas = Carteirinha.all
     @totalCarteirinhas = 0
     @carteirinhas.each do |carteirinha|
-      if carteirinha.status == "Aprovadas"
+      if carteirinha.status == "Aprovada"
         @totalCarteirinhas = @totalCarteirinhas + 1
       end
     end
@@ -399,7 +414,7 @@ class ApplicationController < ActionController::Base
     @carteirinhas = Carteirinha.all
     @totalCarteirinhas = 0
     @carteirinhas.each do |carteirinha|
-      if carteirinha.status == "Reprovadas"
+      if carteirinha.status == "Rejeitada"
         @totalCarteirinhas = @totalCarteirinhas + 1
       end
     end
@@ -411,13 +426,14 @@ class ApplicationController < ActionController::Base
     @carteirinhas = Carteirinha.all
     @totalCarteirinhas = 0
     @carteirinhas.each do |carteirinha|
-      if carteirinha.status == "Vencidas"
+      if carteirinha.status == "Vencida"
         @totalCarteirinhas = @totalCarteirinhas + 1
       end
     end
     return @totalCarteirinhas
   end
 
+# Retorna o nome do usuario atual
   helper_method :returnPessoaOnUsuario
   def returnPessoaOnUsuario(idUsuario)
     @pessoas = Pessoa.all
@@ -429,6 +445,7 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+# Retorna o objeto da Requisição com a entrada da id
   helper_method :returnReqObj
   def returnReqObj(reqId)
     #Pessoa, Endereço,Documento,Requisição
@@ -437,11 +454,13 @@ class ApplicationController < ActionController::Base
     return @requisicao
   end
 
+# Retorna a id da pessoa de acordo com a requisição
   helper_method :returnReqPes
   def returnReqPes(requisicao)
     return @requisicao.pessoa_id
   end
 
+# Retorna o objeto da Pessoa com a entrada objeto da Requisição
   helper_method :getPessoaByReq
   def getPessoaByReq(requisicao)
     @pessoa = nil
@@ -454,6 +473,7 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+# Retorna o objeto da Pessoa com a entrada da Carteirinha
   helper_method :returnPesByCar
   def returnPesByCar(carteirinha)
     @pessoa = nil
@@ -461,14 +481,14 @@ class ApplicationController < ActionController::Base
     @requisicao = nil
     @requisicoes  = Requisicao.all
     @requisicoes.each do |arequisicao|
-      if arequisicao.id = carteirinha.requisicao_id
+      if arequisicao.id == carteirinha.requisicao_id
         @pessoa = getPessoaByReq(arequisicao)
         return @pessoa
       end
     end
   end
 
-
+# ???w
   helper_method :printAllDocuments
   def printAllDocuments(reqId)
     @pessoa = Pessoa.find(@requisicao.pessoa_id)
@@ -477,15 +497,10 @@ class ApplicationController < ActionController::Base
     #@requisicao = Requisicao.find(@requisicao.pessoa_id)
     #@cid = Cid.find(@requisicao.pessoa_id)
 
-
-
-    @lista = Array.new
-    @lista << 'kelvin'
-    @lista << 'rafael'
     return @pessoa.nome
   end
 
-
+# Retorna o objeto Endereço de acordo com o id da Pessoa
   helper_method :returnEnderecoByPes
   def returnEnderecoByPes(pesId)
     @endereco = Endereco.all
@@ -497,6 +512,7 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+# Retorna o objeto Documento de acordo com o id da Pessoa
   helper_method :returnDocumentoByPes
   def returnDocumentoByPes(pesId)
     @documento = Documento.all
@@ -508,6 +524,7 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+# Retorna o objeto Requisição de acordo com o id da Pessoa
   helper_method :returnRequisicaoByPes
   def returnRequisicaoByPes(pesId)
     @requisicao = Requisicao.all
@@ -519,6 +536,7 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+# Retorna o objeto Cidade de acordo com o id da Pessoa
   helper_method :returnCidByPes
   def returnCidByPes(pesId)
     @cid = Cid.all
@@ -529,4 +547,69 @@ class ApplicationController < ActionController::Base
     end
     return nil
   end
+
+
+
+# Restrição para mostrar śomente do usuario atual
+
+  #Se está logado, não é admin e não é funcionário
+  helper_method :authCurrentUsuario
+  def authCurrentUsuario()
+    if (usuario_signed_in?) && (!current_usuario.try(:admin?)) && (!current_usuario.try(:funcionario?))
+      return true
+    end
+    return false
+  end
+
+  # Verifica se Pessoa atual é igual a id atual
+  # Ex: pessoas/3/edit é igual ao id da Pessoa atual
+  helper_method :ifCurrentPessoa
+  def ifCurrentPessoa()
+    if getPessoa().id == Pessoa.find(params[:id]).id
+      return true
+    end
+    return false
+  end
+
+  helper_method :ifCurrentDocumento
+  def ifCurrentDocumento()
+    if returnDoc() == Documento.find(params[:id]).id
+      return true
+    end
+    return false
+  end
+
+  helper_method :ifCurrentEndereco
+  def ifCurrentEndereco()
+    if returnEnd() == Endereco.find(params[:id]).id
+      return true
+    end
+    return false
+  end
+
+  helper_method :ifCurrentRequisicao
+  def ifCurrentRequisicao()
+    if returnReq() == Requisicao.find(params[:id]).id
+      return true
+    end
+    return false
+  end
+
+  helper_method :ifCurrentCarteirinha
+  def ifCurrentCarteirinha()
+    if returnCar() == Carteirinha.find(params[:id]).id
+      return true
+    end
+    return false
+  end
+
+  helper_method :ifCurrentCid
+  def ifCurrentCid()
+    if returnCid() == Cid.find(params[:id]).id
+      return true
+    end
+    return false
+  end
+
+
 end

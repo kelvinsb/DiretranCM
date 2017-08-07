@@ -183,7 +183,13 @@
         CPF
       </div>
       <div class="col-lg-6">
-        <img src="<%= @documento.cpf %>" alt="" style="width: 150px; heigth: auto">
+        <% if @documento.cpf_file_name != nil %>
+        <a href="<%= @documento.cpf.url() %>" target="_blank">
+          <img src="<%= @documento.cpf %>" alt="" style="width: 150px; heigth: auto">
+        </a>
+        <% else %>
+        <div class="alert alert-danger">Não foi enviada</div>
+        <% end %>
       </div>
     </div>
     <div class="col-lg-12">
@@ -191,7 +197,13 @@
         RG
       </div>
       <div class="col-lg-6">
-        <img src="<%= @documento.rg %>" alt="" style="width: 150px; heigth: auto">
+        <% if @documento.rg_file_name != nil %>
+        <a href="<%= @documento.rg.url() %>" target="_blank">
+          <img src="<%= @documento.rg %>" alt="" style="width: 150px; heigth: auto">
+        </a>
+        <% else %>
+        <div class="alert alert-danger">Não foi enviada</div>
+        <% end %>
       </div>
     </div>
     <div class="col-lg-12">
@@ -199,7 +211,13 @@
         Foto
       </div>
       <div class="col-lg-6">
-        <img src="<%= @documento.foto %>" alt="" style="width: 150px; heigth: auto">
+        <% if @documento.foto_file_name != nil %>
+        <a href="<%= @documento.foto.url() %>" target="_blank">
+          <img src="<%= @documento.foto %>" alt="" style="width: 150px; heigth: auto">
+        </a>
+        <% else %>
+        <div class="alert alert-danger">Não foi enviada</div>
+        <% end %>
       </div>
     </div>
     <% @cid = returnCidByPes(@pessoa.id) %>
@@ -209,7 +227,13 @@
         Cid
       </div>
       <div class="col-lg-6">
-        <img src="<%= @documento.cid %>" alt="" style="width: 150px; heigth: auto">
+        <% if @documento.cid_file_name != nil %>
+        <a href="<%= @documento.cid.url() %>" target="_blank">
+          <img src="<%= @documento.cid %>" alt="" style="width: 150px; heigth: auto">
+        </a>
+        <% else %>
+        <div class="alert alert-danger">Não foi enviada</div>
+        <% end %>
       </div>
     </div>
     <% end %>
@@ -218,7 +242,13 @@
         Comprovante de Residencia
       </div>
       <div class="col-lg-6">
-        <img src="<%= @documento.comp_residencia %>" alt="" style="width: 150px; heigth: auto">
+        <% if @documento.comp_residencia_file_name != nil %>
+        <a href="<%= @documento.comp_residencia.url() %>" target="_blank">
+          <img src="<%= @documento.comp_residencia %>" alt="" style="width: 150px; heigth: auto">
+          </a>
+        <% else %>
+        <div class="alert alert-danger">Não foi enviada</div>
+        <% end %>
       </div>
     </div>
     
@@ -281,7 +311,7 @@
 <% end %>
 <br>
 <%= form_for @carteirinha, :remote => true do |c| %>
-  <%= c.hidden_field :status, :value=>"Aprovado" %>
+  <%= c.hidden_field :status, :value=>"Aprovada" %>
   <% if @carteirinha.categoria == "Idoso" || @carteirinha.categoria == "Deficiente" %>
     <%= c.hidden_field :data_vencimento, :value=>Date.current()+2.years %>
   <% elsif @carteirinha.categoria == "Deficente temporário" %>
@@ -291,7 +321,7 @@
   <%= c.submit "Aprovar", :class => 'btn btn-success' %>
 <% end %>
 <%= form_for @carteirinha, :remote => true do |c| %>
-  <%= c.hidden_field :status, :value=>"Rejeitado" %>
+  <%= c.hidden_field :status, :value=>"Rejeitada" %>
   <%= c.hidden_field :data_vencimento, :value=>"" %>
   <%= c.submit "Rejeitar", :class => 'btn btn-danger' %>
 <% end %>

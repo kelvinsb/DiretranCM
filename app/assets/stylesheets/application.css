@@ -169,3 +169,8 @@ select
   font-size:200%;
   font-weight: bold;
 }
+.navbar-default.menu-topo.navbar
+{
+  background-color: transparent;
+  border: 0;
+}

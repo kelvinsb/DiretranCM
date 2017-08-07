@@ -1,5 +1,9 @@
 <%- model_class = Cid -%>
+<% if authCurrentUsuario() && ifCurrentCarteirinha() %>
 <div class="page-header">
   <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
 </div>
 <%= render :partial => 'form' %>
+<% else %>
+<p>Você não tem privilégios para esta página</p>
+<% end %>

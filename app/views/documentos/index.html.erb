@@ -21,11 +21,11 @@
     <% @documentos.each do |documento| %>
       <tr>
         <td><%= link_to documento.id, documento_path(documento) %></td>
-        <td><img src="<%= documento.cpf %>" alt="" style="width: 150px; heigth: auto"></td>
-        <td><img src="<%= documento.rg %>" alt="" style="width: 150px; heigth: auto"> </td>
-        <td><img src="<%= documento.foto %>" alt="" style="width: 150px; heigth: auto"></td>
-        <td><img src="<%= documento.cid %>" alt="" style="width: 150px; heigth: auto"></td>
-        <td><img src="<%= documento.comp_residencia %>" alt="" style="width: 150px; heigth: auto"></td>
+        <td><a href="<%= documento.cpf %>" target="_blank"><img src="<%= documento.cpf %>" alt="" style="width: 150px; heigth: auto"></a></td>
+        <td><a href="<%= documento.rg %>" target="_blank"><img src="<%= documento.rg %>" alt="" style="width: 150px; heigth: auto"></a> </td>
+        <td><a href="<%= documento.foto %>" target="_blank"><img src="<%= documento.foto %>" alt="" style="width: 150px; heigth: auto"></a></td>
+        <td><a href="<%= documento.cpf %>" target="_blank"><img src="<%= documento.cid %>" alt="" style="width: 150px; heigth: auto"></a></td>
+        <td><a href="<%= documento.cpf %>" target="_blank"><img src="<%= documento.comp_residencia %>" alt="" style="width: 150px; heigth: auto"></a></td>
 
 
         <td><%=l documento.created_at %></td>

@@ -17,10 +17,12 @@
 			<% if returnReq==nil %>
 			<li class="danger">Falta Adicionar Requisição</li>
 			<% end %>
-			<% if (returnCar!=nil) %>
+			<% if (returnCar!=nil) && (returnCar()=="Em Analise") %>
 			<li class="info">A carteirinha foi requisitada, aguarde a resposta!</li>
-			<% elsif (returnPes!=nil) && (returnEnd!=nil) && (returnDoc!=nil) && (returnReq!=nil) %>
+			<% elsif (returnPes!=nil) && (returnEnd!=nil) && (returnDoc!=nil) && (returnReq!=nil) && (returnCar==nil) %>
 			<li class="info">A carteirinha está disponível para ser requisitada</li>
+			<% else %>
+			<li class="info">A carteirinha está <strong><%= resCart() %></strong></li>
 			<% end %>
 		</ul>
   	</div>
