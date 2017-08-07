@@ -1,8 +1,8 @@
 class CarteirinhasController < ApplicationController
   before_action :set_carteirinha, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_usuario!, only: [:show, :new, :edit]
+  before_action :authenticate_usuario!, only: [:show, :new]
   before_action :authAdmin, only: [:index, :destroy]
-  before_action :authFuncionario, only: [:index, :show]
+  before_action :authFuncionario, only: [:index, :show, :edit]
 
   # GET /carteirinhas
   # GET /carteirinhas.json
@@ -61,11 +61,12 @@ class CarteirinhasController < ApplicationController
   # PATCH/PUT /carteirinhas/1.json
   def update
     respond_to do |format|
+
       if @carteirinha.update(carteirinha_params)
         #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully updated.' }
         #format.json { render :show, status: :ok, location: @carteirinha }
         #format.html { redirect_to edit_cid_path }
-
+        format.js { redirect_to carteirinhas_path}
       else
         format.html { render :edit }
         format.json { render json: @carteirinha.errors, status: :unprocessable_entity }
