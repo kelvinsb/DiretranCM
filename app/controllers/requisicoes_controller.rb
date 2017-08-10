@@ -32,7 +32,7 @@ class RequisicoesController < ApplicationController
     @requisicao.pessoa_id = Pessoa.find_by_usuario_id(current_usuario.id).id
 
     #@requisicao.data_emissao quando aprovar
-    @requisicao.data_requisicao = Date.current
+    @requisicao.data_requisicao = Date.current()
     if @requisicao.qtde_carteirinhas == nil
       @requisicao.qtde_carteirinhas = 0
     else
@@ -65,7 +65,6 @@ class RequisicoesController < ApplicationController
   def update
     respond_to do |format|
       if @requisicao.update(requisicao_params)
-
         format.html { redirect_to returnCarEnd()}
         #format.html { redirect_to @requisicao, notice: 'Requisição criada com sucesso.' }
         format.json { render :show, status: :ok, location: @requisicao }
