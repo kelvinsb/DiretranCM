@@ -1,3 +1,5 @@
+I18n.t 
+
 	require 'prawn'
 
 pdf = Prawn::Document.new
@@ -120,7 +122,14 @@ excess_text = pdf.text_box string,
 	:at => [50, 367],
 	:size => 10
 
-string = "30/06/2019" ############################################
+data = Carteirinha.find(params[:id]).data_vencimento
+
+data.strftime('%d%m%Y')
+
+#t=Time::parse(data)
+string = data.to_s
+#string = "30/06/2222" ############################################
+#string = Carteirinha.find(params[:id]).data_vencimento
 excess_text = pdf.text_box string,
 	:at => [95, 369],
 	:size => 14,
