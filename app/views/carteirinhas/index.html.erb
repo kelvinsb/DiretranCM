@@ -7,7 +7,8 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:via) %></th>
-      <th><%= model_class.human_attribute_name(:status) %></th>
+
+
       <th><%= model_class.human_attribute_name(:categoria) %></th>
       <th><%= model_class.human_attribute_name(:data_vencimento) %></th>
       <th><%= model_class.human_attribute_name(:requisicao_id) %></th>
@@ -20,7 +21,7 @@
       <tr>
         <td><%= link_to carteirinha.id, carteirinha_path(carteirinha) %></td>
         <td><%= carteirinha.via %></td>
-        <td><%= carteirinha.status %></td>
+        
         <td><%= carteirinha.categoria %></td>
         <td><%= carteirinha.data_vencimento %></td>
         <td><%= carteirinha.requisicao_id %></td>
