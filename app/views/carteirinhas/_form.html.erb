@@ -1,7 +1,13 @@
-<% if ( returnCar() == nil ) %>
+
 
 <%= form_for @carteirinha, :html => { :class => "form-horizontal carteirinha" } do |f| %>
+  
+  <% if ( returnCar() == nil ) ||  @carteirinha.status == "Rejeitada"%>
 
+    <% if  @carteirinha.status == "Rejeitada" %>
+      <span>Por favor confira os dados da carteirinha</span>
+      <%= f.hidden_field :status, :value=>"Em Analise" %>
+    <% end %>
   <% if @carteirinha.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
@@ -51,9 +57,12 @@
     </div>
   </div>
 
-<% end %>
-<% else %>
 
-<h3>Carteirinha já requerida</h3>
+
+  <% else %>
+
+  <h3>Carteirinha já requerida</h3>
+
+  <% end %>
 
 <% end %>

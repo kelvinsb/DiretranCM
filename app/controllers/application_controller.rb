@@ -369,7 +369,7 @@ class ApplicationController < ActionController::Base
   end
   #Cid end
 
-
+  #Status da Carteirinha
   helper_method :resCart
   def resCart()
 
@@ -377,6 +377,18 @@ class ApplicationController < ActionController::Base
     @idCar = returnCar()
     @carteirinha = Carteirinha.find(@idCar)
     return @carteirinha.status
+
+     
+  end
+
+  #Motivo da rejeição
+  helper_method :rejMot
+  def rejMot()
+
+    #id carteirinha 
+    @idCar = returnCar()
+    @carteirinha = Carteirinha.find(@idCar)
+    return @carteirinha.motivo
 
      
   end

@@ -1,13 +1,14 @@
 class CarteirinhasController < ApplicationController
   before_action :set_carteirinha, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_usuario!, only: [:show, :new]
+  before_action :authenticate_usuario!, only: [:show, :new, :edit]
   before_action :authAdmin, only: [:index, :destroy]
-  before_action :authFuncionario, only: [:index, :show, :edit]
+  before_action :authFuncionario, only: [:index, :show]
 
   # GET /carteirinhas
   # GET /carteirinhas.json
   def index
     @carteirinhas = Carteirinha.all
+    @carteirinhas.order(:status)
   end
 
   # GET /carteirinhas/1
@@ -29,13 +30,12 @@ class CarteirinhasController < ApplicationController
   def create
     @carteirinha = Carteirinha.new(carteirinha_params)
     @carteirinha.requisicao_id = returnReq()
-
+    @carteirinha.status = "Em Analise"
     if @carteirinha.via == nil
       @carteirinha.via = 0
     else
       @carteirinha.via = 2
     end
-    @carteirinha.status = "Em Analise"
     @carteirinha.categoria = Requisicao.find(returnReq()).categoria
 
     if ( returnPes() != nil ) && ( returnEnd() != nil ) && ( returnDoc() != nil ) && ( returnReq() != nil )
@@ -66,7 +66,8 @@ class CarteirinhasController < ApplicationController
         #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully updated.' }
         #format.json { render :show, status: :ok, location: @carteirinha }
         #format.html { redirect_to edit_cid_path }
-        format.js { redirect_to carteirinhas_path}
+        format.html {redirect_to root_path}
+        format.js { redirect_to root_path}
       else
         format.html { render :edit }
         format.json { render json: @carteirinha.errors, status: :unprocessable_entity }
@@ -92,6 +93,6 @@ class CarteirinhasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def carteirinha_params
-      params.require(:carteirinha).permit(:via, :status, :categoria, :data_vencimento, :requisicao_id, :identificador)
+      params.require(:carteirinha).permit(:motivo,:via, :status, :categoria, :data_vencimento, :requisicao_id, :identificador)
     end
 end

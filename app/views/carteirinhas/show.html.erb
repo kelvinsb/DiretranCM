@@ -317,24 +317,32 @@
 
 <% end %>
 <br>
-<%= form_for @carteirinha, :remote => true do |c| %>
-  <%= c.hidden_field :status, :value=>"Aprovada" %>
-  <% if @carteirinha.categoria == "Idoso" || @carteirinha.categoria == "Deficiente" %>
-    <%= c.hidden_field :data_vencimento, :value=>Date.current()+2.years %>
-  <% elsif @carteirinha.categoria == "Deficente temporário" %>
-    <%= c.hidden_field :data_vencimento, :value=>Date.current()+3.months %>
-  <% end %>
+<div class="row">
+  <div class="col-lg-4">
+  <%= form_for @carteirinha, :remote => true do |c| %>
+    <%= c.hidden_field :status, :value=>"Aprovada" %>
+    <% if @carteirinha.categoria == "Idoso" || @carteirinha.categoria == "Deficiente" %>
+      <%= c.hidden_field :data_vencimento, :value=>Date.current()+2.years %>
+    <% elsif @carteirinha.categoria == "Deficente temporário" %>
+      <%= c.hidden_field :data_vencimento, :value=>Date.current()+3.months %>
+    <% end %>
 
-  <%= c.submit "Aprovar", :class => 'btn btn-success' %>
-<% end %>
+    <%= c.submit "Aprovar", :class => 'btn btn-success' %>
+  <% end %>
+  </div> 
+  <div class="col-lg-4">
 <%= form_for @carteirinha, :remote => true do |c| %>
   <%= c.hidden_field :status, :value=>"Rejeitada" %>
+  <%= c.text_field :motivo, placeholder: "Motivo para rejeição" %>
   <%= c.hidden_field :data_vencimento, :value=>"" %>
   <%= c.submit "Rejeitar", :class => 'btn btn-danger' %>
 <% end %>
-
+</div>
+<div class="col-lg-4">
 <div class="edit_carteirinha">
   <div class="btn btn-primary">
     Gerar PDF
   </div>
+</div>
+</div>
 </div>
