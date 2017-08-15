@@ -300,16 +300,16 @@ class ApplicationController < ActionController::Base
 
 
   #Carteirinha init
-# Retorna id da Carteirinha atual
+# Retorna id da 'Carteirinha atual'
   helper_method :returnCar
   def returnCar()
     @carteirinhas = Carteirinha.all
+    @retorno = 0
 
     @reqId = returnReqq()
     if @reqId != nil
       @req = Requisicao.find(@reqId)
       #return @pessoa.id
-      @retorno
       @carteirinhas.each do |itera|
         if itera.requisicao_id == @req.id
            return itera.id
@@ -374,9 +374,20 @@ class ApplicationController < ActionController::Base
   def resCart()
 
     #id carteirinha 
-    @idCar = returnCar()
-    @carteirinha = Carteirinha.find(@idCar)
-    return @carteirinha.status
+    @idCarteirinha = returnCar()
+    @retorno
+    if @idCar=!nil
+      #@carteirinha = Carteirinha.find(@idCar)
+      @carteirinhas = Carteirinha.all
+      @carteirinhas.each do |c|
+        if c.id == @idCarteirinha
+          @retorno = c.status
+        end
+      end
+      return @retorno
+    else
+      return nil
+    end
 
      
   end
