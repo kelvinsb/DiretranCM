@@ -634,5 +634,16 @@ class ApplicationController < ActionController::Base
     return false
   end
 
+  helper_method :ifInfoCarteirinha
+  def ifInfoCarteirinha()
+    #@iCarteirinhas = #Info_carteirinhasss.all
+    #@infC
+    #@iCarteirinhas.each do |ic|
+    #  @infC = c
+    #  break
+    #end
+    @infC = InfoCarteirinha.all.first()
+    return @infC
+  end
 
 end

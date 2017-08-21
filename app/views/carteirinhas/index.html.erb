@@ -37,6 +37,11 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %> -->
         </td>
+        <td>
+          <% if carteirinha.status == "Aprovada" %>
+          <%= link_to "Ver carteirinha", carteirinha_path(carteirinha.id)+'.pdf', :class => 'btn btn-primary' %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

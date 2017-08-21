@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :info_carteirinhas
   resources :inf_carteirinhas
   get 'usuarios/listar'
 

@@ -1,0 +1,54 @@
+<%- model_class = InfoCarteirinha -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <p>Caso queira modificar os dados padrões da carteirinha somente será necessário criar um novo <br>
+<strong>OBS:</strong> Por definição será selecionado o primeiro</p>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nome_tipo_estacionamento) %></th>
+      <th><%= model_class.human_attribute_name(:resolucao) %></th>
+      <th><%= model_class.human_attribute_name(:uf) %></th>
+      <th><%= model_class.human_attribute_name(:municipio) %></th>
+      <th><%= model_class.human_attribute_name(:orgao_expedidor) %></th>
+      <th><%= model_class.human_attribute_name(:nome_diretor) %></th>
+      <th><%= model_class.human_attribute_name(:orgao_exp_diretor) %></th>
+      <th><%= model_class.human_attribute_name(:regras_utilizacao) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @info_carteirinhas.each do |info_carteirinha| %>
+      <tr>
+        <td><%= link_to info_carteirinha.id, info_carteirinha_path(info_carteirinha) %></td>
+        <td><%= info_carteirinha.nome_tipo_estacionamento %></td>
+        <td><%= info_carteirinha.resolucao %></td>
+        <td><%= info_carteirinha.uf %></td>
+        <td><%= info_carteirinha.municipio %></td>
+        <td><%= info_carteirinha.orgao_expedidor %></td>
+        <td><%= info_carteirinha.nome_diretor %></td>
+        <td><%= info_carteirinha.orgao_exp_diretor %></td>
+        <td><%= info_carteirinha.regras_utilizacao %></td>
+        <td><%=l info_carteirinha.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      info_carteirinha_path(info_carteirinha), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_info_carteirinha_path(info_carteirinha), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      info_carteirinha_path(info_carteirinha),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_info_carteirinha_path,
+            :class => 'btn btn-primary' %>

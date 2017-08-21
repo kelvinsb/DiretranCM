@@ -1,39 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = InfCarteirinha -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Num registro:</strong>
-  <%= @inf_carteirinha.num_registro %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:num_registro) %>:</strong></dt>
+  <dd><%= @inf_carteirinha.num_registro %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:validade) %>:</strong></dt>
+  <dd><%= @inf_carteirinha.validade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:diretor) %>:</strong></dt>
+  <dd><%= @inf_carteirinha.diretor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nome_beneficiario) %>:</strong></dt>
+  <dd><%= @inf_carteirinha.nome_beneficiario %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rg) %>:</strong></dt>
+  <dd><%= @inf_carteirinha.rg %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:regras) %>:</strong></dt>
+  <dd><%= @inf_carteirinha.regras %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tipo) %>:</strong></dt>
+  <dd><%= @inf_carteirinha.tipo %></dd>
+</dl>
 
-<p>
-  <strong>Validade:</strong>
-  <%= @inf_carteirinha.validade %>
-</p>
-
-<p>
-  <strong>Diretor:</strong>
-  <%= @inf_carteirinha.diretor %>
-</p>
-
-<p>
-  <strong>Nome beneficiario:</strong>
-  <%= @inf_carteirinha.nome_beneficiario %>
-</p>
-
-<p>
-  <strong>Rg:</strong>
-  <%= @inf_carteirinha.rg %>
-</p>
-
-<p>
-  <strong>Regras:</strong>
-  <%= @inf_carteirinha.regras %>
-</p>
-
-<p>
-  <strong>Tipo:</strong>
-  <%= @inf_carteirinha.tipo %>
-</p>
-
-<%= link_to 'Edit', edit_inf_carteirinha_path(@inf_carteirinha) %> |
-<%= link_to 'Back', inf_carteirinhas_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              inf_carteirinhas_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_inf_carteirinha_path(@inf_carteirinha), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              inf_carteirinha_path(@inf_carteirinha),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

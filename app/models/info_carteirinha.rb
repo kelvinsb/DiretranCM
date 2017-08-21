@@ -1,0 +1,2 @@
+class InfoCarteirinha < ApplicationRecord
+end

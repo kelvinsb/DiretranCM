@@ -1,5 +1,7 @@
-<%- model_class = InfCarteirinha -%>
+<%- model_class = InfoCarteirinha -%>
 <div class="page-header">
   <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+  <p>Algumas informações a serem consideradas: <br>
+  <strong>Orgao exp diretor:</strong> Será exibido abaixo do nome do Diretor</p>
 </div>
 <%= render :partial => 'form' %>

@@ -59,6 +59,39 @@ end
 ################### FRENTE #####################
 ################################################
 
+# Começa validação
+@infCl = ifInfoCarteirinha()
+if @infCl != nil
+	@nTE = @infCl.nome_tipo_estacionamento
+	@res = @infCl.resolucao
+	@uf = @infCl.uf
+	@muni = @infCl.municipio
+	@oE = @infCl.orgao_expedidor
+	@nD = @infCl.nome_diretor
+	@oED = @infCl.orgao_exp_diretor
+	@rU = @infCl.regras_utilizacao
+else
+	@nTE = "ESTACIONAMENTO VAGA ESPECIAL"
+	@res = "303/08 DO CONTRAN"
+	@uf = "Paraná"
+	@muni = "Campo Mourão"
+	@oE = "DIRETRAN - Diretoria de Trânsito
+	Prefeitura Municipal de Campo Mourão"
+	@nD = "ANDRÉ NASCIMENTO CASARIN"
+	@oED = "Diretor de Trânsito Municipal"
+	@rU = "1 - A autorização concedida por meio deste cartão somente terá validade se o mesmo for apresentado no original e preencher as seguintes condições.
+		 1.1 - Estiver colocado sobre o painel do veículo, com frente voltada para cima.
+		  2 - Este cartão de autorização poderá ser recolhido a o ato da autorização suspenso ou cassado, a qualquer tempo , a critério do órgão de trânsito, especialmente se verificada irregularidade em sua utilização, considerando-se como tal, dentre outros:
+			 2.1 - O empréstimo do cartão a terceiros;
+		  3 - A presente autorização somente é valida para estacionar nas vagas devidamente sinalizadas com o símbolo Internacional de Acesso, especialmente criadas pelo órgão de trânsito para esse fim.
+		  4 - Esta autorização também permite o uso em vagas de Estacionamento Rotativo Regulamentado, gratuito ou pago, sinalizadas com o Símbolo Internacional de Acesso, sendo obrigatória a utilização do Cartão do Estacionamento, bem como a obediência às suas normas de utilização.
+		  5 - O desrespeito ao disposto neste cartão de autorização, bem como as demais regras de trânsito e a sinalização local, sujeitará o infrator as medidas administrativas, penalidades e pontuações previstas em lei."
+end
+
+
+#nome_tipo_estacionamento:string resolucao:string uf:string municipio:string orgao_expedidor:string nome_diretor:string orgao_exp_diretor:string regras_utilizacao:string
+# Termina validação 
+
 #marca d'agua
 if (Carteirinha.find(params[:id]).categoria == 'Idoso')
 	logo_path =  "#{Rails.root}/app/assets/images/idoso-sombra.png"
@@ -90,13 +123,15 @@ pdf.text_box "REPÚBLICA FEDERATIVA DO BRASIL",
 pdf.text_box "CONSELHO NACIONAL DE TRÂNSITO",
 :at => [110, 470]
 
-string = "ESTACIONAMENTO VAGA ESPECIAL"
+
+string = @nTE
+
 excess_text = pdf.text_box string,
 	:at => [65, 440],
 	:size => 16,
 	:style => :bold
 
-string = "CONFORME RESOLUÇÃO Nº 303/08 DO CONTRAN"
+string = "CONFORME RESOLUÇÃO Nº " + @res
 excess_text = pdf.text_box string,
 	:at => [105, 415],
 	:size => 8
@@ -140,7 +175,7 @@ excess_text = pdf.text_box string,
 	:at => [50, 352],
 	:size => 10
 
-string = "Paraná" ################################################
+string = @uf ################################################
 excess_text = pdf.text_box string,
 	:at => [158, 352],
 	:size => 10
@@ -150,7 +185,7 @@ excess_text = pdf.text_box string,
 	:at => [50, 337],
 	:size => 10
 
-string = "Campo Mourão" ##########################################
+string = @muni ##########################################
 excess_text = pdf.text_box string,
 	:at => [100, 337],
 	:size => 10
@@ -160,23 +195,23 @@ excess_text = pdf.text_box string,
 	:at => [50, 322],
 	:size => 10
 
-string = "DIRETRAN - Diretoria de Trânsito"
+string = @oE
 excess_text = pdf.text_box string,
 	:at => [130, 322],
 	:size => 10
 
-string = "Prefeitura Municipal de Campo Mourão"
-excess_text = pdf.text_box string,
-	:at => [130, 312],
-	:size => 10
+#string = "Prefeitura Municipal de Campo Mourão"
+#excess_text = pdf.text_box string,
+#	:at => [130, 312],
+#	:size => 10
 
-string = "ANDRÉ NASCIMENTO CASARIN"
+string = @nD
 excess_text = pdf.text_box string,
 	:at => [116, 275],
 	:size => 9,
 	:style => :bold
 
-string = "Diretor de Trânsito Municipal"
+string = @oED
 excess_text = pdf.text_box string,
 	:at => [136, 265],
 	:size => 8
@@ -218,13 +253,7 @@ excess_text = pdf.text_box string,
 	:size => 9,
 	:style => :bold
 
-string = "1 - A autorização concedida por meio deste cartão somente terá validade se o mesmo for apresentado no original e preencher as seguintes condições.
-		 1.1 - Estiver colocado sobre o painel do veículo, com frente voltada para cima.
-		  2 - Este cartão de autorização poderá ser recolhido a o ato da autorização suspenso ou cassado, a qualquer tempo , a critério do órgão de trânsito, especialmente se verificada irregularidade em sua utilização, considerando-se como tal, dentre outros:
-			 2.1 - O empréstimo do cartão a terceiros;
-		  3 - A presente autorização somente é valida para estacionar nas vagas devidamente sinalizadas com o símbolo Internacional de Acesso, especialmente criadas pelo órgão de trânsito para esse fim.
-		  4 - Esta autorização também permite o uso em vagas de Estacionamento Rotativo Regulamentado, gratuito ou pago, sinalizadas com o Símbolo Internacional de Acesso, sendo obrigatória a utilização do Cartão do Estacionamento, bem como a obediência às suas normas de utilização.
-		  5 - O desrespeito ao disposto neste cartão de autorização, bem como as demais regras de trânsito e a sinalização local, sujeitará o infrator as medidas administrativas, penalidades e pontuações previstas em lei."
+string = @rU
 excess_text = pdf.text_box string,
 	:at => [386, 435],
 	:size => 9,

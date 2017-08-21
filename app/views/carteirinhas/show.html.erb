@@ -339,10 +339,10 @@
 <% end %>
 </div>
 <div class="col-lg-4">
+<% if @carteirinha.status == "Aprovada" %>
 <div class="edit_carteirinha">
-  <div class="btn btn-primary">
-    Gerar PDF
-  </div>
+  <%= link_to "Ver carteirinha", carteirinha_path(@carteirinha.id)+'.pdf', :class => 'btn btn-primary' %>
 </div>
+<% end %>
 </div>
 </div>
