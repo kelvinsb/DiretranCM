@@ -2,7 +2,7 @@
 
 <%= form_for @carteirinha, :html => { :class => "form-horizontal carteirinha" } do |f| %>
   
-  <% if ( returnCar() == nil ) ||  @carteirinha.status == "Rejeitada"%>
+  <% if ( returnCar() == nil ) ||  @carteirinha.status == "Rejeitada" || @carteirinha.status == nil %>
 
     <% if  @carteirinha.status == "Rejeitada" %>
       <span>Por favor confira os dados da carteirinha</span>

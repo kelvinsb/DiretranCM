@@ -1,8 +1,8 @@
 class DocumentosController < ApplicationController
   before_action :set_documento, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_usuario!, only: [:show, :new, :edit]
-  before_action :authAdmin, only: [:index, :destroy]
-  before_action :authFuncionario, only: [:index, :show]
+  before_action :authFuncOrAdmin, only: [:index, :destroy]
+  #before_action :authFuncionario, only: [:index, :show]
 
   # GET /documentos
   # GET /documentos.json

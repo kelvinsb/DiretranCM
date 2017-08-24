@@ -72,6 +72,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  #Se funcionario ou admin
+  helper_method :authFuncOrAdmin
+  def authFuncOrAdmin()
+    if current_usuario.try(:admin?) || current_usuario.try(:funcionario?)
+      true
+    else
+      redirect_to root_path
+    end
+  end
+
 # Se funcionário retorna TRUE
   helper_method :authFunc
   def authFunc()
