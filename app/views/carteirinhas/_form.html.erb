@@ -7,6 +7,7 @@
     <% if  @carteirinha.status == "Rejeitada" %>
       <span>Por favor confira os dados da carteirinha</span>
       <%= f.hidden_field :status, :value=>"Em Analise" %>
+      <%= f.hidden_field :motivo, :value=>"" %>
     <% end %>
   <% if @carteirinha.errors.any? %>
     <div id="error_expl" class="panel panel-danger">

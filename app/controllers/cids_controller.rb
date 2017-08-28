@@ -1,8 +1,7 @@
 class CidsController < ApplicationController
   before_action :set_cid, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_usuario!, only: [:show, :new, :edit]
-  before_action :authAdmin, only: [:index, :destroy]
-  before_action :authFuncionario, only: [:index, :show]
+  before_action :authFuncOrAdmin, only: [:index, :destroy]
 
   # GET /cids
   # GET /cids.json

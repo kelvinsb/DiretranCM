@@ -178,3 +178,15 @@ select
   background-color: transparent;
   border: 0;
 }
+.lista-dash li
+{
+  margin-bottom: 2px;
+}
+.navbar.navbar-default.topo
+{
+  padding-top: 10px;
+}
+.fotos-d div
+{
+  padding-top: 2px;
+}

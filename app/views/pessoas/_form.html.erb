@@ -1,10 +1,14 @@
 <%= form_for @pessoa, :html => { :class => "form-horizontal pessoa" } do |f| %>
   <p> <span style="color: red; font-size: 15px; float: left;"> * </span> Campos Obrigatórios</p>
 
+  <% if !@pessoa.new_record? %>
   <div class="form-group">
     <%= f.label :cpf, :class => 'control-label col-lg-2' %>
-    <%= @pessoa.cpf %>
+    <div class="col-lg-6">
+      <%= @pessoa.cpf %>
+    </div>
   </div>
+  <% end %>
 
   <div class="form-group">
     <%= f.label :nome, :class => 'control-label col-lg-2' %>

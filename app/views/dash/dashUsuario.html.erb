@@ -19,7 +19,7 @@
 			<% end %>
 			<% if (returnCar!=nil) && (returnCar()=="Em Analise") %>
 			<li class="info">A carteirinha foi requisitada, aguarde a resposta!</li>
-			<% elsif (returnPes!=nil) && (returnEnd!=nil) && (returnDoc!=nil) && (returnReq!=nil) && (returnCar==nil) %>
+			<% elsif (returnPes!=nil) && (returnEnd!=nil) && (returnDoc!=nil) && (returnReq!=nil) && (returnCar==nil) && resCart == nil %>
 			<li class="info">A carteirinha está disponível para ser requisitada</li>
 			<% elsif returnCar()!= nil && resCart()=="Rejeitada"%>
 			<li class="info">A carteirinha está <strong><%= resCart() %></strong>, <br><br>Motivo: <strong><%= rejMot() %></strong></li>

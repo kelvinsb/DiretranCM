@@ -47,7 +47,7 @@
   	</div>
   </nav>
 
-<% if (current_usuario.try(:admin?)) | current_usuario.try(:funcionario?) %>
+<% if (current_usuario.try(:admin?)) || current_usuario.try(:funcionario?) %>
 
   <nav class="navbar navbar-default menu-topo" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -80,8 +80,11 @@
      <li class="colorb color3<% if current_page?(enderecos_path) %> ativo<% end %> col-lg-1" >
         <%= link_to "Endereço", enderecos_path %>
       </li>
-      <li class="colorb color2<% if current_page?(documentos_path) %> ativo<% end %> col-lg-2" >
+      <li class="colorb color2<% if current_page?(documentos_path) %> ativo<% end %> col-lg-1" >
         <%= link_to "Documento", documentos_path %>
+      </li>
+      <li class="colorb color6<% if current_page?(documentos_path) %> ativo<% end %> col-lg-1" >
+        <%= link_to "Cids", cids_path %>
       </li>
       <li class="colorb color4<% if current_page?(requisicoes_path) %> ativo<% end %> col-lg-1" >
         <%= link_to "Requisição", requisicoes_path %>

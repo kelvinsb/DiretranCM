@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
 # Recebe objeto Pessoa do usuario atual
   helper_method :getPessoa
   def getPessoa()
-    @Pessoas = Pessoa.all
-    @Pessoas.each do |pessoa|
+    pessoas = Pessoa.all
+    pessoas.each do |pessoa|
       if pessoa.usuario_id == current_usuario.id
         return pessoa
       end
@@ -30,9 +30,8 @@ class ApplicationController < ActionController::Base
 # Recebe objeto Pessoa do usuario atual
   helper_method :getPessoaById
   def getPessoaById()
-    +
-    @Pessoas = Pessoa.all
-    @Pessoas.each do |pessoa|
+    pessoas = Pessoa.all
+    pessoas.each do |pessoa|
       if pessoa.usuario_id == current_usuario.id
         return pessoa
       end
@@ -43,13 +42,13 @@ class ApplicationController < ActionController::Base
 # Recebe id do Usuario de acordo com o id do currentusuario
   helper_method :getUserId
   def getUserId(idDeviseUser)
-    @Pessoas = Pessoa.all
-    @Pessoas.each do |usuario|
+    pessoas = Pessoa.all
+    pessoas.each do |usuario|
       if usuario.usuario_id == idDeviseUser
         return usuario.id
       end
     end
-    return 0
+    return nil
   end
 
 # Se admin retorna TRUE
@@ -58,7 +57,7 @@ class ApplicationController < ActionController::Base
     if current_usuario.try(:admin?)
       true
     else
-      redirect_to root_path
+      false
     end
   end
 
@@ -68,7 +67,7 @@ class ApplicationController < ActionController::Base
     if current_usuario.try(:funcionario?)
       true
     else
-      redirect_to root_path
+      false
     end
   end
 
@@ -78,7 +77,7 @@ class ApplicationController < ActionController::Base
     if current_usuario.try(:admin?) || current_usuario.try(:funcionario?)
       true
     else
-      redirect_to root_path
+      false
     end
   end
 
@@ -88,7 +87,7 @@ class ApplicationController < ActionController::Base
     if current_usuario.try(:funcionario?)
       true
     else
-      redirect_to root_path
+      false
     end 
   end
 
@@ -97,12 +96,12 @@ class ApplicationController < ActionController::Base
 # Usado no menu: se não exister Pessoa redireciona para criar
   helper_method :verifyUser
   def verifyUser()
-    @UsuarioId = getUserId(current_usuario.id)
-    if @UsuarioId == 0
+    usuarioId = getUserId(current_usuario.id)
+    if usuarioId == 0
       return new_pessoa_path
     end
     else
-       return edit_pessoa_path(@UsuarioId)
+       return edit_pessoa_path(usuarioId)
   end
 
 
@@ -129,33 +128,33 @@ class ApplicationController < ActionController::Base
 # Retorna id da Requisicao de acordo com o usuario atual
   helper_method :returnReqq
   def returnReqq()
-    @req = Requisicao.all
-    @reqId
-    @pes = Pessoa.all
-    @pesId
-    @retorno
-    @pes.each do |pes|
+    req = Requisicao.all
+    pes = Pessoa.all
+    pesId = nil
+    retorno = nil
+    pes.each do |pes|
       if pes.usuario_id == current_usuario.id
-        @pesId = pes.id
+        pesId = pes.id
       end
     end
-    if @pesId == nil
+    if pesId == nil
       return nil
     end
-    @req.each do |req|
-      if req.pessoa_id == @pesId
+    req.each do |req|
+      if req.pessoa_id == pesId
         return req.id
       end
     end
     return nil
   end
 
+
 # Retorna endereço da Requisicao de acordo com o usuario atual
   helper_method :returnReqEnd
   def returnReqEnd()
-    @iter = returnReqq()
-    if @iter != nil
-      return edit_requisicao_path(@iter)
+    iter = returnReqq()
+    if iter != nil
+      return edit_requisicao_path(iter)
     else
       return new_requisicao_path
     end
@@ -165,25 +164,25 @@ class ApplicationController < ActionController::Base
 # Retorna id da Pessoa atual
   helper_method :returnPes
   def returnPes()
-    @pessoa = Pessoa.all
-    @retorno
-    @pessoa.each do |itera|
+    pessoa = Pessoa.all
+    retorno = nil
+    pessoa.each do |itera|
       if itera.usuario_id == current_usuario.id
          return itera.id
       else
-        @retorno = nil
+        retorno = nil
       end
     end
-    return @retorno
+    return retorno
   end
 
 
 # Redireciona para novo ou editar do usuario atual
   helper_method :returnPesEnd
   def returnPesEnd()
-    @iter = returnPes()
-    if @iter != nil
-      return edit_pessoa_path(@iter)
+    iter = returnPes()
+    if iter != nil
+      return edit_pessoa_path(iter)
     else
       return new_pessoa_path
     end
@@ -195,20 +194,20 @@ class ApplicationController < ActionController::Base
 # Retorna id do Documento atual
   helper_method :returnDoc
   def returnDoc()
-    @documentos = Documento.all
-    @pessoaId = returnPes()
-    if @pessoaId != nil
-      @pessoa = Pessoa.find(@pessoaId)
+    documentos = Documento.all
+    pessoaId = returnPes()
+    if pessoaId != nil
+      pessoa = Pessoa.find(pessoaId)
       #return @pessoa.id
-      @retorno
-      @documentos.each do |itera|
-        if itera.pessoa_id == @pessoa.id
+      retorno = nil
+      documentos.each do |itera|
+        if itera.pessoa_id == pessoa.id
            return itera.id
         else
-          @retorno = nil
+          retorno = nil
         end
       end
-      return @retorno
+      return retorno
     end
   end
 
@@ -216,9 +215,9 @@ class ApplicationController < ActionController::Base
 # Redireciona para novo ou editar do usuario atual
   helper_method :returnDocEnd
   def returnDocEnd()
-    @iter = returnDoc()
-    if @iter != nil
-      return edit_documento_path(@iter)
+    iter = returnDoc()
+    if iter != nil
+      return edit_documento_path(iter)
     else
       return new_documento_path
     end
@@ -230,21 +229,21 @@ class ApplicationController < ActionController::Base
 # Retorna id do Endereço atual
   helper_method :returnEnd
   def returnEnd()
-    @endereco = Endereco.all
-    @pessoaId = returnPes()
-    if @pessoaId != nil
+    endereco = Endereco.all
+    pessoaId = returnPes()
+    if pessoaId != nil
 
-      @pessoa = Pessoa.find(@pessoaId)
+      pessoa = Pessoa.find(pessoaId)
       #return @pessoa.id
-      @retorno
-      @endereco.each do |itera|
-        if itera.pessoa_id == @pessoa.id
+      retorno = nil
+      endereco.each do |itera|
+        if itera.pessoa_id == pessoa.id
            return itera.id
         else
-          @retorno = nil
+          retorno = nil
         end
       end
-      return @retorno
+      return retorno
     end
   end
 
@@ -252,9 +251,9 @@ class ApplicationController < ActionController::Base
 # Redireciona para novo ou editar do usuario atual
   helper_method :returnEndEnd
   def returnEndEnd()
-    @iter = returnEnd()
-    if @iter != nil
-      return edit_endereco_path(@iter)
+    iter = returnEnd()
+    if iter != nil
+      return edit_endereco_path(iter)
     else
       return new_endereco_path
     end
@@ -262,8 +261,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :returnEndIf
   def returnEndIf()
-    @iter = returnEnd()
-    if @iter != nil
+    iter = returnEnd()
+    if iter != nil
       return root_path
     else
       return new_endereco_path
@@ -278,20 +277,20 @@ class ApplicationController < ActionController::Base
 # Retorna id da Requisição atual
   helper_method :returnReq
   def returnReq()
-    @requisicao = Requisicao.all
-    @pessoaId = returnPes()
-    if @pessoaId != nil
-      @pessoa = Pessoa.find(@pessoaId)
+    requisicao = Requisicao.all
+    pessoaId = returnPes()
+    if pessoaId != nil
+      pessoa = Pessoa.find(pessoaId)
       #return @pessoa.id
-      @retorno
-      @requisicao.each do |itera|
-        if itera.pessoa_id == @pessoa.id
+      retorno = nil
+      requisicao.each do |itera|
+        if itera.pessoa_id == pessoa.id
            return itera.id
         else
-          @retorno = nil
+          retorno = nil
         end
       end
-      return @retorno
+      return retorno
     end
   end
 
@@ -299,9 +298,9 @@ class ApplicationController < ActionController::Base
 # Redireciona para novo ou editar do usuario atual
   helper_method :returnReqEnd
   def returnReqEnd()
-    @iter = returnReq()
-    if @iter != nil
-      return edit_requisicao_path(@iter)
+    iter = returnReq()
+    if iter != nil
+      return edit_requisicao_path(iter)
     else
       return new_requisicao_path
     end
@@ -313,31 +312,31 @@ class ApplicationController < ActionController::Base
 # Retorna id da 'Carteirinha atual'
   helper_method :returnCar
   def returnCar()
-    @carteirinhas = Carteirinha.all
-    @retorno = 0
+    carteirinhas = Carteirinha.all
+    retorno = nil
 
-    @reqId = returnReqq()
-    if @reqId != nil
-      @req = Requisicao.find(@reqId)
+    reqId = returnReqq()
+    if reqId != nil
+      req = Requisicao.find(reqId)
       #return @pessoa.id
-      @carteirinhas.each do |itera|
-        if itera.requisicao_id == @req.id
+      carteirinhas.each do |itera|
+        if itera.requisicao_id == req.id
            return itera.id
         else
-          @retorno = nil
+          retorno = nil
         end
       end
-      return @retorno
     end
+    return retorno
   end
 
 
 # Redireciona para novo ou editar do usuario atual
   helper_method :returnCarEnd
   def returnCarEnd()
-    @iter = returnCar()
-    if @iter != nil
-      return edit_carteirinha_path(@iter)
+    iter = returnCar()
+    if iter != nil
+      return edit_carteirinha_path(iter)
     else
       return new_carteirinha_path
     end
@@ -348,21 +347,21 @@ class ApplicationController < ActionController::Base
 # Retorna id da Cid atual
   helper_method :returnCid
   def returnCid()
-    @cid = Cid.all
+    cid = Cid.all
 
-    @reqId = returnReqq()
-    if @reqId != nil
-      @req = Requisicao.find(@reqId)
+    reqId = returnReqq()
+    if reqId != nil
+      req = Requisicao.find(reqId)
       #return @pessoa.id
-      @retorno
-      @cid.each do |itera|
-        if itera.requisicao_id == @req.id
+      retorno = nil
+      cid.each do |itera|
+        if itera.requisicao_id == req.id
            return itera.id
         else
-          @retorno = nil
+          retorno = nil
         end
       end
-      return @retorno
+      return retorno
     end
   end
 
@@ -370,9 +369,9 @@ class ApplicationController < ActionController::Base
 # Redireciona para novo ou editar do usuario atual
   helper_method :returnCidEnd
   def returnCidEnd()
-    @iter = returnCar()
-    if @iter != nil
-      return edit_cid_path(@iter)
+    iter = returnCar()
+    if iter != nil
+      return edit_cid_path(iter)
     else
       return new_cid_path
     end
@@ -384,17 +383,17 @@ class ApplicationController < ActionController::Base
   def resCart()
 
     #id carteirinha 
-    @idCarteirinha = returnCar()
-    @retorno
-    if @idCar=!nil
+    idCarteirinha = returnCar()
+    retorno = nil
+    if idCar=!nil
       #@carteirinha = Carteirinha.find(@idCar)
-      @carteirinhas = Carteirinha.all
-      @carteirinhas.each do |c|
-        if c.id == @idCarteirinha
-          @retorno = c.status
+      carteirinhas = Carteirinha.all
+      carteirinhas.each do |c|
+        if c.id == idCarteirinha
+          retorno = c.status
         end
       end
-      return @retorno
+      return retorno
     else
       return nil
     end
@@ -407,9 +406,9 @@ class ApplicationController < ActionController::Base
   def rejMot()
 
     #id carteirinha 
-    @idCar = returnCar()
-    @carteirinha = Carteirinha.find(@idCar)
-    return @carteirinha.motivo
+    idCar = returnCar()
+    carteirinha = Carteirinha.find(idCar)
+    return carteirinha.motivo
 
      
   end
@@ -420,57 +419,57 @@ class ApplicationController < ActionController::Base
 #Carteirinhas Vencidas
   helper_method :aguardCarteirinhas
   def aguardCarteirinhas()
-    @carteirinhas = Carteirinha.all
-    @totalCarteirinhas = 0
-    @carteirinhas.each do |carteirinha|
+    carteirinhas = Carteirinha.all
+    totalCarteirinhas = 0
+    carteirinhas.each do |carteirinha|
       if carteirinha.status == "Em Analise"
-        @totalCarteirinhas = @totalCarteirinhas + 1
+        totalCarteirinhas = totalCarteirinhas + 1
       end
     end
-    return @totalCarteirinhas
+    return totalCarteirinhas
   end
 
   helper_method :aprovCarteirinhas
   def aprovCarteirinhas()
-    @carteirinhas = Carteirinha.all
-    @totalCarteirinhas = 0
-    @carteirinhas.each do |carteirinha|
+    carteirinhas = Carteirinha.all
+    totalCarteirinhas = 0
+    carteirinhas.each do |carteirinha|
       if carteirinha.status == "Aprovada"
-        @totalCarteirinhas = @totalCarteirinhas + 1
+        totalCarteirinhas = totalCarteirinhas + 1
       end
     end
-    return @totalCarteirinhas
+    return totalCarteirinhas
   end
 
   helper_method :reprovCarteirinhas
   def reprovCarteirinhas()
-    @carteirinhas = Carteirinha.all
-    @totalCarteirinhas = 0
-    @carteirinhas.each do |carteirinha|
+    carteirinhas = Carteirinha.all
+    totalCarteirinhas = 0
+    carteirinhas.each do |carteirinha|
       if carteirinha.status == "Rejeitada"
-        @totalCarteirinhas = @totalCarteirinhas + 1
+        totalCarteirinhas = totalCarteirinhas + 1
       end
     end
-    return @totalCarteirinhas
+    return totalCarteirinhas
   end
 
   helper_method :vencidasCarteirinhas
   def vencidasCarteirinhas()
-    @carteirinhas = Carteirinha.all
-    @totalCarteirinhas = 0
-    @carteirinhas.each do |carteirinha|
+    carteirinhas = Carteirinha.all
+    totalCarteirinhas = 0
+    carteirinhas.each do |carteirinha|
       if carteirinha.status == "Vencida"
-        @totalCarteirinhas = @totalCarteirinhas + 1
+        totalCarteirinhas = totalCarteirinhas + 1
       end
     end
-    return @totalCarteirinhas
+    return totalCarteirinhas
   end
 
 # Retorna o nome do usuario atual
   helper_method :returnPessoaOnUsuario
   def returnPessoaOnUsuario(idUsuario)
-    @pessoas = Pessoa.all
-    @pessoas.each do |pessoaa|
+    pessoas = Pessoa.all
+    pessoas.each do |pessoaa|
       if pessoaa.usuario_id == idUsuario
         return pessoaa.nome
       end
@@ -483,22 +482,22 @@ class ApplicationController < ActionController::Base
   def returnReqObj(reqId)
     #Pessoa, Endereço,Documento,Requisição
     #Pessoa.find(params[:id]).nome
-    @requisicao = Requisicao.find(reqId)
-    return @requisicao
+    requisicao = Requisicao.find(reqId)
+    return requisicao
   end
 
 # Retorna a id da pessoa de acordo com a requisição
   helper_method :returnReqPes
   def returnReqPes(requisicao)
-    return @requisicao.pessoa_id
+    return requisicao.pessoa_id
   end
 
 # Retorna o objeto da Pessoa com a entrada objeto da Requisição
   helper_method :getPessoaByReq
   def getPessoaByReq(requisicao)
-    @pessoa = nil
-    @Pessoas = Pessoa.all
-    @Pessoas.each do |apessoa|
+    pessoa = nil
+    pessoas = Pessoa.all
+    pessoas.each do |apessoa|
       if apessoa.id == requisicao.pessoa_id
         return apessoa
       end
@@ -509,14 +508,14 @@ class ApplicationController < ActionController::Base
 # Retorna o objeto da Pessoa com a entrada da Carteirinha
   helper_method :returnPesByCar
   def returnPesByCar(carteirinha)
-    @pessoa = nil
+    pessoa = nil
 
-    @requisicao = nil
-    @requisicoes  = Requisicao.all
-    @requisicoes.each do |arequisicao|
+    requisicao = nil
+    requisicoes  = Requisicao.all
+    requisicoes.each do |arequisicao|
       if arequisicao.id == carteirinha.requisicao_id
-        @pessoa = getPessoaByReq(arequisicao)
-        return @pessoa
+        pessoa = getPessoaByReq(arequisicao)
+        return pessoa
       end
     end
   end
@@ -524,20 +523,20 @@ class ApplicationController < ActionController::Base
 # ???w
   helper_method :printAllDocuments
   def printAllDocuments(reqId)
-    @pessoa = Pessoa.find(@requisicao.pessoa_id)
+    pessoa = Pessoa.find(requisicao.pessoa_id)
     #@endereco = Endereco.find(@requisicao.pessoa_id)
     #@documento = Document.find(@requisicao.pessoa_id)
     #@requisicao = Requisicao.find(@requisicao.pessoa_id)
     #@cid = Cid.find(@requisicao.pessoa_id)
 
-    return @pessoa.nome
+    return pessoa.nome
   end
 
 # Retorna o objeto Endereço de acordo com o id da Pessoa
   helper_method :returnEnderecoByPes
   def returnEnderecoByPes(pesId)
-    @endereco = Endereco.all
-    @endereco.each do |ender|
+    endereco = Endereco.all
+    endereco.each do |ender|
       if ender.pessoa_id == pesId
         return ender
       end
@@ -548,8 +547,8 @@ class ApplicationController < ActionController::Base
 # Retorna o objeto Documento de acordo com o id da Pessoa
   helper_method :returnDocumentoByPes
   def returnDocumentoByPes(pesId)
-    @documento = Documento.all
-    @documento.each do |doc|
+    documento = Documento.all
+    documento.each do |doc|
       if doc.pessoa_id == pesId
         return doc
       end
@@ -560,8 +559,8 @@ class ApplicationController < ActionController::Base
 # Retorna o objeto Requisição de acordo com o id da Pessoa
   helper_method :returnRequisicaoByPes
   def returnRequisicaoByPes(pesId)
-    @requisicao = Requisicao.all
-    @requisicao.each do |req|
+    requisicao = Requisicao.all
+    requisicao.each do |req|
       if req.pessoa_id == pesId
         return req
       end
@@ -569,11 +568,17 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+  # Retorna o objeto Cid de acordo com o id da Pessoa
+  helper_method :returnCiddByPes
+  def returnCiddByPes(pess)
+    return pess.requisicao.first.cid
+  end
+
 # Retorna o objeto Cidade de acordo com o id da Pessoa
   helper_method :returnCidByPes
   def returnCidByPes(pesId)
-    @cid = Cid.all
-    @cid.each do |cid|
+    cid = Cid.all
+    cid.each do |cid|
       if cid.requisicao_id == returnRequisicaoByPes(pesId)
         return cid
       end
@@ -652,8 +657,8 @@ class ApplicationController < ActionController::Base
     #  @infC = c
     #  break
     #end
-    @infC = InfoCarteirinha.all.first()
-    return @infC
+    infC = InfoCarteirinha.all.first()
+    return infC
   end
 
 end

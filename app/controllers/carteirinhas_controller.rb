@@ -31,8 +31,8 @@ class CarteirinhasController < ApplicationController
     @carteirinha = Carteirinha.new(carteirinha_params)
     @carteirinha.requisicao_id = returnReq()
     @carteirinha.status = "Em Analise"
-    if @carteirinha.via == nil
-      @carteirinha.via = 0
+    if @carteirinha.via == nil || @carteirinha.via == ""
+      @carteirinha.via = 1
     else
       @carteirinha.via = 2
     end
@@ -44,7 +44,7 @@ class CarteirinhasController < ApplicationController
           #format.html { redirect_to @carteirinha, notice: 'Carteirinha was successfully created.' }
           #format.json { render :show, status: :created, location: @carteirinha }
           if @carteirinha.categoria == "Deficiente" || @carteirinha.categoria == "Deficente temporário"
-            format.html { redirect_to new_cid_path }
+            format.html { redirect_to root_path }
           else
             format.html {redirect_to root_path}
           end
