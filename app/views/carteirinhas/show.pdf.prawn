@@ -227,7 +227,8 @@ excess_text = pdf.text_box string,
 
 #string = "Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira 333"
 #string = getPessoa().nome
-string = Pessoa.find(params[:id]).nome
+pessoa = returnPesByCar(@carteirinha)
+string = pessoa.nome
 excess_text = pdf.text_box string,
 	:at => [477, 490],
 	:size => 15,
@@ -242,7 +243,7 @@ excess_text = pdf.text_box string,
 
 #string = "1234667891011"
 #string = getPessoa().rg
-string = Pessoa.find(params[:id]).rg
+string = pessoa.rg
 excess_text = pdf.text_box string,
 	:at => [408, 455],
 	:size => 12
