@@ -95,7 +95,9 @@ end
 #marca d'agua
 if (Carteirinha.find(params[:id]).categoria == 'Idoso')
 	logo_path =  "#{Rails.root}/app/assets/images/idoso-sombra.png"
-	pdf.image logo_path, :at => [120,440], :scale => 1.4
+	pdf.rotate(45, :origin => [20, 360]) do
+		pdf.image logo_path, :at => [20,360], :scale => 0.5
+	end
 	#estacionamento escrito em branco e rotacionado
 	pdf.fill_color(0,0,0,0)
 	pdf.rotate(90, :origin => [35, 255]) do
