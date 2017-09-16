@@ -40,6 +40,26 @@
     </div>
   </div>
 
+   <div class="form-group">
+    <%= f.label :Orgão_emissor, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.text_field :rg_orgao, :class => 'form-control', :maxlength => 10, :size => 10 %> <span style="color: red; font-size: 15px; float: left;"> *</span>
+    </div>
+    <div class="col-lg-4">
+      <%=f.error_span(:rg_orgao) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Estado_de_emissão, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-6">
+      <%= f.text_field :rg_estado, :class => 'form-control', :maxlength => 2, :size => 2 %> <span style="color: red; font-size: 15px; float: left;"> *</span>
+    </div>
+    <div class="col-lg-4">
+      <%=f.error_span(:rg_estado) %>
+    </div>
+  </div>
+
   <div class="form-group">
     <%= f.label :data_nascimento, :class => 'control-label col-lg-2' %>
     <div class="col-lg-6">
