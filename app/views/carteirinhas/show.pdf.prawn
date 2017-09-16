@@ -158,11 +158,12 @@ excess_text = pdf.text_box string,
 	:size => 10
 
 data = Carteirinha.find(params[:id]).data_vencimento
-
-data.strftime('%d%m%Y')
+#[variable].strftime("%a, %B %d %T:%s %P")
+#data.strftime('%d%m%Y')
+printdata = data.strftime('%d/%m/%Y')
 
 #t=Time::parse(data)
-string = data.to_s
+string = printdata.to_s
 #string = "30/06/2222" ############################################
 #string = Carteirinha.find(params[:id]).data_vencimento
 excess_text = pdf.text_box string,
