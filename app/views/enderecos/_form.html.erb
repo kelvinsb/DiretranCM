@@ -18,7 +18,7 @@
   <div class="form-group">
     <%= f.label :cep, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :cep, :class => 'form-control', :maxlength => 8, :size => 8 %> <span style="color: red; font-size: 15px; float: left;"> *</span>
+      <%= f.text_field :cep, :class => 'form-control', :maxlength => 9, :size => 9, :onkeyup => "mascara( this, mcep );"  %> <span style="color: red; font-size: 15px; float: left;"> *</span>
     </div>
     <%=f.error_span(:cep) %>
   </div>

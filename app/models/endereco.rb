@@ -3,7 +3,7 @@ class Endereco < ApplicationRecord
 
   validates :cep,
   presence:  {message: ": deve ser preenchido"},
-  length: {maximum: 8, message: ": maximo de 8 digitos"},
+  length: {maximum: 9, message: ": maximo de 8 digitos"},
   numericality: {message: "Somente numeros"}
 
   validates :cidade,
