@@ -670,4 +670,13 @@ class ApplicationController < ActionController::Base
     return infC
   end
 
+  helper_method :ifInfoCarteirinha
+  def changeAndUpdateIdentificador(carteirinha)
+     ic = InfoCarteirinha.first
+     ic.numeracao_carteirinha = ic.numeracao_carteirinha + 1
+     ic.save
+     ic = InfoCarteirinha.first
+     carteirinha.identificador = ic.numeracao_carteirinha
+     carteirinha.save  
+   end
 end

@@ -67,7 +67,7 @@ class CarteirinhasController < ApplicationController
         #format.json { render :show, status: :ok, location: @carteirinha }
         #format.html { redirect_to edit_cid_path }
         format.html {redirect_to root_path}
-        format.js { redirect_to root_path}
+        format.js { changeAndUpdateIdentificador(@carteirinha); redirect_to root_path}
       else
         format.html { render :edit }
         format.json { render json: @carteirinha.errors, status: :unprocessable_entity }
