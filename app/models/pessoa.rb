@@ -12,6 +12,14 @@ class Pessoa < ApplicationRecord
 	presence: {message: " deve ser preenchido"},
 	length: {minimum:8, maximum:14, message: " deve ser preenchido com 9 digitos"}
 
+  validates :rg_orgao,
+  presence: {message: " deve ser preenchido"},
+  length: {minimum:3, maximum:3, message: " deve ser preenchido com as iniciais do orgão emissor"}
+
+  validates :rg_estado,
+  presence: {message: " deve ser preenchido"},
+  length: {minimum:2, maximum:2, message: " deve ser preenchido com a UF"}
+
 	validates :data_nascimento,
 	presence: {message: " deve ser preenchido"}
 

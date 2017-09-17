@@ -33,7 +33,7 @@
   <div class="form-group">
     <%= f.label :rg, :class => 'control-label col-lg-2' %>
     <div class="col-lg-6">
-      <%= f.text_field :rg, :class => 'form-control', :maxlength => 10, :size => 10 %> <span style="color: red; font-size: 15px; float: left;"> *</span>
+      <%= f.text_field :rg, :class => 'form-control', :maxlength => 10, :size => 10, :onkeyup => "mascara( this, mrg );" %> <span style="color: red; font-size: 15px; float: left;"> *</span>
     </div>
     <div class="col-lg-4">
       <%=f.error_span(:rg) %>

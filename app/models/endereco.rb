@@ -1,5 +1,5 @@
 class Endereco < ApplicationRecord
-  belongs_to :pessoa  
+  belongs_to :pessoa
 
   validates :cep,
   presence:  {message: ": deve ser preenchido"},
@@ -20,8 +20,8 @@ class Endereco < ApplicationRecord
 
   validates :numero,
   presence: {message: ": deve ser preenchido"},
-  length: {maximum: 4, message: ": maximo de 4 digitos"},
-  numericality: {only_integer: true, message: ": deve ser preenchido com números"}
+  length: {maximum: 6, message: ": maximo de 6 digitos"}
+  #numericality: {only_integer: true, message: ": deve ser preenchido com números"}
 
   validates :complemento,
   #presence: {message: ": deve ser preenchido"},
