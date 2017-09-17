@@ -79,3 +79,4 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
 gem "rails-erd"
+gem 'json'

@@ -70,6 +70,6 @@ class InfoCarteirinhasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_carteirinha_params
-      params.require(:info_carteirinha).permit(:nome_tipo_estacionamento, :resolucao, :uf, :municipio, :orgao_expedidor, :nome_diretor, :orgao_exp_diretor, :regras_utilizacao)
+      params.require(:info_carteirinha).permit(:nome_tipo_estacionamento, :resolucao, :uf, :municipio, :orgao_expedidor, :nome_diretor, :orgao_exp_diretor, :regras_utilizacao, :numeracao_carteirinha)
     end
 end

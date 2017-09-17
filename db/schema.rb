@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 20170916212741) do
     t.string   "regras_utilizacao"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "numeracao_carteirinha"
   end
 
   create_table "pessoas", force: :cascade do |t|
