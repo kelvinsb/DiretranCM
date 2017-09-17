@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
 
   # !LER redirecionar, mudar ainda
   def after_sign_in_path_for(resource)
-    if(getPessoa() != nil)
+    if(authAdmin() == true)
+     dash_dashFuncionario_path
+    elsif(authFuncionario() == true)
+     dash_dashFuncionario_path
+    elsif(getPessoa() != nil)
      dash_dashUsuario_path
     else
      new_pessoa_path
