@@ -143,8 +143,9 @@ excess_text = pdf.text_box string,
 	:at => [125, 395],
 	:size => 10
 
-string = "715/2017"###############################################
-excess_text = pdf.text_box string,
+pessoa = returnPesByCar(@carteirinha)
+string = @carteirinha.identificador
+excess_text = pdf.text_box string.to_s,
 	:at => [215, 400],
 	:size => 18,
 	:style => :bold
@@ -230,7 +231,6 @@ excess_text = pdf.text_box string,
 
 #string = "Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira Maria da Silva Pereira 333"
 #string = getPessoa().nome
-pessoa = returnPesByCar(@carteirinha)
 string = pessoa.nome
 excess_text = pdf.text_box string,
 	:at => [477, 490],
@@ -256,6 +256,7 @@ excess_text = pdf.text_box string,
 	:at => [480, 453],
 	:size => 9
 
+
 string = pessoa.rg_orgao
 #string = "SSSP"
 excess_text = pdf.text_box string,
@@ -266,6 +267,7 @@ string = "UF:"
 excess_text = pdf.text_box string,
 	:at => [590, 453],
 	:size => 9
+
 
 string = pessoa.rg_estado
 #string = "PR"
