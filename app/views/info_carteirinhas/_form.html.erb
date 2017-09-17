@@ -46,7 +46,7 @@
   <div class="form-group">
     <%= f.label :orgao_expedidor, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_area :orgao_expedidor, :class => 'form-control', size: "50x50" %>
+      <%= f.text_area :orgao_expedidor, :class => 'form-control', size: "50x10" %>
     </div>
     <%=f.error_span(:orgao_expedidor) %>
   </div>
@@ -67,9 +67,19 @@
   <div class="form-group">
     <%= f.label :regras_utilizacao, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_area :regras_utilizacao, :class => 'form-control', size: "50x50" %>
+      <%= f.text_area :regras_utilizacao, :class => 'form-control', size: "50x10" %>
     </div>
     <%=f.error_span(:regras_utilizacao) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :numeracao_carteirinha, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :numeracao_carteirinha, :class => 'form-control' %><br> <br>
+      A partir de qual numeração, ou id da carteirinha, deseja a inserção nas carteirinhas <br>
+      <strong>Exemplo:</strong> No ano de <%= Date.current.year %> já foram produzidas 200 carteirinhas, então a numeração seria <%= Date.current.year %>-200
+    </div>
+
+    <%=f.error_span(:numeracao_carteirinha) %>
   </div>
 
   <div class="form-group">

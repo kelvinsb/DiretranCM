@@ -14,6 +14,15 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  helper_method :populate_info_carteirinha
+  def populate_info_carteirinha
+    filePath = File.join(Rails.root, 'app', 'json', 'dados.json')
+    file = File.read(filePath)
+    dadosDoArquivo = JSON.parse(file)
+    ic = Info_carteirinha.new(:nome_tipo_estacionamento => dadosDoArquivo[0]['nome_tipo_estacionamento'],:resolucao => dadosDoArquivo[0]['resolucao'],:uf => dadosDoArquivo[0]['uf'],municipio => dadosDoArquivo[0]['municipio'],:orgao_expedidor => dadosDoArquivo[0]['orgao_expedidor'],:nome_diretor => dadosDoArquivo[0]['nome_diretor'],:orgao_exp_diretor => dadosDoArquivo[0]['orgao_exp_diretor'],:regras_utilizacao => dadosDoArquivo[0]['regras_utilizacao'],:numeracao_carteirinha => dadosDoArquivo[0]['numeracao_carteirinha'])
+    ic.save
+  end
+
 
 # Recebe objeto Pessoa do usuario atual
   helper_method :getPessoa
