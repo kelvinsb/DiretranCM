@@ -259,7 +259,7 @@ excess_text = pdf.text_box string,
 
 string = pessoa.rg_orgao
 #string = "SSSP"
-excess_text = pdf.text_box string,
+excess_text = pdf.text_box string.to_s,
 	:at => [545, 455],
 	:size => 12
 
@@ -271,7 +271,7 @@ excess_text = pdf.text_box string,
 
 string = pessoa.rg_estado
 #string = "PR"
-excess_text = pdf.text_box string,
+excess_text = pdf.text_box string.to_s,
 	:at => [608, 455],
 	:size => 12
 
