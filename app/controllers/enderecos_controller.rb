@@ -32,7 +32,6 @@ class EnderecosController < ApplicationController
     @endereco = Endereco.new(endereco_params)
     @endereco.pessoa_id = returnPes()
 
-
     #require 'correios-cep'
     #address = Correios::CEP::AddressFinder.get @endereco.cep
     #address {:address => "Rua Fernando Amorim",:neighborhood => "Cavaleiro",:city => "Jaboatão dos Guararapes",:state => "PE",:zipcode => "54250610",:complement => ""}

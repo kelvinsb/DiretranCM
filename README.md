@@ -32,21 +32,42 @@
 * Como inicializar:
 	rails server
 
-* Criar Admin:
-	rails c
-	>>admin = Usuario.new({cpf:'cpf válido', password: 'senha', password_confirmation: 'senha', admin: true, funcionario: true})
-	>>admin.save!
+## Comandos
 
-* Criar funcionário:
-	rails c
-	>>funcionario = Usuario.new({cpf:'cpf válido', password: 'senha', password_confirmation: 'senha', admin: false, funcionario: true})
-	>>funcionario.save!
+1. Criar Admin:
+	> rails c
 
-* Trocar senha de usuario:
-	rails c
-	>>user = Usuario.find(id)
-	>>user.update_attribute :password, 'nova_senha'
+	>admin = Usuario.new({cpf:'cpf válido', password: 'senha', password_confirmation: 'senha', admin: true, funcionario: true})
 
+	>admin.save!
+
+2. Criar funcionário:
+	> rails c
+
+	>funcionario = Usuario.new({cpf:'cpf válido', password: 'senha', password_confirmation: 'senha', admin: false, funcionario: true})
+
+	>funcionario.save!
+
+3. Trocar senha de usuario:
+
+	> rails c
+
+	>user = Usuario.find(id)
+
+	>user.update_attribute :password, 'nova_senha'
+
+
+## Atualização
+
+Para executar no docker execute os seguintes passos:
+
+1. Abrir docker
+	- `docker-compose up -d --build`
+2. Executar migrações
+	- `docker-compose exec web rake db:migrate`
+3. Para executar alguns do comandos acima
+	- `docker-compose exec web sh`
+	- `rails c`
 
 Este programa foi desenvolvido pela equipe team_diretran durante a disciplina Projeto Integrador da Universidade Tecnólogica Federal do Paraná, Campus Campo Mourão. Equipe composta por:
 

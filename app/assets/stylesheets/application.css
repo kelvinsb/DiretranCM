@@ -14,6 +14,28 @@
  *= require_self
  */
 /* User sign in and sign forms. */
+body, html {
+  margin: 0;
+}
+.conteudo {
+  padding: 5px 25px;
+}
+.navbar .navbar-collapse {
+  padding:0;
+}
+.navbar .nav.navbar-nav.col-lg-12 {
+  padding: 0;
+}
+.nav.navbar-nav.col-lg-12 li {
+  transition: 1s;
+}
+.nav.navbar-nav.col-lg-12 li:hover {
+  opacity: 0.6;
+}
+.nav.navbar-nav li {
+  min-height: 75px;
+  word-wrap: break-word;
+}
 .border-form-div {
   max-width: 300px;
   padding: 19px 29px 29px;
@@ -73,9 +95,8 @@
 }
 .colorb.ativo
 {
-  border-width: 2px;
+  border-width: 1px;
   font-weight: bold;
-  font-size: 110%;
   border-style: solid;
 }
 .navbar-nav .col-lg-2,

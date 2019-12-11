@@ -80,3 +80,5 @@ gem 'devise-bootstrap-views'
 
 gem "rails-erd"
 gem 'json'
+
+gem 'coffee-script-source', '~> 1.11', '>= 1.11.1'
