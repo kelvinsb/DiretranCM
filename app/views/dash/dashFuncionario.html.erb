@@ -1,17 +1,15 @@
-<div class="row" id="dashquadrados">
 
-	<div class="col-xs-12 col-lg-12 col-md-12">
-		<ul class="lista-dash">
-			<li class="danger">Carteirinhas aguardando aprovação: <%= aguardCarteirinhas() %></li>
-		</ul>
-		<ul class="lista-dash">
-			<li class="danger">Carteirinhas Aprovadas: <%= aprovCarteirinhas() %></li>
-		</ul>
-		<ul class="lista-dash">
-			<li class="danger">Carteirinhas Rejeitadas: <%= reprovCarteirinhas() %></li>
-		</ul>
-		<ul class="lista-dash">
-			<li class="danger">Carteirinhas Vencidas: <%= vencidasCarteirinhas() %></li>
-		</ul>
-  	</div>
+<div class="col-sm-12">
+	<div class="alert alert-info text-center">
+		Carteirinhas aguardando aprovação: <%= aguardCarteirinhas() %>
+	</div>
+	<div class="alert alert-success text-center">
+		Carteirinhas Aprovadas: <%= aprovCarteirinhas() %>
+	</div>
+	<div class="alert alert-warning text-center">
+		Carteirinhas Rejeitadas: <%= reprovCarteirinhas() %>
+	</div>
+	<div class="alert alert-secondary text-center">
+		Carteirinhas Vencidas: <%= vencidasCarteirinhas() %>
+	</div>
 </div>

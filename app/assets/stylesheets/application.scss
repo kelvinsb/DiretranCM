@@ -1,21 +1,19 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 /* User sign in and sign forms. */
+@import "bootstrap";
 body, html {
   margin: 0;
+}
+.btn {
+  margin-top: 5px;
+}
+.jumbotron {
+  margin-bottom: 0;
+  padding: 15px;
+  border-bottom: 1px dotted;
+}
+.container {
+  padding-top: 10px;
 }
 .conteudo {
   padding: 5px 25px;
@@ -189,11 +187,11 @@ select
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.edit_carteirinha .btn
-{
-  font-size:200%;
-  font-weight: bold;
-}
+// .edit_carteirinha .btn
+// {
+//   font-size:200%;
+//   font-weight: bold;
+// }
 .navbar-default.menu-topo.navbar
 {
   background-color: transparent;
@@ -210,4 +208,9 @@ select
 .fotos-d div
 {
   padding-top: 2px;
+}
+.has-error {
+  color: #FFF;
+  padding: 5px;
+  background-color: #dc3545 !important
 }

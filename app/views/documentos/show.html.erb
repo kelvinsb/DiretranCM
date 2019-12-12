@@ -1,59 +1,52 @@
-<%- model_class = Documento -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+<div class="col-sm-12">
+    <%- model_class = Documento -%>
+    <div class="page-header">
+      <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+    </div>
+    
+    <dl class="dl-horizontal">
+      <dt><strong><%= model_class.human_attribute_name(:pessoa_id) %>:</strong></dt>
+      <dd><%= @documento.pessoa_id %></dd>
+      <dt><strong>Cpf:</strong></dt>
+      <dd>
+          <% if @documento.cpf_file_name != nil %>
+          <a href="<%= @documento.cpf.url() %>" target="_blank"><%= image_tag @documento.cpf.url(:medium) %></a>
+          <% end %>
+      </dd>
+      <dt><strong>RG:</strong></dt>
+      <dd>
+          <% if @documento.rg_file_name != nil %>
+          <a href="<%= @documento.rg.url() %>" target="_blank"><%= image_tag @documento.rg.url(:medium) %></a>
+          <% end %>
+      </dd>
+      <dt><strong>Foto:</strong></dt>
+      <dd>
+          <% if @documento.foto_file_name != nil %>
+          <a href="<%= @documento.foto.url() %>" target="_blank"><%= image_tag @documento.cid.url(:medium) %></a>
+          <% end %>
+      </dd>
+      <dt><strong>Cid:</strong></dt>
+      <dd>
+          <% if @documento.cid_file_name != nil %>
+          <a href="<%= @documento.cid.url() %>" target="_blank"><%= image_tag @documento.cid.url(:medium) %></a>
+          <% end %>
+      </dd>
+      <dt><strong>Comprovante de residência:</strong></dt>
+      <dd>
+          <% if @documento.comp_residencia_file_name != nil %>
+          <a href="<%= @documento.comp_residencia.url() %>" target="_blank"><%= image_tag @documento.comp_residencia.url(:medium) %></a>
+          <% end %>
+      </dd>
+    </dl>
+    
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+                  documentos_path, :class => 'btn btn-primary'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_documento_path(@documento), :class => 'btn btn-secondary' %>
+    <!-- <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  documento_path(@documento),
+                  :method => 'delete',
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                  :class => 'btn btn-danger' %> -->
+    
 </div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:pessoa_id) %>:</strong></dt>
-  <dd><%= @documento.pessoa_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cpf_file_name) %>:</strong></dt>
-  <dd><%= @documento.cpf_file_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cpf_content_type) %>:</strong></dt>
-  <dd><%= @documento.cpf_content_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cpf_file_size) %>:</strong></dt>
-  <dd><%= @documento.cpf_file_size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cpf_updated_at) %>:</strong></dt>
-  <dd><%= @documento.cpf_updated_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:rg_file_name) %>:</strong></dt>
-  <dd><%= @documento.rg_file_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:rg_content_type) %>:</strong></dt>
-  <dd><%= @documento.rg_content_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:rg_file_size) %>:</strong></dt>
-  <dd><%= @documento.rg_file_size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:rg_updated_at) %>:</strong></dt>
-  <dd><%= @documento.rg_updated_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:foto_file_name) %>:</strong></dt>
-  <dd><%= @documento.foto_file_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:foto_content_type) %>:</strong></dt>
-  <dd><%= @documento.foto_content_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:foto_file_size) %>:</strong></dt>
-  <dd><%= @documento.foto_file_size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:foto_updated_at) %>:</strong></dt>
-  <dd><%= @documento.foto_updated_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cid_file_name) %>:</strong></dt>
-  <dd><%= @documento.cid_file_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cid_content_type) %>:</strong></dt>
-  <dd><%= @documento.cid_content_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cid_file_size) %>:</strong></dt>
-  <dd><%= @documento.cid_file_size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:cid_updated_at) %>:</strong></dt>
-  <dd><%= @documento.cid_updated_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comp_residencia_file_name) %>:</strong></dt>
-  <dd><%= @documento.comp_residencia_file_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comp_residencia_content_type) %>:</strong></dt>
-  <dd><%= @documento.comp_residencia_content_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comp_residencia_file_size) %>:</strong></dt>
-  <dd><%= @documento.comp_residencia_file_size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comp_residencia_updated_at) %>:</strong></dt>
-  <dd><%= @documento.comp_residencia_updated_at %></dd>
-</dl>
-
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              documentos_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_documento_path(@documento), :class => 'btn btn-default' %>
-<!-- <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              documento_path(@documento),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %> -->

@@ -4,29 +4,32 @@
     <title>DiretranCM</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag :all %>
+    
   </head>
 
   <body>
-
-  <nav class="navbar navbar-default topo">
-    <div class="container-fluid">
-      <div class="navbar-logo">
-        <div class="hidden-xs hidden-sm col-md-4 col-lg-2">
-          <%= image_tag 'brasao_diretran.png' %>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-3 d-none d-lg-block">
+            <%= image_tag 'brasao_diretran.png' %>
         </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-        <h1><%=  link_to "Prefeitura de Campo Mourão - Diretoria de Trânsito - Diretran", root_path %></h1>
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 text-center">
+            <h1><%=  link_to "Prefeitura de Campo Mourão - Diretoria de Trânsito - Diretran", root_path %></h1>
+        </div>
+        <div class="col-lg-2 col-md-2 d-none d-lg-block">
+            <%= image_tag 'prefeitura_logo.png' %>
+        </div>
       </div>
-      <div class="hidden-xs hidden-sm col-md-2 col-lg-2">
-          <%= image_tag 'prefeitura_logo.png' %>
-      </div>
-
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <p class="navbar-text pull-left"> <strong> Rua Harrison José Borges - 1360 - Anexo à casa do empreeendedor</strong></p>
-  		  <p class="navbar-text pull-right">
-          <% if usuario_signed_in? %>
+      <div class="row">
+        <div class="col-lg-8 col-sm-12 text-center">
+            <strong> Rua Harrison José Borges - 1360 - Anexo à casa do empreeendedor</strong>
+        </div>
+        <div class="col-lg-4 col-sm-12 text-center">
+            <% if usuario_signed_in? %>
             Entrou como: <strong><%= pessoa = getPessoa()
                                     if (pessoa != nil)
                                         pessoa.nome
@@ -40,148 +43,121 @@
             <%= link_to "Cadastrar", new_usuario_registration_path, :class => 'navbar-link'  %> |
             <%= link_to "Entrar", new_usuario_session_path, :class => 'navbar-link'  %>
           <% end %>
-        </p>
+        </div>
+        </div>
       </div>
-
-  		</div>
-  	</div>
-  </nav>
+    </div>
+  </div>
 
 <% if (current_usuario.try(:admin?)) || current_usuario.try(:funcionario?) %>
 
-  <nav class="navbar navbar-default menu-topo" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
 
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav col-lg-12">
-
-      <li class="home<% if current_page?(dash_dashUsuario_url) %> ativo<% end %> col-lg-2" >
-
-        <%= link_to "Página inicial", root_path %>
-      </li>
-
-      <li class="colorb z<% if current_page?(pessoas_path) %> ativo<% end %> col-lg-1" >
-        <%= link_to "Pessoas", pessoas_path %>
-      </li>
-     <li class="colorb color3<% if current_page?(enderecos_path) %> ativo<% end %> col-lg-1" >
-        <%= link_to "Endereço", enderecos_path %>
-      </li>
-      <li class="colorb color2<% if current_page?(documentos_path) %> ativo<% end %> col-lg-2" >
-        <%= link_to "Documento", documentos_path %>
-      </li>
-      <li class="colorb color6<% if current_page?(cids_path) %> ativo<% end %> col-lg-1" >
-        <%= link_to "Cids", cids_path %>
-      </li>
-      <li class="colorb color4<% if current_page?(requisicoes_path) %> ativo<% end %> col-lg-1" >
-        <%= link_to "Requisição", requisicoes_path %>
-      </li>
-      <li class="colorb color5<% if current_page?(carteirinhas_path) %> ativo<% end %> col-lg-2" >
-        <%= link_to "Carteirinha", carteirinhas_path %>
-      </li>
-      <li class="colorb color6<% if current_page?(info_carteirinhas_path) %> ativo<% end %> col-lg-2" >
-        <%= link_to "Informações", info_carteirinhas_path %>
-      </li>
-
-
-    </ul>
-
-
-  </div><!-- /.navbar-collapse -->
-
-</nav>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item<% if current_page?(dash_dashUsuario_url) %> active<% end %>">
+            <%= link_to "Página inicial", root_path, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(pessoas_path) %> active<% end %>">
+              <%= link_to "Pessoas", pessoas_path, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(enderecos_path) %> active<% end %>">
+              <%= link_to "Endereços", enderecos_path, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(documentos_path) %> active<% end %>">
+              <%= link_to "Documentos", documentos_path, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(cids_path) %> active<% end %>">
+              <%= link_to "Cids", cids_path, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(requisicoes_path) %> active<% end %>">
+              <%= link_to "Requisição", requisicoes_path, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(carteirinhas_path) %> active<% end %>">
+              <%= link_to "Carteirinhas", carteirinhas_path, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(info_carteirinhas_path) %> active<% end %>">
+              <%= link_to "Informações", info_carteirinhas_path, class: 'nav-item nav-link' %>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
 
 
 
-<% elsif usuario_signed_in? %>
-  <nav class="navbar navbar-default menu-topo" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+  <% elsif usuario_signed_in? %>
 
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav col-lg-12">
-
-      <li class="home<% if current_page?(dash_dashUsuario_url) %> ativo<% end %> col-lg-2" >
-
-        <%= link_to "Página inicial", root_path %>
-      </li>
-      <li  class="colorb color0<% if current_page?(edit_usuario_registration_path) %> ativo<% end %> col-lg-1" >
-        <%= link_to "Perfil",  edit_usuario_registration_path %>
-      </li>
-
-      <li class="colorb color1<% if current_page?(returnPesEnd) %> ativo<% end %> col-lg-1" >
-        <%= link_to "Pessoa", returnPesEnd %>
-      </li>
-     <li class="colorb color3<% if current_page?(returnEndEnd) %> ativo<% end %> col-lg-2" >
-        <%= link_to "Endereço", returnEndEnd %>
-      </li>
-      <% if returnPes() != nil %>
-      <li class="colorb color2<% if current_page?(returnDocEnd) %> ativo<% end %> col-lg-2" >
-        <%= link_to "Documento", returnDocEnd %>
-      </li>
-      <li class="colorb color4<% if current_page?(returnReqEnd) %> ativo<% end %> col-lg-2" >
-        <%= link_to "Requisição", returnReqEnd %>
-      </li>
-      <li class="colorb color5<% if current_page?(returnCarEnd) %> ativo<% end %> col-lg-2" >
-        <%= link_to "Carteirinha", returnCarEnd %>
-      </li>
-      <% end %>
-
-
-    </ul>
-
-
-  </div><!-- /.navbar-collapse -->
-
-</nav><% end %>
-
-<% flash.each do |name, msg| %>
-  <div class="row" id="showMsgError">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center btn btn-info">
-    <% if msg.class == Array %>
-      <% msg.each do |message| %>
-        <%= content_tag :div, message, :id => "flash_#{name}" %>
-      <% end %>
-    <% else %>
-
-      <%= content_tag :div, msg, :id => "flash_#{name}", :class => "col-xs-11 col-sm-11 col-md-11 col-lg-11" %>
-
-    <% end %>
-      <a href="#" onclick="closeDiv(showMsgError)">
-        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right close-div">
-          x
-        </div>
-      </a>
-
-     </div>
-  </div>
-
-  <br>
-
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item<% if current_page?(dash_dashUsuario_url) %> active<% end %>">
+            <%= link_to "Página inicial", root_path, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(edit_usuario_registration_path) %> active<% end %>">
+              <%= link_to "Perfil", edit_usuario_registration_path, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(returnPesEnd) %> active<% end %>">
+              <%= link_to "Pessoa", returnPesEnd, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(returnEndEnd) %> active<% end %>">
+              <%= link_to "Endereço", returnEndEnd, class: 'nav-item nav-link' %>
+          </li>
+          <% if returnPes() != nil %>
+          <li class="nav-item<% if current_page?(returnDocEnd) %> active<% end %>">
+              <%= link_to "Documento", returnDocEnd, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(returnReqEnd) %> active<% end %>">
+              <%= link_to "Requisição", returnReqEnd, class: 'nav-item nav-link' %>
+          </li>
+          <li class="nav-item<% if current_page?(returnCarEnd) %> active<% end %>">
+              <%= link_to "Carteirinha", returnCarEnd, class: 'nav-item nav-link' %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
   <% end %>
-      <div class="conteudo">
+
+
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-12">
+              <% flash.each do |name, msg| %>
+              <a href="#" onclick="closeDiv('showMsgError')" class="col-sm-1">
+                <div class="row btn-info" id="showMsgError">
+                  <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 text-center">
+                  <% if msg.class == Array %>
+                    <% msg.each do |message| %>
+                      <%= content_tag :div, message, :id => "flash_#{name}" %>
+                    <% end %>
+                  <% else %>
+              
+                    <%= content_tag :div, msg, :id => "flash_#{name}", :class => "col-xs-11 col-sm-11 col-md-11 col-lg-11" %>
+              
+                  <% end %>
+              
+                  </div>
+                  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                    x
+                  </div>
+                </div>
+              </a>
+            
+              <br>
+            
+              <% end %>
+          </div>
           <%= yield %>
       </div>
+    </div>
   </body>
 </html>

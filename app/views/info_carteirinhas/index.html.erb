@@ -4,7 +4,7 @@
   <p>Caso queira modificar os dados padrões da carteirinha somente será necessário criar um novo <br>
 <strong>OBS:</strong> Por definição será selecionado o primeiro</p>
 </div>
-<% if @info_carteirinhas.exists? %>
+<% if !@info_carteirinhas.exists? %>
 <p>Aparentemente não existe dados para serem exibidos na carteirinha, crie um <%= link_to t('.new', :default => t("helpers.links.new")),
             new_info_carteirinha_path,
             :class => 'btn btn-primary' %> ou

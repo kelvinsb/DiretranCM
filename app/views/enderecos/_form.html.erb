@@ -1,87 +1,88 @@
-<%= form_for @endereco, :html => { :class => "form-horizontal endereco" } do |f| %>
-  <p> <span style="color: red; font-size: 15px; float: left;"> *</span> Campos Obrigatórios</p>
-  <% if @endereco.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@endereco.errors.count, "error") %> prohibited this endereco from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @endereco.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+<div class="col-sm-12">
+    <%= form_for @endereco do |f| %>
+    <p> <small style="color: red; font-size: 15px; float: left;"> *</small> Campos Obrigatórios</p>
+    <% if @endereco.errors.any? %>
+    <div class="card text-white bg-danger">
+      <div id="error_expl" class="">
+          <div class="card-body">
+              <h3 class="card-title"><%= pluralize(@endereco.errors.count, "erro") %> impedem o cadastro:</h3>
+            <ul>
+            <% @endereco.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
     </div>
+    <% end %>
+  
+    <div class="form-group">
+      <%= f.label :cep %>
+      <small style="color: red; font-size: 15px; float: left;"> *</small>
+      <div>
+        <%=
+          f.text_field :cep,
+          :class => 'form-control',
+          :maxlength => 9,
+          :size => 9
+          # :onkeyup => "mascara( this, mcep );"
+        %>
+      </div>
+      <%=f.error_span(:cep) %>
+    </div>
+    <div class="form-group">
+      <%= f.label :cidade %>
+      <small style="color: red; font-size: 15px; float: left;"> *</small>
+        <div>
+            <%= f.select :cidade, ['Campo Mourão'], {}, :class => 'form-control' %>
+        </div>
+        <%=f.error_span(:cidade) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :bairro%>
+      <small style="color: red; font-size: 15px; float: left;"> *</small>
+        <div>
+          <%= f.text_field :bairro, :class => 'form-control', :maxlength => 25, :size => 25  %>
+        </div>
+      <%=f.error_span(:bairro) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :logradouro %>
+      <small style="color: red; font-size: 15px; float: left;"> *</small>
+        <div>
+          <%= f.text_field :logradouro, :class => 'form-control', :maxlength => 80, :size => 30 %>
+        </div>
+      <%=f.error_span(:logradouro) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :numero%>
+      <small style="color: red; font-size: 15px; float: left;"> *</small>
+        <div>
+          <%= f.text_field :numero, :class => 'form-control', :maxlength => 4, :size => 4  %>
+        </div>
+      <%=f.error_span(:numero) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :complemento %>
+        <div>
+          <%= f.text_field :complemento, :class => 'form-control', :maxlength => 50, :size => 50 %>
+        </div>
+      <%=f.error_span(:complemento) %>
+    </div>
+  
+    <div class="form-group">
+        <div>
+          <%= f.hidden_field :pessoa_id, :class => 'form-control' %>
+        </div>
+      <%=f.error_span(:pessoa_id) %>
+    </div>
+  
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+  
   <% end %>
-
-  <div class="form-group">
-    <%= f.label :cep, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%=
-        f.text_field :cep,
-        :class => 'form-control',
-        :maxlength => 9,
-        :size => 9
-        # :onkeyup => "mascara( this, mcep );"
-      %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <%=f.error_span(:cep) %>
-  </div>
-
-  </div>
-  <div class="form-group">
-    <%= f.label :cidade, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.select :cidade, ['Campo Mourão'] %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-      <%=f.error_span(:cidade) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :bairro, :class => 'control-label col-lg-2'%>
-    <div class="col-lg-10">
-      <%= f.text_field :bairro, :class => 'form-control', :maxlength => 25, :size => 25  %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <%=f.error_span(:bairro) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :logradouro, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :logradouro, :class => 'form-control', :maxlength => 80, :size => 30 %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <%=f.error_span(:logradouro) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :numero, :class => 'control-label col-lg-2'%>
-    <div class="col-lg-10">
-      <%= f.text_field :numero, :class => 'form-control', :maxlength => 4, :size => 4  %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <%=f.error_span(:numero) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :complemento, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :complemento, :class => 'form-control', :maxlength => 50, :size => 50 %>
-    </div>
-    <%=f.error_span(:complemento) %>
-  </div>
-
-  <div class="form-group">
-      <div class="col-lg-10">
-      <%= f.hidden_field :pessoa_id, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:pessoa_id) %>
-  </div>
-
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-
-    </div>
-  </div>
-
-<% end %>
+  
+</div>

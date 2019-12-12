@@ -1,113 +1,96 @@
-<%= form_for @pessoa, :html => { :class => "form-horizontal pessoa" } do |f| %>
-  <p> <span style="color: red; font-size: 15px; float: left;"> * </span> Campos Obrigatórios</p>
-
-  <% if !@pessoa.new_record? %>
-  <div class="form-group">
-    <%= f.label :cpf, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= @pessoa.cpf %>
+<div class="col-sm-12">
+    <%= form_for @pessoa do |f| %>
+    <p> * </span> Campos Obrigatórios</p>
+  
+    <% if !@pessoa.new_record? %>
+    <div class="form-group">
+      <%= f.label :cpf %>
+        <%= @pessoa.cpf %>
     </div>
-  </div>
+    <% end %>
+  
+    <div class="form-group">
+      <%= f.label :nome %>
+      <small style="color: red; font-size: 15px">*</small>
+      <div>
+        <%= f.text_field :nome, :class => 'form-control', :maxlength => 80, :size => 80 %>
+      </div>
+        <%=f.error_span(:nome) %>
+    </div>
+    <div class="form-group">
+      <%= f.label :sexo %>
+      <small style="color: red; font-size: 15px">*</small>
+        <div>
+            <%= f.select :sexo, ['Masculino', 'Feminino'], {},  { :class => 'form-control' } %>
+        </div>
+        <%=f.error_span(:sexo) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :rg %>
+      <small style="color: red; font-size: 15px">*</small>
+        <%= f.text_field :rg, :class => 'form-control', :maxlength => 14, :size => 14 %>
+        <%=f.error_span(:rg) %>
+    </div>
+  
+     <div class="form-group">
+      <%= f.label :Orgão_emissor %>
+      <small style="color: red; font-size: 15px">*</small>
+        <div>
+          <%= f.text_field :rg_orgao, :class => 'form-control', :maxlength => 10, :size => 10 %>
+        </div>
+        <%=f.error_span(:rg_orgao) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :Estado_de_emissão %>
+      <small style="color: red; font-size: 15px">*</small>
+        <div>
+          <%= f.select :rg_estado, ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI'] + 
+          ['PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'], {},  { :class => 'form-control' } %>
+        </div>
+        <%=f.error_span(:rg_estado) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :data_nascimento %>
+      <small style="color: red; font-size: 15px">*</small>
+        <div>
+          <%= f.date_select :data_nascimento, {:start_year => (Date.current.year - 120), :end_year => Date.current.year}, {:class => "form-control"}  %> 
+        </div>
+        <%=f.error_span(:data_nascimento) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :email %>
+      <small style="color: red; font-size: 15px">*</small>
+      <div>
+        <%= f.text_field :email, :class => 'form-control' %>
+      </div>
+        <%=f.error_span(:email) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :telefone %>
+      <div>
+        <%= f.text_field :telefone, :class => 'form-control', :maxlength => 15, :size => 15, :onkeyup => "mascara( this, mtel );" %>
+      </div>
+        <%=f.error_span(:telefone) %>
+    </div>
+  
+    <div class="form-group">
+      <script type="text/javascript" src="mtel.js"></script>
+      <%= f.label :celular %>
+      <small style="color: red; font-size: 15px">*</small>
+      <div>
+        <%= f.text_field :celular, :class => 'form-control', :maxlength => 15, :size => 15, :onkeyup => "mascara( this, mtel );" %>
+      </div>
+        <%=f.error_span(:celular) %>
+    </div>
+  
+  
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+  
   <% end %>
-
-  <div class="form-group">
-    <%= f.label :nome, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= f.text_field :nome, :class => 'form-control', :maxlength => 80, :size => 80 %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <div class="col-lg-4">
-      <%=f.error_span(:nome) %>
-    </div>
-
-  </div>
-  <div class="form-group">
-    <%= f.label :sexo, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= f.select :sexo, ['Masculino', 'Feminino'] %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <div class="col-lg-4">
-      <%=f.error_span(:sexo) %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :rg, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= f.text_field :rg, :class => 'form-control', :maxlength => 14, :size => 14 %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <div class="col-lg-4">
-      <%=f.error_span(:rg) %>
-    </div>
-  </div>
-
-   <div class="form-group">
-    <%= f.label :Orgão_emissor, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= f.text_field :rg_orgao, :class => 'form-control', :maxlength => 10, :size => 10 %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <div class="col-lg-4">
-      <%=f.error_span(:rg_orgao) %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Estado_de_emissão, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= f.select :rg_estado, ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI'] + 
-        ['PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'] %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <div class="col-lg-4">
-      <%=f.error_span(:rg_estado) %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :data_nascimento, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= f.date_select :data_nascimento, :start_year => Date.current.year - 120, :end_year => Date.current.year %>  <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <div class="col-lg-4">
-      <%=f.error_span(:data_nascimento) %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :email, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= f.text_field :email, :class => 'form-control' %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <div class="col-lg-4">
-      <%=f.error_span(:email) %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :telefone, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= f.text_field :telefone, :class => 'form-control', :maxlength => 15, :size => 15, :onkeyup => "mascara( this, mtel );" %>
-    </div>
-    <div class="col-lg-4">
-      <%=f.error_span(:telefone) %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <script type="text/javascript" src="mtel.js"></script>
-    <%= f.label :celular, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-6">
-      <%= f.text_field :celular, :class => 'form-control', :maxlength => 15, :size => 15, :onkeyup => "mascara( this, mtel );" %> <span style="color: red; font-size: 15px; float: left;"> *</span>
-    </div>
-    <div class="col-lg-4">
-      <%=f.error_span(:celular) %>
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-
-    </div>
-  </div>
-
-<% end %>
+  
+</div>

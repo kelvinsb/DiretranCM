@@ -1,109 +1,127 @@
-<%= form_for @documento, :html => { :class => "form-horizontal documento" } do |f| %>
+<div class="col-sm-12">
+    <%= form_for @documento, :html => { :class => "form-horizontal documento" } do |f| %>
 
-  <% if @documento.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@documento.errors.count, "error") %> prohibited this documento from being saved:</h3>
+    <% if @documento.errors.any? %>
+      <div id="error_expl" class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= pluralize(@documento.errors.count, "error") %> prohibited this documento from being saved:</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+          <% @documento.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       </div>
-      <div class="panel-body">
-        <ul>
-        <% @documento.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+    <% end %>
+  
+    <div class="form-group">
+      <h3>
+        <%= f.label :cpf, "CPF", :class => 'control-label col-lg-12' %>
+      </h3>
+      <div class="col-lg-10">
+        <div class="col-lg-12">
+        <% if @documento.cpf_file_name != nil %>
+          <a href="<%= @documento.cpf.url() %>" target="_blank"><%= image_tag @documento.cpf.url(:medium) %></a>
         <% end %>
-        </ul>
+  
+        </div>
+        <div class="col-lg-12">
+          <%= f.file_field :cpf %>
+        </div>
+      </div>
+      <hr />
+      <%=f.error_span(:pessoa_id) %>
+    </div>
+  
+    <div class="form-group">
+      <h3>
+        <%= f.label :rg, "RG", :class => 'control-label col-lg-12' %>
+      </h3>
+      <div class="col-lg-10">
+        <div class="col-lg-12">
+          <% if @documento.rg_file_name != nil %>
+          <a href="<%= @documento.rg.url() %>" target="_blank">
+            <%= image_tag @documento.rg.url(:medium) %>
+          </a>
+          <% end %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.file_field :rg %>
+        </div>
+      </div>
+      <hr />
+      <%=f.error_span(:pessoa_id) %>
+    </div>
+  
+    <div class="form-group">
+      <h3>
+        <%= f.label :foto, "Foto", :class => 'control-label col-lg-12' %>
+      </h3>
+      <div class="col-lg-10">
+        <div class="col-lg-12">
+          <% if @documento.foto_file_name != nil %>
+          <a href="<%= @documento.foto.url() %>" target="_blank">
+            <%= image_tag @documento.foto.url(:medium) %>
+          </a>
+          <% end %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.file_field :foto %>
+        </div>
+      </div>
+      <hr />
+      <%=f.error_span(:pessoa_id) %>
+    </div>
+  
+    <div class="form-group">
+      <h3>
+        <%= f.label :cid, "CID", :class => 'control-label col-lg-12' %>
+      </h3>
+      <div class="col-lg-10">
+        <div class="col-lg-12">
+        <% if @documento.cid_file_name != nil %>
+        <a href="<%= @documento.cid.url() %>" target="_blank">
+          <%= image_tag @documento.cid.url(:medium) %>
+        </a>
+        <% end %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.file_field :cid %>
+        </div>
+      </div>
+      <hr />
+      <%=f.error_span(:pessoa_id) %>
+    </div>
+  
+    <div class="form-group">
+      <h3>
+        <%= f.label :comp_residencia, "Comprovante de Residência", :class => 'control-label col-lg-12' %>
+      </h3>
+      <div class="col-lg-10">
+        <div class="col-lg-12">
+        <% if @documento.comp_residencia_file_name != nil %>
+        <a href="<%= @documento.cpf.url() %>" target="_blank">
+          <%= image_tag @documento.comp_residencia.url(:medium) %>
+        </a>
+        <% end %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.file_field :comp_residencia %>
+        </div>
+      </div>
+      <hr />
+      <%=f.error_span(:pessoa_id) %>
+    </div>
+  
+    <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+        <%= f.submit nil, :class => 'btn btn-primary' %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")), documentos_path, :class => 'btn btn-default' %>
       </div>
     </div>
+  
   <% end %>
-
-  <div class="form-group">
-    <%= f.label :cpf, "CPF", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <div class="col-lg-12">
-      <% if @documento.cpf_file_name != nil %>
-        <a href="<%= @documento.cpf.url() %>" target="_blank"><%= image_tag @documento.cpf.url(:medium) %></a>
-      <% end %>
-
-      </div>
-      <div class="col-lg-12">
-        <%= f.file_field :cpf %>
-      </div>
-    </div>
-    <%=f.error_span(:pessoa_id) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :rg, "RG", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <div class="col-lg-12">
-        <% if @documento.rg_file_name != nil %>
-        <a href="<%= @documento.rg.url() %>" target="_blank">
-          <%= image_tag @documento.rg.url(:medium) %>
-        </a>
-        <% end %>
-      </div>
-      <div class="col-lg-12">
-        <%= f.file_field :rg %>
-      </div>
-    </div>
-    <%=f.error_span(:pessoa_id) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :foto, "Foto", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <div class="col-lg-12">
-        <% if @documento.foto_file_name != nil %>
-        <a href="<%= @documento.foto.url() %>" target="_blank">
-          <%= image_tag @documento.foto.url(:medium) %>
-        </a>
-        <% end %>
-      </div>
-      <div class="col-lg-12">
-        <%= f.file_field :foto %>
-      </div>
-    </div>
-    <%=f.error_span(:pessoa_id) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :cid, "CID", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <div class="col-lg-12">
-      <% if @documento.cid_file_name != nil %>
-      <a href="<%= @documento.cid.url() %>" target="_blank">
-        <%= image_tag @documento.cid.url(:medium) %>
-      </a>
-      <% end %>
-      </div>
-      <div class="col-lg-12">
-        <%= f.file_field :cid %>
-      </div>
-    </div>
-    <%=f.error_span(:pessoa_id) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :comp_residencia, "Comprovante de Residencia", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <div class="col-lg-12">
-      <% if @documento.comp_residencia_file_name != nil %>
-      <a href="<%= @documento.cpf.url() %>" target="_blank">
-        <%= image_tag @documento.comp_residencia.url(:medium) %>
-      </a>
-      <% end %>
-      </div>
-      <div class="col-lg-12">
-        <%= f.file_field :comp_residencia %>
-      </div>
-    </div>
-    <%=f.error_span(:pessoa_id) %>
-  </div>
-
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), documentos_path, :class => 'btn btn-default' %>
-    </div>
-  </div>
-
-<% end %>
+  
+</div>

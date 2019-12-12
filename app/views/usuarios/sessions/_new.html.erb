@@ -8,14 +8,14 @@
                 <h2><%=I18n.t'log_sess_new'%> </h2>
 
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                  <div class="field" id="userName" class="form-control input-sm chat-input">
+                  <div id="userName" class="form-control">
                     <%= f.label :cpf, "CPF" %>
-                    <%= f.text_field :cpf, autofocus: true %>
+                    <%= f.text_field :cpf, autofocus: true, :class => 'form-control' %>
                   </div>
                   <br />
-                  <div class="field" id="userPassword" class="form-control input-sm chat-input">
+                  <div id="userPassword" class="form-control">
                     <%= f.label :password, "Senha" %>
-                    <%= f.password_field :password, autocomplete: "off" %>
+                    <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
                   </div>
 
                   <% if devise_mapping.rememberable? -%>

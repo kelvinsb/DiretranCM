@@ -1,93 +1,78 @@
-<%= form_for @info_carteirinha, :html => { :class => "form-horizontal info_carteirinha" } do |f| %>
+<div class="col-sm-12">
+    <%= form_for @info_carteirinha, :html => { :class => "form-horizontal info_carteirinha" } do |f| %>
 
-  <% if @info_carteirinha.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@info_carteirinha.errors.count, "error") %> prohibited this info_carteirinha from being saved:</h3>
+    <% if @info_carteirinha.errors.any? %>
+      <div id="error_expl" class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= pluralize(@info_carteirinha.errors.count, "error") %> prohibited this info_carteirinha from being saved:</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+          <% @info_carteirinha.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       </div>
-      <div class="panel-body">
-        <ul>
-        <% @info_carteirinha.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label :nome_tipo_estacionamento, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <% end %>
+  
+    <div class="form-group">
+      <%= f.label :nome_tipo_estacionamento %>
       <%= f.text_field :nome_tipo_estacionamento, :class => 'form-control' %>
+      <%=f.error_span(:nome_tipo_estacionamento) %>
     </div>
-    <%=f.error_span(:nome_tipo_estacionamento) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :resolucao, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="form-group">
+      <%= f.label :resolucao %>
       <%= f.text_field :resolucao, :class => 'form-control' %>
+      <%=f.error_span(:resolucao) %>
     </div>
-    <%=f.error_span(:resolucao) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :uf, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="form-group">
+      <%= f.label :uf %>
       <%= f.text_field :uf, :class => 'form-control' %>
+      <%=f.error_span(:uf) %>
     </div>
-    <%=f.error_span(:uf) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :municipio, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="form-group">
+      <%= f.label :municipio %>
       <%= f.text_field :municipio, :class => 'form-control' %>
+      <%=f.error_span(:municipio) %>
     </div>
-    <%=f.error_span(:municipio) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :orgao_expedidor, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="form-group">
+      <%= f.label :orgao_expedidor %>
       <%= f.text_area :orgao_expedidor, :class => 'form-control', size: "50x10" %>
+      <%=f.error_span(:orgao_expedidor) %>
     </div>
-    <%=f.error_span(:orgao_expedidor) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :nome_diretor, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="form-group">
+      <%= f.label :nome_diretor %>
       <%= f.text_field :nome_diretor, :class => 'form-control' %>
+      <%=f.error_span(:nome_diretor) %>
     </div>
-    <%=f.error_span(:nome_diretor) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :orgao_exp_diretor, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="form-group">
+      <%= f.label :orgao_exp_diretor %>
       <%= f.text_field :orgao_exp_diretor, :class => 'form-control' %>
+      <%=f.error_span(:orgao_exp_diretor) %>
     </div>
-    <%=f.error_span(:orgao_exp_diretor) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :regras_utilizacao, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="form-group">
+      <%= f.label :regras_utilizacao %>
       <%= f.text_area :regras_utilizacao, :class => 'form-control', size: "50x10" %>
+      <%=f.error_span(:regras_utilizacao) %>
     </div>
-    <%=f.error_span(:regras_utilizacao) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :numeracao_carteirinha, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="form-group">
+      <%= f.label :numeracao_carteirinha %>
       <%= f.text_field :numeracao_carteirinha, :class => 'form-control' %><br> <br>
       A partir de qual numeração, ou id da carteirinha, deseja a inserção nas carteirinhas <br>
       <strong>Exemplo:</strong> No ano de <%= Date.current.year %> já foram produzidas 200 carteirinhas, então a numeração seria <%= Date.current.year %>-200
+  
+      <%=f.error_span(:numeracao_carteirinha) %>
     </div>
-
-    <%=f.error_span(:numeracao_carteirinha) %>
-  </div>
-
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                info_carteirinhas_path, :class => 'btn btn-default' %>
+  
+    <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+        <%= f.submit nil, :class => 'btn btn-primary' %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  info_carteirinhas_path, :class => 'btn btn-secondary' %>
+      </div>
     </div>
-  </div>
-
-<% end %>
+  
+  <% end %>
+  
+</div>

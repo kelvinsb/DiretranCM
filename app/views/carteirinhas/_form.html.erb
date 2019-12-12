@@ -1,7 +1,6 @@
-
-
-<%= form_for @carteirinha, :html => { :class => "form-horizontal carteirinha" } do |f| %>
-  
+<div class="col-sm-12">
+  <%= form_for @carteirinha, :html => { :class => "form-horizontal carteirinha" } do |f| %>
+    
   <% if ( returnCar() == nil ) ||  @carteirinha.status == "Rejeitada" || @carteirinha.status == nil %>
 
     <% if  @carteirinha.status == "Rejeitada" %>
@@ -38,7 +37,7 @@
       @requisicao = Requisicao.find(returnReq())
       %>
       <%= @requisicao.categoria %>
-       
+      
       <%#= f.hidden_field :categoria, :class => 'form-control' %>
     </div>
     <%#=f.error_span(:categoria) %>
@@ -54,16 +53,23 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit "Requerer carteirinha", :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                carteirinhas_path, :class => 'btn btn-default' %>
+                carteirinhas_path, :class => 'btn btn-secondary' %>
     </div>
   </div>
 
 
+  <% elsif @carteirinha.status == "Aprovada" %>
+  <div class="col-lg-12">
+    <div class="edit_carteirinha">
+      <%= link_to "Ver carteirinha", carteirinha_path(@carteirinha.id)+'.pdf', :class => 'btn btn-primary' %>
+    </div>
+  </div>
 
   <% else %>
-
   <h3>Carteirinha já requerida</h3>
 
   <% end %>
 
-<% end %>
+  <% end %>
+
+</div>

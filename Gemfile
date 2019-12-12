@@ -82,3 +82,5 @@ gem "rails-erd"
 gem 'json'
 
 gem 'coffee-script-source', '~> 1.11', '>= 1.11.1'
+
+gem 'bootstrap', '~> 4.4.1'
